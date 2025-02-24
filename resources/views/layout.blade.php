@@ -16,7 +16,7 @@
   <div class="container nav-bg navbar-dark">
     <a class="navbar-brand me-0" href="/"><img src="{{asset('img/layout/logo.png')}}" alt="logo" class="logo"></a>
     <div class="d-lg-flex justify-content-end">
-      <a class="nav-link" href="#"><img src="{{asset('img/layout/auth.png')}}" alt="profile" class="logo"></a>
+      <a class="nav-link" href="/sign"><img src="{{asset('img/layout/auth.png')}}" alt="profile" class="logo"></a>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -25,7 +25,7 @@
     <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarsExample11">
       <ul class="navbar-nav justify-content-lg-left">
         <li class="nav-item">
-          <a class="nav-link active text-dark" aria-current="page" href="index.html">Főoldal</a>
+          <a class="nav-link active text-dark" aria-current="page" href="/">Főoldal</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active text-dark" aria-current="page" href="adatlap.html">Állataink</a>
