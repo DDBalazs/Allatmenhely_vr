@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/style.js')}}"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
 
@@ -52,15 +53,15 @@
       <div class="row">
         <div class="col text-center py-4">
           <h2>Elérhetőségeink</h2>
-          <p>Telefon: +36 1 234 5678</p>
-          <p><a href="mailto:info@boldogmenhely.hu">Email: info@boldogmenhely.hu</a></p>
-          <p><a href="https://maps.app.goo.gl/1fQM3uQHkHQVvYU27" target="_blank">Cím: 1234 Boldog Város, Állatbarát utca 7.</a></p>
+          <p><i class='bx bxs-mobile'></i>Telefon: +36 1 234 5678</p>
+          <p><i class='bx bx-mail-send'></i></i><a href="mailto:info@boldogmenhely.hu">Email: info@boldogmenhely.hu</a></p>
+          <p><i class='bx bx-current-location'></i><a href="https://maps.app.goo.gl/1fQM3uQHkHQVvYU27" target="_blank">Cím: 1234 Boldog Város, Állatbarát utca 7.</a></p>
         </div>
         <div class="col text-center pt-4">
           <h2>Közösségi média</h2>
-          <p><a href="" target="_blank">Boldog Menhely Facebook</a></p>
-          <p><a href="" target="_blank">Boldog Menhely Instagram</a></p>
-          <p><a href="" target="_blank">Boldog Menhely Youtube</a></p>
+          <p><i class='bx bxl-facebook-square'></i><a href="" target="_blank">Boldog Menhely Facebook</a></p>
+          <p><i class='bx bxl-instagram' ></i><a href="" target="_blank">Boldog Menhely Instagram</a></p>
+          <p><i class='bx bxl-youtube' ></i><a href="" target="_blank">Boldog Menhely Youtube</a></p>
         </div>
       </div>
     </div>

@@ -1,3 +1,6 @@
+/* https://boxicons.com */
+/* {{-- https://www.youtube.com/watch?v=d-VIORM1X2o --}} */
+
 /* layout */
 body{
     background-image: url('../img/hatter.png');
@@ -167,8 +170,26 @@ footer a:hover{
     justify-content: center;
     align-items: center;
 }
+.form-box{
+    display: flex;
+}
+.form-box .LoginForm{
+    position: absolute;
+    /* transform: translateX(-450px); */
+}
+.form-box .LoginLink.active{
+    transform: translateX(-450px);
+}
+.form-box .RegisterForm{
+    transform: translateX(450px);
+}
+.form-box .RegisterForm.active{
+    transform: translateX(0px);
+}
 .sign .form-box h2{
     text-align: center;
+    font-size: 38px;
+    font-weight: 600;
 }
 .form-box .input-box{
     margin: 35px 0;
@@ -197,19 +218,51 @@ footer a:hover{
 .input-box input:valid ~ label{
     top: -5px;
 }
-.forgot-section{
+.input-box i{
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.forget-section{
     display: flex;
     justify-content: space-between;
     font-size: 15px;
     margin: -15px 0 15px;
 }
-.forgot-section p{
+.forget-section p{
     display: flex;
     align-items: center;
 }
-.forgot-section p input{
+.forget-section p input{
     accent-color: #11595d;
     margin: 0 3px;
 }
-
-
+.forget-section a{
+    text-decoration: none;
+}
+.buttn{
+    height: 45px;
+    width: 100%;
+    border-radius: 50px;
+    color: #fff;
+    background: #11595d;
+    border: 2px solid #0c4345;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+.account-creation{
+    text-align: center;
+    margin: 25px 0 10px;
+    font-weight: 400;
+    font-size: 14px;
+}
+.account-creation span a{
+    text-decoration: none;
+}
+.account-creation a:hover{
+    text-decoration: underline;
+}

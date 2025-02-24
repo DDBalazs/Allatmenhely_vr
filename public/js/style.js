@@ -10,3 +10,16 @@ function stickyNav() {
 }
 
 window.addEventListener("scroll", stickyNav);
+
+
+function Sign(){
+    const LoginForm = document.querySelector('.LoginForm');
+    const RegisterForm = document.querySelector('.RegisterForm');
+    const LoginLink = document.querySelector('.LoginLink');
+    const RegisterLink = document.querySelector('.RegisterLink');
+
+    RegisterLink.onclick=()=>{
+        RegisterForm.classList.add('active');
+    }
+}
+

@@ -1,34 +1,65 @@
 @extends('layout')
 @section('content')
-{{-- https://www.youtube.com/watch?v=d-VIORM1X2o --}}
 
     <main class="reg">
         <div class="container sign">
             <div class="form-box">
-                <form action="">
+                {{-- LOGIN --}}
+                <form action="" class="LoginForm">
                     <h2>Belépés</h2>
                     <div class="input-box">
                         <input type="text" required>
                         <label for="">Név</label>
+                        <i class="bx bxs-user"></i>
                     </div>
                     <div class="input-box">
                         <input type="text" required>
                         <label for="">E-Mail</label>
+                        <i class='bx bxs-envelope'></i>
                     </div>
                     <div class="input-box">
                         <input type="text" required>
                         <label for="">Jelszó</label>
+                        <i class="bx bxs-lock-alt"></i>
                     </div>
                     <div class="forget-section">
-                        <p>
-                            <input type="checkbox" name="" id="">
-                            Remember me
-                        </p>
                         <a href="">Elfelejtette a jelszavát?</a>
                     </div>
-                    <button class="btn">Bejelentkezés</button>
+                    <button class="buttn">Bejelentkezés</button>
                     <div class="account-creation">
-                        <span>Nincs még fiókod?<a href="">Regisztrálj</a></span>
+                        <span>Nincs még fiókod?<a href="" class="RegisterLink">Regisztrálj</a></span>
+                    </div>
+                </form>
+
+                {{-- REGISTER --}}
+                <form action="" class="RegisterForm">
+                    <h2>Regisztráció</h2>
+                    <div class="input-box">
+                        <input type="text" required>
+                        <label for="">Név</label>
+                        <i class="bx bxs-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" required>
+                        <label for="">E-Mail</label>
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" required>
+                        <label for="">Jelszó</label>
+                        <i class="bx bxs-lock-alt"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" required>
+                        <label for="">Jelszó mégegyszer</label>
+                        <i class="bx bxs-lock-alt"></i>
+                    </div>
+                    <div class="forget-section">
+                        <a href="">Elfelejtette a jelszavát?</a>
+                    </div>
+                    <button class="buttn">Regisztráció</button>
+                    <div class="account-creation">
+                        <span>Van már fiókod?<a href="" class="LoginLink">Jelentkezz be!</a></span>
                     </div>
                 </form>
             </div>
