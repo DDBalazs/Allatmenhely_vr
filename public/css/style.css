@@ -10,21 +10,6 @@ body{
     height: 50px;
     width: 50px;
 }
-
-/* adatok
-.kep{
-    border: 1px solid black;
-    padding: 40px;
-  }
-.card{
-    width: 220px;
-    margin: 10px;
-}
-.szurofeltetel{
-    background-color: gray;
-    opacity: 0.9;
-} */
-
 /* main page */
 .carousel {
     margin-bottom: -8px;
@@ -169,22 +154,29 @@ footer a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .form-box{
     display: flex;
 }
 .form-box .LoginForm{
     position: absolute;
-    /* transform: translateX(-450px); */
+    transform: translateX(0px) rotate(0deg);
+    transition: .5s ease;
+    transition-delay: .4s;
 }
-.form-box .LoginLink.active{
-    transform: translateX(-450px);
+.form-box .LoginForm.active{
+    transform: translateX(-450px) rotate(-45deg);
+    transition-delay: .2s;
 }
 .form-box .RegisterForm{
-    transform: translateX(450px);
+    transform: translateX(550px) rotate(45deg);
+    transition: .5s ease;
+    transition-delay: .2s;
 }
 .form-box .RegisterForm.active{
-    transform: translateX(0px);
+    transform: translateX(0px) rotate(0deg);
+    transition-delay: .4s;
 }
 .sign .form-box h2{
     text-align: center;
@@ -247,8 +239,8 @@ footer a:hover{
     width: 100%;
     border-radius: 50px;
     color: #fff;
-    background: #11595d;
-    border: 2px solid #0c4345;
+    background: #007bff;
+    border: 2px solid #074588;
     outline: none;
     font-size: 16px;
     cursor: pointer;
@@ -266,3 +258,99 @@ footer a:hover{
 .account-creation a:hover{
     text-decoration: underline;
 }
+
+/* Responsitivitása */
+@media(max-width:768px){
+    .sign{
+        height: 500px;
+        width: 380px;
+    }
+    .sign .form-box{
+        font-size: 32px;
+    }
+    .form-box .input-box i{
+        font-size: 18px;
+    }
+    .form-box .input-box label{
+        font-size: 14px;
+    }
+    .form-box .input-box{
+        margin: 35px 0;
+        width: 300px;
+    }
+    .forget-section{
+        font-size:  13px;
+    }
+    .buttn{
+        height: 40px;
+        width: 100%;
+        font-size: 14px;
+    }
+    .account-creation{
+        font-size: 13px;
+    }
+}
+
+@media(max-width:480px){
+    .sign{
+        height: 450px;
+        width: 310px;
+    }
+    .sign .form-box{
+        font-size: 26px;
+    }
+    .form-box .input-box i{
+        font-size: 16px;
+    }
+    .form-box .input-box label{
+        font-size: 12px;
+    }
+    .form-box .input-box{
+        margin: 30px 0;
+        width: 260px;
+    }
+    .forget-section{
+        font-size:  11px;
+    }
+    .buttn{
+        height: 35px;
+        width: 100%;
+        font-size: 12px;
+    }
+    .account-creation{
+        font-size: 11px;
+    }
+}
+
+
+/* MyPage */
+
+.mypage{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mypagebg{
+    height: 1000px;
+    width: 700px;
+    border: 2px solid rgba(255,255,255,.4);
+    border-radius: 10px;
+    background: rgba(0,0,0,.2);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2),
+    0 0 15px rgba(0,0,0,.2),
+    0 0 30px rgba(0,0,0,.2);
+    text-align: center;
+    justify-content: center;
+    overflow: hidden;
+
+    h2{
+        margin: 30px;
+     }
+    p{
+        font-size: 30px;
+    }
+    }
+}
+

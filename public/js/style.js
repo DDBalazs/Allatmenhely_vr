@@ -12,14 +12,21 @@ function stickyNav() {
 window.addEventListener("scroll", stickyNav);
 
 
-function Sign(){
+document.addEventListener("DOMContentLoaded", function () {
     const LoginForm = document.querySelector('.LoginForm');
     const RegisterForm = document.querySelector('.RegisterForm');
     const LoginLink = document.querySelector('.LoginLink');
     const RegisterLink = document.querySelector('.RegisterLink');
 
-    RegisterLink.onclick=()=>{
+    RegisterLink.addEventListener("click", function (e) {
+        e.preventDefault(); // Megakadályozza az újratöltést
         RegisterForm.classList.add('active');
-    }
-}
+        LoginForm.classList.add('active');
+    });
 
+    LoginLink.addEventListener("click", function (e) {
+        e.preventDefault(); // Megakadályozza az újratöltést
+        RegisterForm.classList.remove('active');
+        LoginForm.classList.remove('active');
+    });
+});

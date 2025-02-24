@@ -96,7 +96,11 @@
                 <div class="onkentes">
                   <h2>Legyél önkéntes te is!</h2>
                   <p>Szeretnéd, hogy a segítséged valódi változást hozzon? Csatlakozz önkénteseink közé, és segíts, hogy minden állat megtalálja az örök otthonát. Akár néhány óra, akár rendszeres segítség, a te időd és energiád óriási különbséget jelenthet egy állat életében. Legyél részese egy szeretettel teli közösségnek, és éld át, milyen érzés örömet szerezni másoknak!</p>
-                  <a href="#" class="btn btn-dark">Jelentkezz!</a>
+                  @if (Auth::check())
+                    <a href="/mypage" class="btn btn-dark">Jelentkezz!</a>
+                  @else
+                    <a href="/sign" class="btn btn-dark">Jelentkezz!</a>
+                  @endif
                 </div>
               </div>
            </div>

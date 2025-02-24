@@ -17,7 +17,11 @@
   <div class="container nav-bg navbar-dark">
     <a class="navbar-brand me-0" href="/"><img src="{{asset('img/layout/logo.png')}}" alt="logo" class="logo"></a>
     <div class="d-lg-flex justify-content-end">
-      <a class="nav-link" href="/sign"><img src="{{asset('img/layout/auth.png')}}" alt="profile" class="logo"></a>
+        @if (Auth::check())
+            <a class="nav-link" href="/mypage"><img src="{{asset('img/layout/auth.png')}}" alt="profile" class="logo"></a>
+        @else
+            <a class="nav-link" href="/sign"><img src="{{asset('img/layout/auth.png')}}" alt="profile" class="logo"></a>
+        @endif
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
