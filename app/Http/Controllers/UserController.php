@@ -85,6 +85,44 @@ class UserController extends Controller
         Auth::logout();
         return redirect('/')->with('success', 'Sikeresen kijelentkeztél!');
     }
+
+    public function Newpass(){
+        if(Auth::check()){
+            return view('newpass');
+        } else {
+            return redirect('/')->with('error','Kérlek előbb jelentkezz be!');
+        }
+    }
+    public function NewpassData(Request $req){
+        $req->validate([
+            'oldpassword'       => 'required',
+            'newpassword'       => ['required', 'confirmed', Password::min(8)
+                                                                    ->letters()
+                                                                    ->numbers()
+                                                                    ->symbols()
+                                                                    ->mixedCase()],
+            'newpassword_confirmation'  => 'required'
+        ],[
+            'oldpassword.required'                  => 'KÖTELEZŐ MEGADNI A RÉGI JELSZÓT!',
+            'newpassword.required'                  => 'KÖTELEZŐ MEGADNI AZ ÚJ JELSZÓT!',
+            'newpassword.confirmed'                 => 'NEM EGGYEZNEK A JELSZAVAK!',
+            'newpassword.confirmed.required'        => 'KÖTELEZŐ MEGADNI!',
+            'newpassword_confirmation.required'     => 'KÖTELEZP MEGADNI!',
+            'newpassword.min'                       => 'MINIMUM 8 KARAKTER HOSSZÚSÁGÚ LEGYEN!',
+            'newpassword.mixed'                     => 'TARTALMAZNI KELL KIS ÉS NAGY BETŰT IS!',
+            'newpassword.symbols'                   =>  'A jelszónak tartalmazni kell speciális karakter!',
+            'newpassword.numbers'                   => 'TARTALMAZNIA KELL SZÁMOKAT!',
+            'newpassword.letters'                   => 'TARTALMAZNI KELL BETŰKET!',
+        ]);
+        if(Hash::check($req->oldpassword, Auth::user()->password)){
+            $data           = User::find(Auth::user()->onkentes_id);
+            $data->password = Hash::make($req->newpassword);
+            $data->Save();
+            return view('mypage');
+        } else {
+            return redirect('/newpass')->with('error', 'Nem sikerült a jelszó módosítás.');
+        }
+    }
 }
 
 
