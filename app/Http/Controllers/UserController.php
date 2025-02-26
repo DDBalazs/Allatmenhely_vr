@@ -7,29 +7,37 @@ use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
+    public function Sign(){
+        if(!Auth::check()){
+            return view('sign');
+        } else {
+            return redirect('/mypage')->with('loggederror', 'Már be vagy jelentkezve');
+        }
+    }
     public function Login(Request $req){
-                // Login
-                $req->validate([
-                    'candicate'             =>  'required',
-                    'password'              =>  'required'
-                ],[
-                    'candicate.required'    =>  'Nem adta meg a nevet vagy az email címet!',
-                    'password.required'     =>  'Nem adtad meg a jelszót!'
-                ]);
+            // Login
+            $req->validate([
+                'candicate'             =>  'required',
+                'password'              =>  'required'
+            ],[
+                'candicate.required'    =>  'Nem adta meg a nevet vagy az email címet!',
+                'password.required'     =>  'Nem adtad meg a jelszót!'
+            ]);
 
-                if(Auth::attempt(['nev' => $req->candicate, 'password' => $req->password])){
-                    return redirect('/mypage')->with('success', 'Sikeresen beléptél!');
-                }
-                else if(Auth::attempt(['email' => $req->candicate, 'password' => $req->password])){
-                    return redirect('/mypage')->with('success', 'Sikeresen beléptél!');
-                }
-                else
-                {
-                    return redirect('/sign')->with('error', 'Sikertelen belépés!');
-                }
+            if(Auth::attempt(['nev' => $req->candicate, 'password' => $req->password])){
+                return redirect('/mypage')->with('logsuccess', 'Sikeresen beléptél!');
+            }
+            else if(Auth::attempt(['email' => $req->candicate, 'password' => $req->password])){
+                return redirect('/mypage')->with('logsuccess', 'Sikeresen beléptél!');
+            }
+            else
+            {
+                return redirect('/sign')->with('logerror', 'Sikertelen belépés!');
+            }
     }
 
     public function Register(Request $req){
@@ -61,12 +69,6 @@ class UserController extends Controller
             $data->email        = $req->email;
             $data->password     = Hash::make($req->password);
 
-            if($data->Save()){
-                return view('sign');
-            }
-            else{
-                return redirect('/sign')->with('Error', 'Sikertelen regisztráció');
-            }
     }
 
     public function Modositas(Request $req){
@@ -77,7 +79,7 @@ class UserController extends Controller
         if(Auth::check()){
             return view('mypage');
         } else {
-            return redirect('/login')->with('error', 'Kérlek előbb jelentkezz be!');
+            return redirect('/login')->with('unloggederror', 'Kérlek előbb jelentkezz be!');
         }
     }
 

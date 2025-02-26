@@ -2,6 +2,34 @@
 @section('content')
 
     <main class="reg">
+        @if (session('logerror'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Sikertelen bejelentkezés!',
+                text: '{{session('logerror')}}',
+                confirmButtonText: 'Ok'
+            });
+        </script>
+        @elseif (session('regsuccess'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sikeres regisztráció!',
+                text: '{{session('regsuccess')}}',
+                confirmButtonText: 'Ok'
+            });
+        </script>
+        @elseif (session('unloggederror'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sikeres regisztráció!',
+                text: '{{session('regsuccess')}}',
+                confirmButtonText: 'Ok'
+            });
+        </script>
+      @endif
         <div class="container sign">
             <div class="form-box">
                 {{-- LOGIN --}}
@@ -9,20 +37,14 @@
                     @csrf
                     <h2>Belépés</h2>
                     <div class="input-box">
-                        <input type="text" name="candicate" id="candicate" value="{{old('candicate')}}" required>
+                        <input type="text" name="candicate" id="candicate" required>
                         <label for="candicate">Név vagy Email cím</label>
                         <i class="bx bxs-user"></i>
-                        @error('candicate')
-                            <span class="text-danger">{{$message}}</span>
-                        @enderror
                     </div>
                     <div class="input-box">
                         <input type="password" name="password" id="password" required>
                         <label for="password">Jelszó</label>
                         <i class="bx bxs-lock-alt"></i>
-                        @error('password')
-                            <span class="text-danger">{{$message}}</span>
-                        @enderror
                     </div>
                     <div class="forget-section">
                         <a href="">Elfelejtette a jelszavát?</a>
@@ -54,7 +76,7 @@
                         @enderror
                     </div>
                     <div class="input-box">
-                        <input type="password" name="password" id="password" required>
+                        <input type="password" name="password" id="password1" required>
                         <label for="password">Jelszó</label>
                         <i class="bx bxs-lock-alt"></i>
                         @error('password')

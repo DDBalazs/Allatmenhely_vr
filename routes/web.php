@@ -7,7 +7,7 @@ use App\Http\Controllers\UserController;
 Route::view('/', 'welcome');
 
 // login & regiszter
-Route::view('/sign', 'sign');
+Route::get('/sign', [UserController::class, 'Sign']);
 Route::post('/login', [UserController::class, 'Login']);
 Route::post('/register', [UserController::class, 'Register']);
 

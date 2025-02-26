@@ -1,7 +1,26 @@
 @extends('layout')
 @section('content')
 <main class="mypage">
-
+    @if (session('logsuccess'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sikeres bejelentkezés!',
+                text: '{{session('logsuccess')}}',
+                confirmButtonText: 'Ok'
+            });
+        </script>
+    @elseif (session('loggederror')){
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Sikertelen művelet',
+                text: '{{session('loggederror')}}',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    }
+    @endif
     <div class="container mypagebg">
         <div class="py-2">
             <h2><b>Profilod</b></h2>
