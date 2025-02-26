@@ -69,6 +69,9 @@ class UserController extends Controller
             $data->email        = $req->email;
             $data->password     = Hash::make($req->password);
 
+            if($data->Save())
+            return redirect('/login')->with('regsuccess','Sikeres regisztráció!');
+
     }
 
     public function Modositas(Request $req){
@@ -85,14 +88,14 @@ class UserController extends Controller
 
     public function Logout(){
         Auth::logout();
-        return redirect('/')->with('success', 'Sikeresen kijelentkeztél!');
+        return redirect('/')->with('logout', 'Sikeresen kijelentkeztél!');
     }
 
     public function Newpass(){
         if(Auth::check()){
             return view('newpass');
         } else {
-            return redirect('/')->with('error','Kérlek előbb jelentkezz be!');
+            return redirect('/sign')->with('unloggederror','Kérlek előbb jelentkezz be!');
         }
     }
     public function NewpassData(Request $req){
@@ -120,9 +123,9 @@ class UserController extends Controller
             $data           = User::find(Auth::user()->onkentes_id);
             $data->password = Hash::make($req->newpassword);
             $data->Save();
-            return view('mypage');
+            return view('mypage')->with('newpasssuccess','Sikerült a jelszó módosítás.');
         } else {
-            return redirect('/newpass')->with('error', 'Nem sikerült a jelszó módosítás.');
+            return redirect('/newpass')->with('newpasserror', 'Nem sikerült a jelszó módosítás.');
         }
     }
 }

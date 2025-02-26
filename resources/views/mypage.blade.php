@@ -5,21 +5,20 @@
         <script>
             Swal.fire({
                 icon: 'success',
-                title: 'Sikeres bejelentkezés!',
+                title: 'Sikeres művelet!',
                 text: '{{session('logsuccess')}}',
                 confirmButtonText: 'Ok'
             });
         </script>
-    @elseif (session('loggederror')){
+    @elseif (session('loggederror'))
         <script>
             Swal.fire({
                 icon: 'error',
-                title: 'Sikertelen művelet',
+                title: 'Sikertelen művelet!',
                 text: '{{session('loggederror')}}',
                 confirmButtonText: 'Ok'
             })
         </script>
-    }
     @endif
     <div class="container mypagebg">
         <div class="py-2">

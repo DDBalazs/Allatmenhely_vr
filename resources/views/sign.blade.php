@@ -15,7 +15,7 @@
         <script>
             Swal.fire({
                 icon: 'success',
-                title: 'Sikeres regisztráció!',
+                title: 'Sikeres művelet!',
                 text: '{{session('regsuccess')}}',
                 confirmButtonText: 'Ok'
             });
@@ -37,7 +37,7 @@
                     @csrf
                     <h2>Belépés</h2>
                     <div class="input-box">
-                        <input type="text" name="candicate" id="candicate" required>
+                        <input type="text" name="candicate" id="candicate" value="{{old('candicate')}}" required>
                         <label for="candicate">Név vagy Email cím</label>
                         <i class="bx bxs-user"></i>
                     </div>
