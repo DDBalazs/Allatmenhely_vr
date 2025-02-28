@@ -19,6 +19,15 @@
                 confirmButtonText: 'Ok'
             })
         </script>
+    @elseif (session('newpasssuccess'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sikeres művelet!',
+                text: '{{session('newpasssuccess')}}',
+                confirmButtonText: 'Ok'
+            })
+        </script>
     @endif
     <div class="container mypagebg">
         <div class="py-2">

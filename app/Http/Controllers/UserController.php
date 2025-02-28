@@ -70,7 +70,7 @@ class UserController extends Controller
             $data->password     = Hash::make($req->password);
 
             if($data->Save())
-            return redirect('/login')->with('regsuccess','Sikeres regisztráció!');
+                return redirect('/sign')->with('regsuccess','Sikeres regisztráció!');
 
     }
 
@@ -108,24 +108,23 @@ class UserController extends Controller
                                                                     ->mixedCase()],
             'newpassword_confirmation'  => 'required'
         ],[
-            'oldpassword.required'                  => 'KÖTELEZŐ MEGADNI A RÉGI JELSZÓT!',
-            'newpassword.required'                  => 'KÖTELEZŐ MEGADNI AZ ÚJ JELSZÓT!',
-            'newpassword.confirmed'                 => 'NEM EGGYEZNEK A JELSZAVAK!',
-            'newpassword.confirmed.required'        => 'KÖTELEZŐ MEGADNI!',
-            'newpassword_confirmation.required'     => 'KÖTELEZP MEGADNI!',
-            'newpassword.min'                       => 'MINIMUM 8 KARAKTER HOSSZÚSÁGÚ LEGYEN!',
-            'newpassword.mixed'                     => 'TARTALMAZNI KELL KIS ÉS NAGY BETŰT IS!',
-            'newpassword.symbols'                   =>  'A jelszónak tartalmazni kell speciális karakter!',
-            'newpassword.numbers'                   => 'TARTALMAZNIA KELL SZÁMOKAT!',
-            'newpassword.letters'                   => 'TARTALMAZNI KELL BETŰKET!',
+            'oldpassword.required'                  => 'A régi jelszót kötelező megadni!',
+            'newpassword.required'                  => 'Az új jelszót kötelező megadni!',
+            'newpassword.confirmed'                 => 'Az új jelszó nem egyezik!',
+            'newpassword_confirmation.required'     => 'Az új jelszó megerősítését kötelező megadni!',
+            'newpassword.min'                       => 'A jelszónak minimum 8 karakter hosszúnak kell lennie!',
+            'newpassword.mixedCase'                 => 'A jelszónak tartalmazni kell is és nagy betűt is!',
+            'newpassword.symbols'                   => 'A jelszónak tartalmazni kell speciális karakter!',
+            'newpassword.numbers'                   => 'A jelszónak tartalmazni kell számot!',
+            'newpassword.letters'                   => 'A jelszónak tartalmazni kell betűket!',
         ]);
         if(Hash::check($req->oldpassword, Auth::user()->password)){
             $data           = User::find(Auth::user()->onkentes_id);
             $data->password = Hash::make($req->newpassword);
             $data->Save();
-            return view('mypage')->with('newpasssuccess','Sikerült a jelszó módosítás.');
+            return redirect('/mypage')->with('newpasssuccess','Sikerült a jelszó módosítás.');
         } else {
-            return redirect('/newpass')->with('newpasserror', 'Nem sikerült a jelszó módosítás.');
+            return view('newpass')->with('newpasserror', 'Nem sikerült a jelszó módosítás.');
         }
     }
 }

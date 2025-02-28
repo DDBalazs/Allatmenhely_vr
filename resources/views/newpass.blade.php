@@ -1,21 +1,12 @@
 @extends('layout')
 @section('content')
 <main class="mypage">
-    @if(session('newpasssuccess'))
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Sikeres művelet!',
-                text: '{{session('newpasssuccess')}}',
-                confirmButtonText: 'Ok'
-            })
-        </script>
-    @elseif(session('newpasserror'))
+    @if(session('newpasserror'))
         <script>
             Swal.fire({
                 icon: 'error',
                 title: 'Sikertelen művelet!',
-                text: '{{session('newpasssuccess')}}',
+                text: '{{session('newpasserror')}}',
                 confirmButtonText: 'Ok'
             })
         </script>
@@ -25,6 +16,7 @@
             <h2><b>Jelszó módosítás</b></h2>
         </div>
         <form action="/newpass" method="POST">
+            @csrf
             <div class="py-2">
                 <label for="oldpassword">Régi jelszó:</label>
                 <input type="password" name="oldpassword" id="oldpassword">

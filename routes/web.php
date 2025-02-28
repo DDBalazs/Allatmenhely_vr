@@ -16,7 +16,7 @@ Route::view('/mypage', 'mypage');
 Route::post('/modositas', [UserController::class, 'Modositas']);
 Route::get('/logout', [UserController::class, 'Logout']);
 
-Route::get('/newpass', [UserController::class, 'Newpass']);
+Route::view('/newpass', [UserController::class, 'Newpass']);
 Route::post('/newpass', [UserController::class, 'NewpassData']);
 
 
