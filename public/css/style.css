@@ -106,9 +106,10 @@ footer a:hover{
     animation: scroll linear;
     animation-timeline: view();
     animation-range: entry 0 cover 50%;
-}
-.textboxok p{
-    text-align: left;
+
+    p{
+        text-align: left;
+    }
 }
 .lkepek{
     height: 435px;
@@ -128,9 +129,10 @@ footer a:hover{
     animation: scroll linear;
     animation-timeline: view();
     animation-range: entry 0 cover 40%;
-}
-.onkentes p{
-    text-align: left;
+
+    p{
+        text-align: left;
+    }
 }
 
 /* sign */
@@ -158,26 +160,28 @@ footer a:hover{
 }
 .form-box{
     display: flex;
+
+    .LoginForm{
+        position: absolute;
+        transform: translateX(0px) rotate(0deg);
+        transition: .5s ease;
+        transition-delay: .4s;
+    }
+    .LoginForm.active{
+        transform: translateX(-450px) rotate(-45deg);
+        transition-delay: .2s;
+    }
+    .RegisterForm{
+        transform: translateX(550px) rotate(45deg);
+        transition: .5s ease;
+        transition-delay: .2s;
+    }
+    .RegisterForm.active{
+        transform: translateX(0px) rotate(0deg);
+        transition-delay: .4s;
+    }
 }
-.form-box .LoginForm{
-    position: absolute;
-    transform: translateX(0px) rotate(0deg);
-    transition: .5s ease;
-    transition-delay: .4s;
-}
-.form-box .LoginForm.active{
-    transform: translateX(-450px) rotate(-45deg);
-    transition-delay: .2s;
-}
-.form-box .RegisterForm{
-    transform: translateX(550px) rotate(45deg);
-    transition: .5s ease;
-    transition-delay: .2s;
-}
-.form-box .RegisterForm.active{
-    transform: translateX(0px) rotate(0deg);
-    transition-delay: .4s;
-}
+
 .sign .form-box h2{
     text-align: center;
     font-size: 38px;
