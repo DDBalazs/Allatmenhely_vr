@@ -51,7 +51,12 @@
                     </div>
                     <button class="buttn" type="submit">Bejelentkezés</button>
                     <div class="account-creation">
-                        <span>Nincs még fiókod? <a href="" class="RegisterLink">Regisztrálj</a></span>
+                        <span>Nincs még fiókod? <a href="" class="RegisterLink">Regisztrálj</a></span><br>
+                        @if ($errors->any)
+                            @foreach ($errors->all() as $sv)
+                                <strong><span class="text-danger text-center mx-auto">{{$sv}}</span></strong><br>
+                            @endforeach
+                        @endif
                     </div>
                 </form>
 
@@ -93,13 +98,13 @@
                     </div>
                     <button class="buttn" type="submit">Regisztráció</button>
                     <div class="account-creation">
-                        <span>Van már fiókod?<a href="" class="LoginLink">Jelentkezz be!</a></span>
+                        <span>Van már fiókod?<a href="" class="LoginLink">Jelentkezz be!</a></span><br>
+                        @if ($errors->any)
+                            @foreach ($errors->all() as $sv)
+                                <strong><span class="text-danger text-center mx-auto">{{$sv}}</span></strong><br>
+                            @endforeach
+                        @endif
                     </div>
-                    @if ($errors->any)
-                        @foreach ($errors->all() as $sv)
-                            <span class="text-danger">{{$sv}}</span>
-                        @endforeach
-                    @endif
                 </form>
             </div>
         </div>

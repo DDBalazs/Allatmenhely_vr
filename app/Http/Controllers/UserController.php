@@ -44,7 +44,7 @@ class UserController extends Controller
             // Regiszter
             $req->validate([
                 'nev'                               =>  'required',
-                'email'                             =>  'required|email',
+                'email'                             =>  'required|email|unique:onkentes,email',
                 'password'                          =>  ['required','confirmed',Password::min(8)
                                                                                         ->letters()
                                                                                         ->numbers()
@@ -55,13 +55,14 @@ class UserController extends Controller
                 'nev.required'                      =>  'A nevet kötelező megadni!',
                 'email.required'                    =>  'Az emeailt kötelező megadni!',
                 'email.email'                       =>  'Létező email címet adjon meg!',
+                'email.unique'                      =>  'Ezzel az emaillal már regisztráltak!',
                 'password.required'                 =>  'A jelszót kötelező megadni!',
                 'password.confirmed'                =>  'A két jelszó nem egyezik!',
                 'password.min'                      =>  'A jelszónak legalább 8 karakter hosszúságúnak kell lennie!',
-                'password.number'                   =>  'A jelszónak tartalmazni kell számot!',
+                'password.numbers'                  =>  'A jelszónak tartalmazni kell számot!',
                 'password.letters'                  =>  'A jelszónak tartalmazni kell betűket!',
-                'password.mixedCase'                =>  'A jelszónak tartalmazni kell kis és nagy betűt!',
-                'password.symbols'                  =>  'A jelszünak tartalmazni kell speciális karaktert!',
+                'password.mixed'                    =>  'A jelszónak tartalmazni kell kis és nagy betűt!',
+                'password.symbols'                  =>  'A jelszónak tartalmazni kell speciális karaktert!',
                 'password_confirmation.required'    =>  'A jelszó ismétlést kötelező megadni!'
             ]);
             $data               = new User;

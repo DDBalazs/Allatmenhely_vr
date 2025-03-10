@@ -9,7 +9,7 @@
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/style.js')}}"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="icon" type="png" href="{{asset('img/kutyaalogoban.png')}}">
+    <link rel="icon" type="png" href="{{asset('img/weblogo.png')}}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
@@ -35,7 +35,7 @@
           <a class="nav-link active text-dark" aria-current="page" href="/">Főoldal</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-dark" aria-current="page" href="adatlap.html">Állataink</a>
+          <a class="nav-link active text-dark" aria-current="page" href="#">Állataink</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active text-dark" aria-current="page" href="#">Programjaink</a>

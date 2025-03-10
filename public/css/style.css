@@ -144,7 +144,7 @@ footer a:hover{
 }
 .sign
 {
-    height: 550px;
+    height: 750px;
     width: 450px;
     border: 2px solid rgba(255,255,255,.4);
     border-radius: 10px;
@@ -168,11 +168,11 @@ footer a:hover{
         transition-delay: .4s;
     }
     .LoginForm.active{
-        transform: translateX(-450px) rotate(-45deg);
+        transform: translateX(-500px) rotate(-50deg);
         transition-delay: .2s;
     }
     .RegisterForm{
-        transform: translateX(550px) rotate(45deg);
+        transform: translateX(600px) rotate(50deg);
         transition: .5s ease;
         transition-delay: .2s;
     }
