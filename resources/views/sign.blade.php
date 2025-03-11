@@ -29,7 +29,7 @@
                 confirmButtonText: 'Ok'
             });
         </script>
-      @endif
+        @endif
         <div class="container sign">
             <div class="form-box">
                 {{-- LOGIN --}}
@@ -37,12 +37,12 @@
                     @csrf
                     <h2>Belépés</h2>
                     <div class="input-box">
-                        <input type="text" name="candicate" id="candicate" value="{{old('candicate')}}" required>
+                        <input type="text" name="candicate" id="candicate" value="{{old('candicate')}}">
                         <label for="candicate">Név vagy E-mail cím</label>
                         <i class="bx bxs-user"></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" name="password" id="password" required>
+                        <input type="password" name="password" id="password">
                         <label for="password">Jelszó</label>
                         <i class="bx bxs-lock-alt"></i>
                     </div>
@@ -65,36 +65,24 @@
                     @csrf
                     <h2>Regisztráció</h2>
                     <div class="input-box">
-                        <input type="text" name="nev" id="nev" value="{{old('nev')}}" required>
+                        <input type="text" name="nev" id="nev" value="{{old('nev')}}">
                         <label for="nev">Név</label>
                         <i class="bx bxs-user"></i>
-                        {{-- @error('nev')
-                            <span class="text-error">{{$message}}</span>
-                        @enderror --}}
                     </div>
                     <div class="input-box">
-                        <input type="email" name="email" id="email" value="{{old('email')}}" required>
+                        <input type="email" name="email" id="email" value="{{old('email')}}">
                         <label for="email">E-Mail</label>
                         <i class='bx bxs-envelope'></i>
-                        {{-- @error('email')
-                            <span class="text-error">{{$message}}</span>
-                        @enderror --}}
                     </div>
                     <div class="input-box">
-                        <input type="password" name="password" id="password1" required>
+                        <input type="password" name="password" id="password1">
                         <label for="password">Jelszó</label>
                         <i class="bx bxs-lock-alt"></i>
-                        {{-- @error('password')
-                            <span class="text-error">{{$message}}</span>
-                        @enderror --}}
                     </div>
                     <div class="input-box">
-                        <input type="password" name="password_confirmation" id="password_confirmation" required>
+                        <input type="password" name="password_confirmation" id="password_confirmation">
                         <label for="password_confirmation">Jelszó mégegyszer</label>
                         <i class="bx bxs-lock-alt"></i>
-                        {{-- @error('password_confirmation')
-                            <span class="text-error">{{$message}}</span>
-                        @enderror --}}
                     </div>
                     <button class="buttn" type="submit">Regisztráció</button>
                     <div class="account-creation">
