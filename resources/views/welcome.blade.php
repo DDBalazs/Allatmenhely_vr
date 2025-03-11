@@ -45,11 +45,11 @@
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span class="visually-hidden">Elöző</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+          <span class="visually-hidden">Következő</span>
         </button>
       </div>
       <hr>
@@ -100,16 +100,21 @@
           <hr>
 
           <!-- Önkéntes -->
+            @if(!Auth::check())
            <div class="bg-light">
               <div class="text-center">
                 <div class="onkentes">
                   <h2>Legyél önkéntes te is!</h2>
                   <p>Szeretnéd, hogy a segítséged valódi változást hozzon? Csatlakozz önkénteseink közé, és segíts, hogy minden állat megtalálja az örök otthonát. Akár néhány óra, akár rendszeres segítség, a te időd és energiád óriási különbséget jelenthet egy állat életében. Legyél részese egy szeretettel teli közösségnek, és éld át, milyen érzés örömet szerezni másoknak!</p>
-                  @if (Auth::check())
-                    <a href="/mypage" class="btn btn-dark">Jelentkezz!</a>
-                  @else
-                    <a href="/sign" class="btn btn-dark">Jelentkezz!</a>
-                  @endif
+                  <a href="/sign" class="btn btn-dark">Jelentkezz!</a>
+            @else
+            <div class="bg-light">
+                <div class="text-center">
+                  <div class="onkentes">
+                    <h2>Foglalj önkéntes tevékenységeket!</h2>
+                    <p>Szeretnéd, hogy a segítséged valódi változást hozzon? Csatlakozz önkénteseink közé, és segíts, hogy minden állat megtalálja az örök otthonát. Akár néhány óra, akár rendszeres segítség, a te időd és energiád óriási különbséget jelenthet egy állat életében. Legyél részese egy szeretettel teli közösségnek, és éld át, milyen érzés örömet szerezni másoknak!</p>
+                    <a href="#" class="btn btn-dark">Foglalj!</a>
+            @endif
                 </div>
               </div>
            </div>
