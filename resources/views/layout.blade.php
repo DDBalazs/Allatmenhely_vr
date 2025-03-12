@@ -48,7 +48,7 @@
         </li>
         <div class="vr"></div>
         <li class="nav-item">
-          <a class="nav-link active text-dark" aria-current="page" href="#">Kapcsolat</a>
+          <a class="nav-link active text-dark" aria-current="page" href="/contact">Elérhetőségeink</a>
         </li>
         @if (Auth::check())
         <div class="vr"></div>
@@ -80,6 +80,8 @@
           <p><i class='bx bxl-youtube' ></i><a href="" target="_blank">Boldog Menhely Youtube</a></p>
         </div>
       </div>
+      <hr class="w-75 mx-auto border border-secondary my-2">
+      <p class="text-center">2025 © Copyright Boldog Menhely. All Rights Reserved</p>
     </div>
   </footer>
 </body>

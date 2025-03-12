@@ -19,5 +19,5 @@ Route::get('/logout', [UserController::class, 'Logout']);
 Route::view('/newpass', [UserController::class, 'Newpass']);
 Route::post('/newpass', [UserController::class, 'NewpassData']);
 
-
+Route::view('/contact', 'contact');
 
