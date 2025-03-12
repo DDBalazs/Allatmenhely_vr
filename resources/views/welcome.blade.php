@@ -83,7 +83,7 @@
 
           <!-- Legrégebbi lakók -->
           <div class="bg-warning mx-auto">
-            <h2 class="text-center py-2">Legrégebbi lakóink:</h2>
+            <h1 class="text-center py-2">Legrégebbi lakóink:</h1>
             <div class="row mx-auto">
               <h2 class="text-center">Kutyák:</h2>
               <div class="col"><a href="#"><img src="{{asset('img/allatok/k/k1.png')}}" alt="kutyi1" class="lkepek"></a></div>

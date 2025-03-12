@@ -4,6 +4,8 @@
 /* layout */
 body{
     background-image: url('../img/hatter.png');
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
 }
 .logo{
@@ -205,10 +207,9 @@ footer a:hover{
                 letter-spacing: .5px;
                 position: absolute;
                 left: 5px;
-                top: 50%;
+                /* top: 0%; */
                 transform: translateY(-50%);
                 transition: .5s ease;
-                opacity: .4;
 
             }
             i{
@@ -267,7 +268,7 @@ footer a:hover{
         }
     }
 }
-}
+
 
 .input-box input:focus ~ label,
 .input-box input:valid ~ label{
@@ -347,7 +348,7 @@ footer a:hover{
     align-items: center;
 
     .mypagebg{
-    height: 1000px;
+    height: 800px;
     width: 700px;
     border: 2px solid rgba(255,255,255,.4);
     border-radius: 10px;
@@ -366,6 +367,9 @@ footer a:hover{
     p{
         font-size: 30px;
     }
+    }
+    .profdata{
+        margin-left: 3rem;
     }
 }
 

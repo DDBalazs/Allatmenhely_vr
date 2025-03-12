@@ -33,19 +33,22 @@
         <div class="py-2">
             <h2><b>Profilod</b></h2>
         </div>
-        <div class="py-2">
-            <p><b>Neved címed:</b> {{Auth::user()->nev}}</p>
+        <hr class="w-75 mx-auto border border-dark my-2">
+        <div class="py-2 profdata">
+            <p class="text-start">Neved címed: {{Auth::user()->nev}}</p>
         </div>
-        <div class="py-2">
-            <p><b>E-Mail címed:</b> {{Auth::user()->email}}</p>
+        <div class="py-2 profdata">
+            <p class="text-start">E-Mail címed: {{Auth::user()->email}}</p>
         </div>
-        <div class="py-2">
-            <p><b>Jelszavad:</b>**********</p>
-        </div>
-        <div class="py-2">
-            <label for="tel" class="form-label"><p>Telefonszáma:</p></label>
-            <input type="text" name="tel" id="tel" class="form-control w-50 mx-auto">
-            <a href="" class="btn btn-dark w-25 mt-2">Mentés</a>
+        <div class="py-2 profdata d-flex align-items-center">
+            <p class="text-start">Telefonszáma: </p>
+            @if (Auth::user()->tel == !0)
+                <p class="text-start"> {{Auth::user()->tel}}</p>
+                <a href="" class="btn btn-dark w-25 mx-2">Telefonszám módosítása</a>
+            @else
+                <input type="text" name="tel" id="tel" class="form-control flex-grow-1 me-2 w-50">
+                <a href="" class="btn btn-dark w-25 mx-2">Mentés</a>
+            @endif
         </div>
         <div class="py-2">
             <a href="/newpass" class="btn btn-dark">Jelszó módosítás</a>

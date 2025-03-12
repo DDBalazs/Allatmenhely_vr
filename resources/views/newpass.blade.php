@@ -15,23 +15,29 @@
         <div class="py-2">
             <h2><b>Jelszó módosítás</b></h2>
         </div>
+        <hr class="w-75 mx-auto border border-dark my-2">
         <form action="/newpass" method="POST">
             @csrf
-            <div class="py-2">
-                <label for="oldpassword">Régi jelszó:</label>
-                <input type="password" name="oldpassword" id="oldpassword">
+            <div class="py-2 profdata d-flex align-items-center">
+                <p class="text-start">Régi jelszó:</p>
+                <input type="password" name="oldpassword" id="oldpassword" class="form-control w-50 me-2">
             </div>
-            <div class="py-2">
-                <label for="newpassword">Új jelszó:</label>
-                <input type="password" name="newpassword" id="newpassword">
+            <div class="py-2 profdata d-flex align-items-center">
+                <p class="text-start">Új jelszó:</p>
+                <input type="password" name="newpassword" id="newpassword" class="form-control w-50 me-2">
             </div>
-            <div class="py-2">
-                <label for="newpassword_confirmation">Új jelszó mégegyszer:</label>
-                <input type="password" name="newpassword_confirmation" id="newpassword_confirmation">
+            <div class="py-2 profdata d-flex align-items-center">
+                <p class="text-start">Új jelszó megerősítése:</p>
+                <input type="password" name="newpassword_confirmation" id="newpassword_confirmation" class="form-control flex-grow-1 me-2 w-50">
             </div>
-            <button type="submit" class="buttn" >Jelszó módosítása</button>
+            <button type="submit" class="btn btn-dark" >Jelszó módosítása</button>
         </form>
-        <a href="/mypage" class="btn btn-dark">Visszalépés</a>
+        <a href="/mypage" class="btn btn-dark my-2">Visszalépés</a>
+        @if ($errors->any)
+            @foreach ($errors->all() as $sv)
+                <strong><span class="text-danger text-center mx-auto">{{$sv}}</span></strong><br>
+            @endforeach
+        @endif
     </div>
 
 

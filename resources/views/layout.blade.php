@@ -34,18 +34,28 @@
         <li class="nav-item">
           <a class="nav-link active text-dark" aria-current="page" href="/">Főoldal</a>
         </li>
+        <div class="vr"></div>
         <li class="nav-item">
           <a class="nav-link active text-dark" aria-current="page" href="#">Állataink</a>
         </li>
+        <div class="vr"></div>
         <li class="nav-item">
           <a class="nav-link active text-dark" aria-current="page" href="#">Programjaink</a>
         </li>
+        <div class="vr"></div>
         <li class="nav-item">
           <a class="nav-link active text-dark" aria-current="page" href="#">Tudnivalók</a>
         </li>
+        <div class="vr"></div>
         <li class="nav-item">
           <a class="nav-link active text-dark" aria-current="page" href="#">Kapcsolat</a>
         </li>
+        @if (Auth::check())
+        <div class="vr"></div>
+        <li class="nav-item">
+          <a class="nav-link active text-dark" aria-current="page" href="#">Foglalj időpontot</a>
+        </li>
+        @endif
       </ul>
     </div>
     </div>
