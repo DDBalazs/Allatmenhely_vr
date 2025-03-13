@@ -80,23 +80,24 @@
         </div>
           <hr class="vonal">
 
-
-          <!-- Legrégebbi lakók -->
-          <div class="bg-warning mx-auto">
-            <h1 class="text-center py-2">Legrégebbi lakóink:</h1>
-            <div class="row mx-auto">
-              <h2 class="text-center">Kutyák:</h2>
-              <div class="col"><a href="#"><img src="{{asset('img/allatok/k/k1.png')}}" alt="kutyi1" class="lkepek"></a></div>
-              <div class="col"><a href="#"><img src="{{asset('img/allatok/k/k3.png')}}" alt="kutyi2" class="lkepek"></a></div>
-              <div class="col"><a href="#"><img src="{{asset('img/allatok/k/k8.png')}}" alt="kutyi3" class="lkepek"></a></div>
+            <!-- Legrégebbi lakók -->
+            <div class="conatiner">
+                <div class="bg-warning mx-auto">
+                    <h1 class="text-center py-2">Legrégebbi lakóink:</h1>
+                    <div class="row mx-auto">
+                        <h2 class="text-center">Kutyák:</h2>
+                        <div class="col"><a href="#"><img src="{{asset('img/allatok/k/k1.png')}}" alt="kutyi1" class="lkepek"></a></div>
+                        <div class="col"><a href="#"><img src="{{asset('img/allatok/k/k3.png')}}" alt="kutyi2" class="lkepek"></a></div>
+                        <div class="col"><a href="#"><img src="{{asset('img/allatok/k/k8.png')}}" alt="kutyi3" class="lkepek"></a></div>
+                    </div>
+                    <div class="row mx-auto">
+                        <h2 class="text-center">Macskák:</h2>
+                        <div class="col"><a href="#"><img src="{{asset('img/allatok/c/c10.png')}}" alt="cica1" class="lkepek"></a></div>
+                        <div class="col"><a href="#"><img src="{{asset('img/allatok/c/c5.png')}}" alt="cica2" class="lkepek"></a></div>
+                        <div class="col"><a href="#"><img src="{{asset('img/allatok/c/c7.png')}}" alt="cica3" class="lkepek"></a></div>
+                    </div>
+                </div>
             </div>
-            <div class="row mx-auto">
-              <h2 class="text-center">Macskák:</h2>
-              <div class="col"><a href="#"><img src="{{asset('img/allatok/c/c10.png')}}" alt="cica1" class="lkepek"></a></div>
-              <div class="col"><a href="#"><img src="{{asset('img/allatok/c/c5.png')}}" alt="cica2" class="lkepek"></a></div>
-              <div class="col"><a href="#"><img src="{{asset('img/allatok/c/c7.png')}}" alt="cica3" class="lkepek"></a></div>
-            </div>
-          </div>
           <hr>
 
           <!-- Önkéntes -->

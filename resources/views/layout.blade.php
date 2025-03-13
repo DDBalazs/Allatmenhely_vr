@@ -70,7 +70,7 @@
         <div class="col text-center py-4">
           <h2>Elérhetőségeink</h2>
           <p><i class='bx bxs-mobile'></i>Telefon: +36 1 234 5678</p>
-          <p><i class='bx bx-mail-send'></i></i><a href="mailto:info@boldogmenhely.hu">Email: info@boldogmenhely.hu</a></p>
+          <p><i class='bx bx-mail-send'></i><a href="mailto:info@boldogmenhely.hu">Email: info@boldogmenhely.hu</a></p>
           <p><i class='bx bx-current-location'></i><a href="https://maps.app.goo.gl/1fQM3uQHkHQVvYU27" target="_blank">Cím: 1234 Boldog Város, Állatbarát utca 7.</a></p>
         </div>
         <div class="col text-center pt-4">

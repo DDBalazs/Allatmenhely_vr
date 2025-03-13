@@ -118,7 +118,6 @@ footer a:hover{
     height: 435px;
     width: 435px;
     border: 1px solid black;
-    margin: 60px;
     text-align: center;
 }
 .onkentes{
@@ -445,6 +444,66 @@ footer a:hover{
             height: 100px;
             font-size: 20px;
             background-color: rgb(121, 81, 36);
+        }
+    }
+    .text{
+        font-size: larger;
+        margin: 25px;
+    }
+    .ikonok{
+        i{
+            font-size: xx-large;
+        }
+        p{
+            font-size: larger;
+            color: black;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        a:hover{
+            color: black;
+            text-decoration: underline;
+        }
+    }
+    .donation{
+        background-color:rgb(143, 113, 74);
+
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        a:hover{
+            color: black;
+            text-decoration: underline;
+        }
+    }
+
+    .surgos{
+        background-color: rgb(170, 75, 20);
+        color: white;
+
+        p{
+            padding-bottom: 20px;
+        }
+
+        .sosikonok{
+            i{
+                font-size: xx-large;
+            }
+            p{
+                font-size: larger;
+                color: rgb(255, 255, 255);
+            }
+            a{
+                color: rgb(248, 248, 248);
+                text-decoration: none;
+            }
+            a:hover{
+                color: rgb(255, 255, 255);
+                text-decoration: underline;
+            }
         }
     }
 }
