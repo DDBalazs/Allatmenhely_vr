@@ -11,6 +11,7 @@ Route::view('/information', 'information');
 
 // documentumok
 Route::view('aszf', 'documents.aszf');
+Route::view('adatved', 'documents.adatved');
 // login & regiszter
 Route::get('/sign', [UserController::class, 'Sign']);
 Route::post('/login', [UserController::class, 'Login']);

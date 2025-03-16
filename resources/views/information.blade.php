@@ -10,7 +10,7 @@
                 <a href="/aszf"><i class='bx bx-book'></i>ÁSZF</a>
             </div>
             <div class="col">
-                <a href=""><i class='bx bx-check-shield'></i>Adatvédelem</a>
+                <a href="/adatved"><i class='bx bx-check-shield'></i>Adatvédelem</a>
             </div>
             <div class="col">
                 <a href=""><i class='bx bx-question-mark'></i>FAQ</a>
