@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function Sign(){
         if(!Auth::check()){
-            return view('sign');
+            return view('auth.sign');
         } else {
             return redirect('/mypage')->with('loggederror', 'Már be vagy jelentkezve');
         }
@@ -21,17 +21,14 @@ class UserController extends Controller
     public function Login(Request $req){
             // Login
             $req->validate([
-                'candicate'             =>  'required',
+                'email'                 =>  'required',
                 'password'              =>  'required'
             ],[
-                'candicate.required'    =>  'Nem adta meg a nevet vagy az email címet!',
+                'email.required'        =>  'Nem adta meg az email címet!',
                 'password.required'     =>  'Nem adtad meg a jelszót!'
             ]);
 
-            if(Auth::attempt(['nev' => $req->candicate, 'password' => $req->password])){
-                return redirect('/mypage')->with('logsuccess', 'Sikeresen beléptél!');
-            }
-            else if(Auth::attempt(['email' => $req->candicate, 'password' => $req->password])){
+            if(Auth::attempt(['email' => $req->email, 'password' => $req->password])){
                 return redirect('/mypage')->with('logsuccess', 'Sikeresen beléptél!');
             }
             else
@@ -81,7 +78,7 @@ class UserController extends Controller
 
     public function MyPage(){
         if(Auth::check()){
-            return view('mypage');
+            return view('auth.mypage');
         } else {
             return redirect('/login')->with('unloggederror', 'Kérlek előbb jelentkezz be!');
         }
@@ -94,7 +91,7 @@ class UserController extends Controller
 
     public function Newpass(){
         if(Auth::check()){
-            return view('newpass');
+            return view('auth.newpass');
         } else {
             return redirect('/sign')->with('unloggederror','Kérlek előbb jelentkezz be!');
         }
@@ -125,7 +122,7 @@ class UserController extends Controller
             $data->Save();
             return redirect('/mypage')->with('newpasssuccess','Sikerült a jelszó módosítás.');
         } else {
-            return view('newpass')->with('newpasserror', 'Nem sikerült a jelszó módosítás.');
+            return view('auth.newpass')->with('newpasserror', 'Nem sikerült a jelszó módosítás.');
         }
     }
 }

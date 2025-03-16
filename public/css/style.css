@@ -102,7 +102,6 @@ footer a:hover{
     height: auto;
     width: 800px;
     margin: auto;
-    margin-top: 200px;
     font-size:x-large;
     padding: 20px;
 
@@ -114,10 +113,14 @@ footer a:hover{
         text-align: left;
     }
 }
+.welcomepage{
+    background-color: rgb(184, 153, 113);
+}
 .lkepek{
-    height: 435px;
-    width: 435px;
+    height: 300px;
+    width: 300px;
     border: 1px solid black;
+    border-radius: 20%;
     text-align: center;
 }
 .onkentes{
@@ -130,7 +133,7 @@ footer a:hover{
 
     animation: scroll linear;
     animation-timeline: view();
-    animation-range: entry 0 cover 40%;
+    animation-range: entry 0 cover 30%;
 
     p{
         text-align: left;
@@ -324,10 +327,19 @@ footer a:hover{
                 }
     }
 }
-
+/* BZGGG FUIXIXIX */
 .input-box input:focus ~ label,
 .input-box input:valid ~ label{
     top: -5px;
+}
+input,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:autofill,
+input:-internal-autofill-selected {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
 }
 
 /* Responsitivitása */
@@ -479,9 +491,28 @@ footer a:hover{
             text-decoration: underline;
         }
     }
+    .tamogatok{
+        .supporterek{
 
+            animation: scroll linear;
+            animation-timeline: view();
+            animation-range: entry 0 cover 50%;
+
+            img{
+                border: 2px solid #ddd;
+                border-radius: 15%;
+                height: 300px;
+                width: 300px;
+                padding: 15px;
+            }
+            h5{
+                padding-top: 10px;
+                padding-bottom: 15px;
+            }
+        }
+    }
     .surgos{
-        background-color: rgb(170, 75, 20);
+        background-color: rgb(129, 0, 0);
         color: white;
 
         p{
@@ -507,7 +538,28 @@ footer a:hover{
         }
     }
 }
+.information{
+    background-color: rgb(184, 153, 113);
+    height:100vh;
+    font-size: 40px;
 
+    i{
+        font-size: 100px;
+        border: 3px solid rgb(92, 58, 15);
+        border-radius: 50%;
+        padding: 15px;
+    }
+    a{
+        color: rgb(92, 58, 15);
+        text-decoration: none;
+    }
+    a:hover{
+        color: rgb(92, 58, 15);
+        text-decoration: underline;
+    }
+}
 
-
-
+.documents{
+    background-color: rgb(160, 160, 160);
+    font-size: 20px;
+}

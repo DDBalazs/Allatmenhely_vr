@@ -37,8 +37,8 @@
                     @csrf
                     <h2>Belépés</h2>
                     <div class="input-box">
-                        <input type="text" name="candicate" id="candicate" value="{{old('candicate')}}">
-                        <label for="candicate">Név vagy E-mail cím</label>
+                        <input type="text" name="email" id="email" value="{{old('email')}}">
+                        <label for="email">E-mail cím</label>
                         <i class="bx bxs-user"></i>
                     </div>
                     <div class="input-box">

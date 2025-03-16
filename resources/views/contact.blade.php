@@ -27,22 +27,22 @@
                 <tbody>
                     <tr>
                         <th class="col">Kutyák</th>
-                        <th class="col">8-14</th>
+                        <td class="col">8-14</td>
                         <th class="col">Zárva</th>
-                        <th class="col">8-16</th>
-                        <th class="col">14-18</th>
-                        <th class="col">10-18</th>
-                        <th class="col">10-16</th>
+                        <td class="col">8-16</td>
+                        <td class="col">14-18</td>
+                        <td class="col">10-18</td>
+                        <td class="col">10-16</td>
                         <th class="col">Zárva</th>
                     </tr>
                     <tr>
                         <th class="col">Macska</th>
-                        <th class="col">13-18</th>
+                        <td class="col">13-18</td>
                         <th class="col">Zárva</th>
-                        <th class="col">10-18</th>
-                        <th class="col">14-18</th>
-                        <th class="col">10-18</th>
-                        <th class="col">11-17</th>
+                        <td class="col">10-18</td>
+                        <td class="col">14-18</td>
+                        <td class="col">10-18</td>
+                        <td class="col">11-17</td>
                         <th class="col">Zárva</th>
                     </tr>
                 </tbody>
@@ -85,6 +85,34 @@
         </div>
     </div>
     <hr>
+    <div class="tamogatok">
+        <div class="container">
+            <div class="py-2 text-center">
+                <h1>Támogatóink</h1>
+                <hr class="w-75 mx-auto border border-dark my-4">
+                <h3>Főbb támogatóink</h3>
+            </div>
+            <div class="row text-center mx-auto">
+                <div class="col supporterek">
+                    <img src="{{asset('img/supporters/paycare.png')}}" alt="pawcare">
+                    <h5>PawCare Foundation</h5>
+                </div>
+                <div class="col supporterek">
+                    <img src="{{asset('img/supporters/greenpaws.png')}}" alt="greenpaws">
+                    <h5>GreenPaws Pet Supplies</h5>
+                </div>
+                <div class="col supporterek">
+                    <img src="{{asset('img/supporters/happytails.png')}}" alt="happytails">
+                    <h5>Happy Tails Vet Clinic</h5>
+                </div>
+                <div class="col supporterek">
+                    <img src="{{asset('img/supporters/furryfriends.png')}}" alt="furryfriends">
+                    <h5>Furry Friends Transport</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
     <div class="surgos">
         <div class="container">
             <div class="py-2 text-center">
@@ -96,11 +124,9 @@
                 <div class="col"><p class="sosikonok"><i class='bx bxs-mobile'></i><br>+36 2 345 6789</p></div>
                 <div class="col"><p class="sosikonok"><i class='bx bx-mail-send'></i><br><a href="mailto:info@boldogmenhely.hu">surgos@boldogmenhely.hu</a></p></div>
             </div>
-            <p>Kérjük, hogy a bejelentésben adja meg az állat pontos helyét, állapotát, és ha lehetséges, mellékeljen képet is. Köszönjük, hogy segít nekünk gondoskodni a rászoruló állatokról!</p>
+            <p class="py-2">Kérjük, hogy a bejelentésben adja meg az állat pontos helyét, állapotát, és ha lehetséges, mellékeljen képet is. Köszönjük, hogy segít nekünk gondoskodni a rászoruló állatokról!</p>
         </div>
     </div>
-
-
 </main>
 
 @endsection
