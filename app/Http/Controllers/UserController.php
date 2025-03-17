@@ -125,6 +125,9 @@ class UserController extends Controller
             return view('auth.newpass')->with('newpasserror', 'Nem sikerült a jelszó módosítás.');
         }
     }
+    public function Programok(){
+        return view('programok');
+    }
 }
 
 

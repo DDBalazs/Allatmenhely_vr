@@ -8,6 +8,7 @@ Route::view('/', 'welcome');
 //bladek
 Route::view('/contact', 'contact');
 Route::view('/information', 'information');
+Route::get('/programok', [UserController::class, 'Programok']);
 
 // documentumok
 Route::view('aszf', 'documents.aszf');

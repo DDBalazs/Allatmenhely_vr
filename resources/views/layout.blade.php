@@ -41,7 +41,7 @@
             </li>
             <div class="vr"></div>
             <li class="nav-item">
-              <a class="nav-link active text-dark" aria-current="page" href="#">Programjaink</a>
+              <a class="nav-link active text-dark" aria-current="page" href="/programok">Programjaink</a>
             </li>
             <div class="vr"></div>
             <li class="nav-item">

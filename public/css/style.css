@@ -575,3 +575,25 @@ input:-internal-autofill-selected {
         font-size: medium;
     }
 }
+
+.program{
+    .galeria{
+        img{
+            width: 400px;
+            height: 420px;
+            border: 3px solid black;
+            border-radius: 20%;
+            padding: 2px;
+        }
+    }
+    .gyik{
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        a:hover{
+            color: black;
+            text-decoration:underline;
+        }
+    }
+}
