@@ -5,7 +5,8 @@
     <hr>
     <div class="container">
         <div class="py-2">
-            <h1 class="text-center"><a href="/information" class="d-flex"><i class='bx bx-left-arrow-alt' ></i>Lépj vissza!</a>Általános Szerződési Feltételek (ÁSZF) </h1>
+            <a href="/information" class="d-flex mt-3"><i class='bx bx-left-arrow-alt' ></i>Lépj vissza!</a>
+            <h1 class="text-center">Általános Szerződési Feltételek (ÁSZF) </h1>
             <hr class="w-75 mx-auto border border-dark my-2">
         </div>
         <div class="py-2">
