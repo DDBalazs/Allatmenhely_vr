@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="galeria py-4">
-                <h1 class="text-center">Gyakran ismételt kérdések</h1>
+                <h1 class="text-center">Galéria</h1>
                 <hr class="w-75 mx-auto border border-dark my-2">
             <div class="row mx-auto text-center">
                 <div class="col"><img src="{{asset('img/programok/elso.png')}}" alt="elso"></div>
@@ -55,7 +55,7 @@
                 <p>Igen kell előzetesen jeletkezni, ha van már fiókod akkor a Időpontfoglalás fűlben, ha még nincs akkor a fiók fülön tudsz regisztrálni.</p>
                 <br>
                 <h5>Mit kell hozni a nyíltnapra?</h5>
-                <p>Nem kell semmi konkrétat hozni a nyíltnapokra. A szerelésed legyen kényelmes öltözés illetve olyanok ami nem probléma ha kicsit koszos lesz az állatok álltal.</p>
+                <p>Nem kell semmi konkrétat hozni a nyíltnapokra. A szerelésed legyen kényelmes öltözék, illetve olyanok ami nem probléma ha kicsit koszos lesz az állatok álltal.</p>
                 <br>
                 <h5>Hogyan lehet önkéntes lenni?</h5>
                 <p>Regisztrálni tudsz a progil fülön belül.</p>
@@ -63,7 +63,7 @@
             </div>
         </div>
         <div class="esemenynaptar">
-            
+
 
         </div>
     </div>

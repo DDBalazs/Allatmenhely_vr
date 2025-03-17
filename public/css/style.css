@@ -577,6 +577,8 @@ input:-internal-autofill-selected {
 }
 
 .program{
+    background-color: rgb(184, 153, 113);
+
     .galeria{
         img{
             width: 400px;
