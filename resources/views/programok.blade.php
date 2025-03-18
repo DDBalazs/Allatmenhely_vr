@@ -62,10 +62,6 @@
                 <h4><a href="/gyik">További kérdésekért kattints ide!</a></h4>
             </div>
         </div>
-        <div class="esemenynaptar">
-
-
-        </div>
     </div>
 </main>
 

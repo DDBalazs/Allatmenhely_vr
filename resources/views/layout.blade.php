@@ -37,7 +37,7 @@
             </li>
             <div class="vr"></div>
             <li class="nav-item">
-              <a class="nav-link active text-dark" aria-current="page" href="#">Állataink</a>
+              <a class="nav-link active text-dark" aria-current="page" href="/allatok">Állataink</a>
             </li>
             <div class="vr"></div>
             <li class="nav-item">

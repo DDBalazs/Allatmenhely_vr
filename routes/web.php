@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AllatMenhely;
 
 //főoldal
 Route::view('/', 'welcome');
@@ -9,6 +10,8 @@ Route::view('/', 'welcome');
 Route::view('/contact', 'contact');
 Route::view('/information', 'information');
 Route::view('/programok', 'programok');
+
+Route::get('/allatok', [AllatMenhely::class, 'Allatok']);
 
 // documentumok
 Route::view('aszf', 'documents.aszf');
