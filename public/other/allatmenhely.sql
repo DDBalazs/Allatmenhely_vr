@@ -2,7 +2,7 @@ CREATE TABLE `allat` (
   `allat_id` INT PRIMARY KEY AUTO_INCREMENT,
   `nev` VARCHAR(30) NOT NULL,
   `fajta_id` INT NOT NULL,
-  `chip_sorszam` VARCHAR(60),
+  `chip_sorszam` VARCHAR(60) UNIQUE,
   `szuldatum` DATE NOT NULL,
   `meret_id` INT NOT NULL,
   `szin` VARCHAR(30) NOT NULL,
