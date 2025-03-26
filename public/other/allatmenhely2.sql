@@ -63,3 +63,41 @@ CREATE TABLE `alkalmazott_user` (
   `password` TEXT NOT NULL,
   `beosztas` VARCHAR(12) NOT NULL
 );
+
+insert into fajta(fajta_id, faj, pontos_fajta)
+values
+(1, 'kutya', 'keverék'),
+(2, 'kutya', 'németjuhász jellegű'),
+(3, 'kutya','pitbull jellegű'),
+(4, 'kutya', 'labrador jellegű'),
+(5, 'macska', 'hosszúszőrű házimacska'),
+(6, 'macska', 'rövidszőrű házimacska');
+
+insert into meret(meret_id, kategoria)
+values
+(1, 'mini pl.: csivava'),
+(2, 'kistestű pl.: francia bulldog'),
+(3, 'közepestestű pl.: beagle'),
+(4, 'nagytestű pl.: labrador'),
+(5, 'Óriás kutyák pl.: masztiffok'),
+(6, 'törpe macskák'),
+(7, 'átlagos házimacska'),
+(8, 'nagy házimacska pl. :Main coon');
+
+insert into allat(allat_id, fajta_id, nev, chip_sorszam, szuldatum, meret_id, szin, nem, ivartalanitott, orokbefogadhato, megjegyzes)
+values
+(1234, 3, 'Morgó', '123456789hh', '2023-02-14', 4, 'fekete', 1, 1, 1, 'Eskü nem harap'),
+(4444, 4, 'Blöki', '987654321pe', '2019-04-18', 2, 'zsemle', 0, 1, 1, 'Mentett kutyus'),
+(3335, 5, 'Cirmi', NULL, '2022-01-01', 6, 'cirmos', 0, 1, 0, "Mentett cica");
+
+insert into oltas(chip_sorszam, oltas_tipusa, datum)
+values
+('123456789hh', 'Veszettség', '2024-12-13'),
+('123456789hh', 'Parvo', '2024-12-28'),
+('987654321pe', 'Veszettség', '2024-12-13');
+
+
+
+
+
+

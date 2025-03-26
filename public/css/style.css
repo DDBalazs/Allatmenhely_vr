@@ -5,7 +5,7 @@
 body{
     background-image: url('../img/hatter.png');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
     background-size: cover;
 }
 .logo{

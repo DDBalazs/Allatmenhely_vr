@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AllatMenhely;
 
 //főoldal
-Route::view('/', 'welcome');
+Route::get('/', [AllatMenhely::class, 'Welcome']);
 //bladek
 Route::view('/contact', 'contact');
 Route::view('/information', 'information');

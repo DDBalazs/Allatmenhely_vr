@@ -4,10 +4,11 @@
     <div class="allatok">
         <div class="container">
             <div class="text-center">
-                <h1>Állataink</h1>
+                <h1 class="py-3">Állataink</h1>
+                <hr class="w-75 mx-auto border border-dark my-2">
 
             </div>
-            <div class="row">
+            <div class="row py-4">
                 <div class="col-3">
                     <form action="/allatok" method="POST" class="form-control border border-dark rounded">
                         <div class="py-3">
