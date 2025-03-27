@@ -86,9 +86,9 @@ values
 
 insert into allat(allat_id, fajta_id, nev, chip_sorszam, szuldatum, meret_id, szin, nem, ivartalanitott, orokbefogadhato, megjegyzes)
 values
-(1234, 3, 'Morgó', '123456789hh', '2023-02-14', 4, 'fekete', 1, 1, 1, 'Eskü nem harap'),
-(4444, 4, 'Blöki', '987654321pe', '2019-04-18', 2, 'zsemle', 0, 1, 1, 'Mentett kutyus'),
-(3335, 5, 'Cirmi', NULL, '2022-01-01', 6, 'cirmos', 0, 1, 0, "Mentett cica");
+(1, 3, 'Morgó', '123456789hh', '2023-02-14', 4, 'fekete', 1, 1, 1, 'Eskü nem harap'),
+(2, 4, 'Blöki', '987654321pe', '2019-04-18', 2, 'zsemle', 0, 1, 1, 'Mentett kutyus'),
+(3, 5, 'Cirmi', NULL, '2022-01-01', 6, 'cirmos', 0, 1, 0, "Mentett cica");
 
 insert into oltas(chip_sorszam, oltas_tipusa, datum)
 values
