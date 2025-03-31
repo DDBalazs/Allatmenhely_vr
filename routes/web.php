@@ -12,6 +12,7 @@ Route::view('/information', 'information');
 Route::view('/programok', 'programok');
 
 Route::get('/allatok', [AllatMenhely::class, 'Allatok']);
+Route::get('/allatok/{id}', [AllatMenhely::class, 'AllatData']);
 
 // documentumok
 Route::view('aszf', 'documents.aszf');

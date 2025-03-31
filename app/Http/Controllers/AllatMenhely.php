@@ -26,9 +26,14 @@ class AllatMenhely extends Controller
         ]);
     }
 
-    public function Allatok($id){
+    public function Allatok(){
         return view('allatok',[
-            'allatok'   => Allatok::find($id)
+            'allatok'   => Allatok::orderBy('allat.allat_id')
+                                    ->get()
         ]);
+    }
+
+    public function AllatData(){
+
     }
 }

@@ -88,12 +88,14 @@
                         <h2 class="py-2">Kutyák:</h2>
                         @foreach ($oldallatokk as $kutyak)
                             <div class="col">
-                                <div class="card">
-                                    <img src="{{asset('img/allatok/k/k'.$kutyak->allat_id.'.png')}}" alt="{{$kutyak->allat_id.'.png'}}" class="card-img-top">
-                                    <div class="card-body">
-                                        <h5 class="card-text">{{$kutyak->nev}}</h5>
+                                <a href="/allatok/{id}" class="text-decoration-none">
+                                    <div class="card">
+                                        <img src="{{asset('img/allatok/k/k'.$kutyak->allat_id.'.png')}}" alt="{{$kutyak->allat_id.'.png'}}" class="card-img-top">
+                                        <div class="card-body">
+                                            <h5 class="card-text">{{$kutyak->nev}}</h5>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         @endforeach
                     </div>
@@ -102,12 +104,14 @@
                         <h2 class="py-2">Macskák:</h2>
                         @foreach ($oldallatokc as $macskak)
                             <div class="col">
-                                <div class="card">
-                                    <img src="{{asset('img/allatok/c/c'.$macskak->allat_id.'.png')}}" alt="{{$macskak->allat_id.'.png'}}" class="card-img-top">
-                                    <div class="card-body">
-                                        <h5 class="card-text">{{$macskak->nev}}</h5>
+                                <a href="/allatok/{id}" class="text-decoration-none">
+                                    <div class="card">
+                                        <img src="{{asset('img/allatok/c/c'.$macskak->allat_id.'.png')}}" alt="{{$macskak->allat_id.'.png'}}" class="card-img-top">
+                                        <div class="card-body">
+                                            <h5 class="card-text">{{$macskak->nev}}</h5>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         @endforeach
                     </div>

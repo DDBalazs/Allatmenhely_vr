@@ -17,11 +17,11 @@
                         </div>
                         <div class="py-3">
                             <h5>Állatfaj</h5>
-                            <input type="checkbox" name="kperm" id="dog"  value="dog" class="form-check-input">
+                            <input type="radio" name="kperm" id="dog"  value="dog">
                             <label for="dog" class="form-check-label">Kutya</label><br>
-                            <input type="checkbox" name="kperm" id="cat"  value="cat" class="form-check-input">
+                            <input type="radio" name="kperm" id="cat"  value="cat">
                             <label for="cat" class="form-check-label">Macska</label><br>
-                            <input type="checkbox" name="kperm" id="all" value="all" class="form-check-input">
+                            <input type="radio" name="kperm" id="all" value="all">
                             <label for="all" class="form-check-label">Mindekettő</label>
                         </div>
                         <div class="py-3">
@@ -51,7 +51,7 @@
                         </div>
                         <div class="py-3">
                             <h5>Jellemzők</h5>
-                            <input type="checkbox" name="traits" id="cfreind"  value="cfriend">
+                            <input type="checkbox" name="traits" id="cfriend"  value="cfriend">
                             <label for="cfriend">Gyermekbarát</label><br>
                             <input type="checkbox" name="traits" id="afriend"  value="afriend">
                             <label for="afriend">Más állatokkal barátságos</label><br>
@@ -80,8 +80,21 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-9">
-                    @dd($allatok)
+                <div class="col-md-9">
+                    <div class="row">
+                        @foreach ($allatok as $allat)
+                                    <div class="col-md-4 mb-4 ">
+                                        <a href="/allatok/{{$allat->allat_id}}" class="text-decoration-none">
+                                            <div class="card">
+                                                <img src="{{asset('img/allatok/k/k'.$allat->allat_id.'.png')}}" alt="{{$allat->allat_id.'.png'}}" class="card-img-top">
+                                                <div class="card-body">
+                                                    <h5 class="card-text">{{$allat->nev}}</h5>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
