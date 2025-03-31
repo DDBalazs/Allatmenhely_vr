@@ -116,13 +116,6 @@ footer a:hover{
 .welcomepage{
     background-color: rgb(184, 153, 113);
 }
-.lkepek{
-    height: 300px;
-    width: 300px;
-    border: 1px solid black;
-    border-radius: 20%;
-    text-align: center;
-}
 .onkentes{
     color: black;
     height: auto;
@@ -139,6 +132,15 @@ footer a:hover{
         text-align: left;
     }
 }
+
+@media only screen and (max-width: 850px) {
+    .onkentes{
+        width: auto;
+    }
+    .textboxok{
+        width: auto;
+    }
+  }
 
 /* sign.blade.php */
 .reg{

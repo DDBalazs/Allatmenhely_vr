@@ -86,27 +86,30 @@
                     <h1 class="text-center py-2">Legrégebbi lakóink:</h1>
                     <div class="row mx-auto text-center">
                         <h2 class="py-2">Kutyák:</h2>
-                        <div class="col">
-                            <a href="#"><img src="{{asset('img/allatok/k/k1.png')}}" alt="kutyi1" class="lkepek"></a>
-                        </div>
-                        <div class="col">
-                            <a href="#"><img src="{{asset('img/allatok/k/k3.png')}}" alt="kutyi2" class="lkepek"></a>
-                        </div>
-                        <div class="col">
-                            <a href="#"><img src="{{asset('img/allatok/k/k8.png')}}" alt="kutyi3" class="lkepek"></a>
-                        </div>
+                        @foreach ($oldallatokk as $kutyak)
+                            <div class="col">
+                                <div class="card">
+                                    <img src="{{asset('img/allatok/k/k'.$kutyak->allat_id.'.png')}}" alt="{{$kutyak->allat_id.'.png'}}" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-text">{{$kutyak->nev}}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
+
                     <div class="row mx-auto text-center">
                         <h2 class="py-2">Macskák:</h2>
-                        <div class="col">
-                            <a href="#"><img src="{{asset('img/allatok/c/c10.png')}}" alt="cica1" class="lkepek"></a>
-                        </div>
-                        <div class="col">
-                            <a href="#"><img src="{{asset('img/allatok/c/c5.png')}}" alt="cica2" class="lkepek"></a>
-                        </div>
-                        <div class="col">
-                            <a href="#"><img src="{{asset('img/allatok/c/c7.png')}}" alt="cica3" class="lkepek"></a>
-                        </div>
+                        @foreach ($oldallatokc as $macskak)
+                            <div class="col">
+                                <div class="card">
+                                    <img src="{{asset('img/allatok/c/c'.$macskak->allat_id.'.png')}}" alt="{{$macskak->allat_id.'.png'}}" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-text">{{$macskak->nev}}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

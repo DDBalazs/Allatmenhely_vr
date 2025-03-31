@@ -81,7 +81,7 @@
                     </form>
                 </div>
                 <div class="col-9">
-
+                    @dd($allatok)
                 </div>
             </div>
         </div>

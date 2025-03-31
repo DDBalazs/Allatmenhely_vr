@@ -22,6 +22,7 @@ CREATE TABLE `allat` (
   `nem` BOOLEAN NOT NULL,
   `ivartalanitott` BOOLEAN NOT NULL,
   `orokbefogadhato` BOOLEAN NOT NULL,
+  `beerkezes_datuma` DATE not NULL,
   `megjegyzes` TEXT
 );
 
@@ -64,15 +65,6 @@ CREATE TABLE `alkalmazott_user` (
   `beosztas` VARCHAR(12) NOT NULL
 );
 
-insert into fajta(fajta_id, faj, pontos_fajta)
-values
-(1, 'kutya', 'keverék'),
-(2, 'kutya', 'németjuhász jellegű'),
-(3, 'kutya','pitbull jellegű'),
-(4, 'kutya', 'labrador jellegű'),
-(5, 'macska', 'hosszúszőrű házimacska'),
-(6, 'macska', 'rövidszőrű házimacska');
-
 insert into meret(meret_id, kategoria)
 values
 (1, 'mini pl.: csivava'),
@@ -84,11 +76,25 @@ values
 (7, 'átlagos házimacska'),
 (8, 'nagy házimacska pl. :Main coon');
 
-insert into allat(allat_id, fajta_id, nev, chip_sorszam, szuldatum, meret_id, szin, nem, ivartalanitott, orokbefogadhato, megjegyzes)
+insert into fajta(fajta_id, faj, pontos_fajta)
 values
-(1, 3, 'Morgó', '123456789hh', '2023-02-14', 4, 'fekete', 1, 1, 1, 'Eskü nem harap'),
-(2, 4, 'Blöki', '987654321pe', '2019-04-18', 2, 'zsemle', 0, 1, 1, 'Mentett kutyus'),
-(3, 5, 'Cirmi', NULL, '2022-01-01', 6, 'cirmos', 0, 1, 0, "Mentett cica");
+(1, 'kutya', 'keverék'),
+(2, 'kutya', 'németjuhász jellegű'),
+(3, 'kutya','pitbull jellegű'),
+(4, 'kutya', 'labrador jellegű'),
+(5, 'macska', 'hosszúszőrű házimacska'),
+(6, 'macska', 'rövidszőrű házimacska');
+
+
+insert into allat(allat_id, fajta_id, nev, chip_sorszam, szuldatum, meret_id, szin, nem, ivartalanitott, orokbefogadhato, beerkezes_datuma ,megjegyzes)
+values
+(1, 1, 'Morgó', '123456789hh', '2023-02-14', 4, 'fekete', 1, 1, 1, '2024-03-31' ,'Eskü nem harap'),
+(2, 2, 'Blöki', '987654321pe', '2019-04-18', 2, 'zsemle', 0, 1, 1, '2020-09-28' ,'Mentett kutyus'),
+(3, 3, 'Pamacs', NULL, '2017-01-01', 6, 'cirmos', 0, 1, 0, '2020-02-06' ,"Mentett kutyus"),
+(4, 4, 'Füge', NULL, '2019-01-01', 6, 'szurke', 0, 1, 0, '2022-02-06' ,"Játékos"),
+(5, 5, 'Cirmi', NULL, '2020-01-01', 6, 'cirmos', 0, 1, 0, '2023-02-06' ,"Mentett cica"),
+(6, 6, 'Kalóz', NULL, '2018-01-01', 6, 'fekete', 0, 1, 0, '2020-02-06' ,"Félszemű");
+
 
 insert into oltas(chip_sorszam, oltas_tipusa, datum)
 values
