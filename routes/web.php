@@ -21,6 +21,7 @@ Route::view('gyik', 'documents.gyik');
 Route::view('cookie', 'documents.cookie');
 Route::view('adomany', 'documents.adomany');
 Route::view('jollet', 'documents.jollet');
+
 // login & regiszter
 Route::get('/sign', [UserController::class, 'Sign']);
 Route::post('/login', [UserController::class, 'Login']);

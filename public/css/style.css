@@ -68,6 +68,11 @@ nav.header-sticky {
     z-index: 2000;
     opacity: .9;
 }
+@media screen and (max-width: 992px) {
+    .vr{
+        display: none;
+    }
+  }
 
 /* Footer */
 footer{
