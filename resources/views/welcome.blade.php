@@ -88,7 +88,7 @@
                         <h2 class="py-2">Kutyák:</h2>
                         @foreach ($oldallatokk as $kutyak)
                             <div class="col">
-                                <a href="/allatok/{id}" class="text-decoration-none">
+                                <a href="/allatok/{{$kutyak->allat_id}}" class="text-decoration-none">
                                     <div class="card">
                                         <img src="{{asset('img/allatok/k/k'.$kutyak->allat_id.'.png')}}" alt="{{$kutyak->allat_id.'.png'}}" class="card-img-top">
                                         <div class="card-body">
@@ -104,7 +104,7 @@
                         <h2 class="py-2">Macskák:</h2>
                         @foreach ($oldallatokc as $macskak)
                             <div class="col">
-                                <a href="/allatok/{id}" class="text-decoration-none">
+                                <a href="/allatok/{{$macskak->allat_id}}" class="text-decoration-none">
                                     <div class="card">
                                         <img src="{{asset('img/allatok/c/c'.$macskak->allat_id.'.png')}}" alt="{{$macskak->allat_id.'.png'}}" class="card-img-top">
                                         <div class="card-body">

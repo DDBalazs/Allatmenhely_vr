@@ -613,5 +613,6 @@ input:-internal-autofill-selected {
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: rgb(97, 49, 21);
     }
 }

@@ -4,7 +4,7 @@
 <main class="allat">
     <hr>
     <div class="allathead">
-        <h1 class="text-center">Ő itt: <strong>{{$lekertallat->nev}}</strong></h1>
+        <h1 class="text-center">Állataink</h1>
     </div>
     <hr class="w-75 mx-auto border border-dark my-2">
     <div class="container">
@@ -13,6 +13,7 @@
                 <img src="{{asset('img/allatok/k/k'.$lekertallat->allat_id.'.png')}}" alt="{{$lekertallat->allat_id}}" class="w-auto h-auto">
             </div>
             <div class="col">
+                <p class="px-3 fs-3"><strong>{{$lekertallat->nev}}</strong></p>
                 <p>{{$lekertallat->megjegyzes}}</p>
                 <p>Születési ideje: {{$lekertallat->szuldatum}}</p>
                 <p>Bekerülési ideje: {{$lekertallat->beerkezes_datuma}}</p>
@@ -28,7 +29,7 @@
                     <p>Nem: lány</p>
                 @endif
                 <p>Szín: {{$lekertallat->szin}}</p>
-                
+
             </div>
         </div>
     </div>
