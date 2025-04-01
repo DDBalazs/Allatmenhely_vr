@@ -34,10 +34,11 @@
                         <div class="py-3">
                             <h5>Kor</h5>
                             <select name="age" id="age" class="form-control">
-                                <option value="puppy">Kölyök</option>
-                                <option value="young">Fiatal</option>
-                                <option value="adult">Felnőtt</option>
-                                <option value="senior">Idős</option>
+                                <option value="allin">Minden</option>
+                                <option value="puppy">Kölyök (0-1 éves korig)</option>
+                                <option value="young">Fiatal (1-3 éves korig)</option>
+                                <option value="adult">Felnőtt (3-8 éves korig)</option>
+                                <option value="senior">Idős (8+ éves)</option>
                             </select>
                         </div>
                         <div class="py-3">
@@ -49,7 +50,7 @@
                             <input type="checkbox" name="size" id="large" value="large">
                             <label for="large">Nagy</label>
                         </div>
-                        <div class="py-3">
+                        {{-- <div class="py-3">
                             <h5>Jellemzők</h5>
                             <input type="checkbox" name="traits" id="cfriend"  value="cfriend">
                             <label for="cfriend">Gyermekbarát</label><br>
@@ -57,7 +58,7 @@
                             <label for="afriend">Más állatokkal barátságos</label><br>
                             <input type="checkbox" name="traits" id="nofriend" value="nofriend">
                             <label for="nofriend">Különleges igényű</label>
-                        </div>
+                        </div> --}}
                         <div class="py-3">
                             <h5>Örökbefogadási státusz</h5>
                             <input type="radio" name="status" id="adoptable" value="adoptable">

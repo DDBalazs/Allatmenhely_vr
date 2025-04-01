@@ -22,7 +22,7 @@
             <div class="container">
               <div class="carousel-caption">
                 <h1>Nézd meg a kutyáinkat!</h1>
-                <a href="#" class="btn btn-dark">Kattints ide!</a>
+                <a href="/allatok" class="btn btn-dark">Kattints ide!</a>
               </div>
             </div>
           </div>
@@ -38,7 +38,7 @@
             <div class="container">
               <div class="carousel-caption">
                 <h1>Nézd meg a macskáinkat!</h1>
-                <a href="#" class="btn btn-dark">Kattints ide!</a>
+                <a href="/allatok" class="btn btn-dark">Kattints ide!</a>
               </div>
             </div>
           </div>
