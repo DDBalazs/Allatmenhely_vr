@@ -35,7 +35,15 @@ class AllatMenhely extends Controller
 
     public function AllatData($id){
         return view('allat',[
-            'lekertallat'   => Allatok::find($id)
+            'lekertallat'   => Allatok::find($id),
+            'merete'        => Allatok::select('allat.allat_id','allat.meret_id', 'meret.meret_id','meret.kategoria')
+                                        ->join('meret', 'allat.meret_id','meret.meret_id')
+                                        ->where('allat.allat_id',$id)
+                                        ->get(),
+            'fajtaja'       => Allatok::select('allat.allat_id', 'allat.fajta_id', 'fajta.fajta_id', 'fajta.pontos_fajta')
+                                        ->join('fajta','allat.fajta_id', 'fajta.fajta_id')
+                                        ->where('allat.allat_id',$id)
+                                        ->get()
         ]);
     }
 }

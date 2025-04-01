@@ -76,11 +76,27 @@ class UserController extends Controller
 
     }
 
-    public function MyPage(){
+    public function MyPage(Request $req){
         if(Auth::check()){
             return view('auth.mypage');
         } else {
             return redirect('/login')->with('unloggederror', 'Kérlek előbb jelentkezz be!');
+        }
+    }
+
+    public function Tel(Request $req){
+        $req->validate([
+            'tel'   =>  'required|max_digits:9|numeric'
+        ],[
+            'tel.required'      =>  "A telefonszámot nem töltötte ki!",
+            'tel.max_digits'    =>  "A telefonszám maximum 9 karakter hosszú lehet",
+            'tel.numeric'       =>  "A telefonszám csak számokat tartalmazhat"
+
+        ]);
+        $data   = User::find(Auth::user()->onkentes_id);
+        $data->tel  =  $req->tel;
+        if($data->Save()){
+            return redirect('/mypage')->with('telsucc', 'Sikeresen módosítottad a telefonszámod!');
         }
     }
 

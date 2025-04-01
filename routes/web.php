@@ -28,6 +28,7 @@ Route::post('/login', [UserController::class, 'Login']);
 Route::post('/register', [UserController::class, 'Register']);
 //mypage
 Route::get('/mypage', [UserController::class, 'Mypage']);
+Route::post('/tel', [UserController::class, 'Tel']);
 Route::post('/modositas', [UserController::class, 'Modositas']);
 Route::get('/logout', [UserController::class, 'Logout']);
 //newpass

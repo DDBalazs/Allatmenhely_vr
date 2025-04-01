@@ -42,12 +42,20 @@
         </div>
         <div class="py-2 profdata d-flex align-items-center">
             <p class="text-start">Telefonszáma: </p>
-            @if (Auth::user()->tel == !0)
+            @if (Auth::user()->tel != NULL)
                 <p class="text-start"> {{Auth::user()->tel}}</p>
                 <a href="" class="btn btn-dark w-25 mx-2">Telefonszám módosítása</a>
             @else
-                <input type="text" name="tel" id="tel" class="form-control flex-grow-1 me-2 w-50">
-                <a href="" class="btn btn-dark w-25 mx-2">Mentés</a>
+                <form action="/tel" method="POST">
+                    @csrf
+                    <input type="text" name="tel" id="tel" class="form-control flex-grow-1 me-2 w-100">
+                    <button class="btn btn-dark w-auto mx-2" type="submit">Mentés</button>
+                </form>
+                @if ($errors->any)
+                    @foreach ($errors->all() as $sv)
+                        <strong><span class="text-danger text-center mx-auto">{{$sv}}</span></strong><br>
+                    @endforeach
+                @endif
             @endif
         </div>
         <div class="py-2">
