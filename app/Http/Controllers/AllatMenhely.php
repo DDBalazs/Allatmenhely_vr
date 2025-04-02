@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Allatok;
 use App\Models\Fajta;
+use App\Models\Foglalt;
+use App\Models\Meret;
 
 class AllatMenhely extends Controller
 {
@@ -28,22 +30,39 @@ class AllatMenhely extends Controller
 
     public function Allatok(){
         return view('allatok',[
-            'allatok'   => Allatok::orderBy('allat.allat_id')
+            'allatok'   =>  Allatok::orderBy('allat.allat_id')
                                     ->get()
         ]);
     }
 
     public function AllatData($id){
         return view('allat',[
-            'lekertallat'   => Allatok::find($id),
-            'merete'        => Allatok::select('allat.allat_id','allat.meret_id', 'meret.meret_id','meret.kategoria')
+            'lekertallat'   =>  Allatok::find($id),
+            'merete'        =>  Allatok::select('allat.allat_id','allat.meret_id', 'meret.meret_id','meret.kategoria')
                                         ->join('meret', 'allat.meret_id','meret.meret_id')
                                         ->where('allat.allat_id',$id)
                                         ->get(),
-            'fajtaja'       => Allatok::select('allat.allat_id', 'allat.fajta_id', 'fajta.fajta_id', 'fajta.pontos_fajta')
+            'fajtaja'       =>  Allatok::select('allat.allat_id', 'allat.fajta_id', 'fajta.fajta_id', 'fajta.pontos_fajta')
                                         ->join('fajta','allat.fajta_id', 'fajta.fajta_id')
                                         ->where('allat.allat_id',$id)
+                                        ->get(),
+            'foglalte'      =>  Foglalt::select('foglalt.allat_id','foglalt.datum','foglalt.onkentes_id','foglalt.teljesitve','allat.allat_id')
+                                        ->Join('allat','foglalt.allat_id','allat.allat_id')
+                                        ->where('foglalt.allat_id',$id)
+                                        ->where('foglalt.onkentes_id',NULL)
                                         ->get()
+        ]);
+    }
+
+    public function Foglalas(){
+        return view('foglalas',[
+            
+        ]);
+    }
+
+    public function FoglalasData(){
+        return view('foglalas',[
+
         ]);
     }
 }

@@ -54,7 +54,7 @@
             @if (Auth::check())
             <div class="vr"></div>
             <li class="nav-item">
-              <a class="nav-link active text-dark" aria-current="page" href="#">Foglalj időpontot</a>
+              <a class="nav-link active text-dark" aria-current="page" href="/allatok/foglalas">Foglalj időpontot</a>
             </li>
             @endif
           </ul>

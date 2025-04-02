@@ -29,6 +29,28 @@
                     <p>Nem: lány</p>
                 @endif
                 <p>Szín: {{$lekertallat->szin}}</p>
+            </div>
+        </div>
+    </div>
+    <hr class="w-75 mx-auto border border-dark my-2">
+    <div class="container">
+        <div class="foglalas">
+            <h2 class="text-center">Foglalj időpontot</h2>
+            <h4 class="text-center">Szeretnél időpontot foglalni önkéntes sétáltatásához vagy esetleg, hogy csak meglátogasd és segítsd a munkánkat?</h4>
+            <div class="mx-auto text-center">
+                <button class="btn btn-secondary w-50 h-50 d-incline-block">Foglalj</button>
+                @if (count($foglalte)>0)
+                    <div class="foglalilehetoseg">
+
+                        <p>Dátumok:</p>
+                        @foreach ($foglalte as $fog)
+                            <a href="foglalas/{{$fog->allat_id}}">{{$fog->datum}}</a>
+                        @endforeach
+
+                    </div>
+                @else
+
+                @endif
 
             </div>
         </div>

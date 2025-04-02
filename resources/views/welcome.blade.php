@@ -133,7 +133,7 @@
                   <div class="onkentes">
                     <h2>Foglalj önkéntes tevékenységeket!</h2>
                     <p>Szeretnéd, hogy a segítséged valódi változást hozzon? Csatlakozz önkénteseink közé, és segíts, hogy minden állat megtalálja az örök otthonát. Akár néhány óra, akár rendszeres segítség, a te időd és energiád óriási különbséget jelenthet egy állat életében. Legyél részese egy szeretettel teli közösségnek, és éld át, milyen érzés örömet szerezni másoknak!</p>
-                    <a href="#" class="btn btn-dark">Foglalj!</a>
+                    <a href="/allatok/foglalas" class="btn btn-dark">Foglalj!</a>
             @endif
                 </div>
               </div>

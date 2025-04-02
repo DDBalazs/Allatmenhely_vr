@@ -47,7 +47,7 @@ CREATE TABLE `foglalt` (
   `datum` DATE NOT NULL,
   `onkentes_id` INT,
   FOREIGN KEY (`onkentes_id`) REFERENCES `onkentes` (`onkentes_id`),
-  `teljesitve` BOOLEAN
+  `teljesitve` BOOLEAN NOT NULL
 );
 
 CREATE TABLE `alkalmazott` (
