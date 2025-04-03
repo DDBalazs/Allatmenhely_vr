@@ -12,6 +12,7 @@ Route::view('/information', 'information');
 Route::view('/programok', 'programok');
 
 Route::get('/allatok', [AllatMenhely::class, 'Allatok']);
+Route::post('/allatok',[AllatMenhely::class, 'AllatokPost']);
 Route::get('/allatok/{id}', [AllatMenhely::class, 'AllatData']);
 Route::get('/allatok/foglalas',[AllatMenhely::class, 'Foglalas']);
 Route::get('/allatok/foglalas/{id}', [AllatMenhely::class, 'FoglalasData']);

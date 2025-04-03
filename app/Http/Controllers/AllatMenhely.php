@@ -35,6 +35,22 @@ class AllatMenhely extends Controller
         ]);
     }
 
+    public function AllatokPost(Request $req){
+        #dd($req);
+        
+        if($req->has('kperm')){
+            $kperm = $req->kperm;
+        }
+        $result = Allatok::selectRaw('select allat.allat_id,allat.fajta_id, allat.nev, allat.fajta_id, allat.meret_id,allat.szin,allat.nem,meret.meret_id,meret.kategoria, fajta.fajta_id, fajta.faj
+                                        FROM allat,meret,fajta
+                                        WHERE allat.fajta_id = fajta.fajta_id
+                                        AND allat.meret_id = meret.meret_id')
+                        ->get();
+        return view('allatok', [
+
+        ]);
+    }
+
     public function AllatData($id){
         return view('allat',[
             'lekertallat'   =>  Allatok::find($id),
@@ -56,7 +72,7 @@ class AllatMenhely extends Controller
 
     public function Foglalas(){
         return view('foglalas',[
-            
+
         ]);
     }
 

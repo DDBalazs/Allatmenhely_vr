@@ -11,6 +11,7 @@
             <div class="row py-4">
                 <div class="col-3">
                     <form action="/allatok" method="POST" class="form-control border border-dark rounded">
+                        @csrf
                         <div class="py-3">
                             <h3 class="text-center">Állatkereső szűrő</h3>
                             <hr class="w-75 mx-auto border border-dark my-2">
