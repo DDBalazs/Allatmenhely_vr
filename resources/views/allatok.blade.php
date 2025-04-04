@@ -60,16 +60,17 @@
                             <input type="checkbox" name="traits" id="nofriend" value="nofriend">
                             <label for="nofriend">Különleges igényű</label>
                         </div> --}}
-                        <div class="py-3">
+                        {{-- <div class="py-3">
                             <h5>Örökbefogadási státusz</h5>
                             <input type="radio" name="status" id="adoptable" value="adoptable">
                             <label for="adoptable">Örökbefogadható</label><br>
                             <input type="radio" name="status" id="foster" value="foster">
                             <label for="foster">Ideiglenes befogadásra vár</label>
-                        </div>
+                        </div> --}}
                         <div class="py-3">
                             <h5>Rendezés</h5>
                             <select name="sort" id="sort" class="form-control">
+                                <option value="none">------</option>
                                 <option value="newest">Legújabbak előre</option>
                                 <option value="oldest">Legrégebbiek előre</option>
                                 <option value="name-asc">Név szerint (A-Z)</option>

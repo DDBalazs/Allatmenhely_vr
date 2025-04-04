@@ -37,17 +37,56 @@ class AllatMenhely extends Controller
 
     public function AllatokPost(Request $req){
         #dd($req);
-        
-        if($req->has('kperm')){
-            $kperm = $req->kperm;
+
+        $animalsql = " ";
+        $selectedanimal = $req->input('kperm');
+        $selectednem = $req->input('nem');
+        $selectedkor = $req->input('age');
+        $selectedmeret = $req->input('meret');
+
+        // faj keresése
+        if($selectedanimal == "dog"){
+            $animalsql = $animalsql+" AND fajta.faj = 'kutya' ";
+        } elseif ($selectedanimal == "cat"){
+            $animalsql = $animalsql+" AND fajta.faj = 'macska' ";
+        } else{
+            $animalsql = $animalsql+" ";
         }
+        // Nem keresése
+        if($selectednem == "him"){
+            $animalsql = $animalsql+" AND nem = 1 ";
+        } elseif($selectednem == "nosteny"){
+            $animalsql = $animalsql+" AND nem = 0";
+        } else{
+            $animalsql = $animalsql+" ";
+        }
+        // Kor keresése
+        if($selectedkor = "puppy"){
+            $animalsql = $animalsql+" AND YEAR(CURRENT_DATE) - year(szuldatum) < 1";
+        }elseif($selectedkor = "young"){
+            $animalsql = $animalsql+" AND YEAR(CURRENT_DATE) - year(szuldatum) BETWEEN 1 AND 3";
+        }elseif($selectedkor = "adult"){
+            $animalsql = $animalsql+" AND YEAR(CURRENT_DATE) - year(szuldatum) BETWEEN 3 AND 8";
+        }elseif($selectedkor = "senior"){
+            $animalsql = $animalsql+" AND YEAR(CURRENT_DATE) - year(szuldatum) > 8";
+        }else{
+            $animalsql = $animalsql+" ";
+        }
+
+        // Méret keresése
+        if($selectedmeret = "small"){
+            $animalsql = $animalsql+" AND meret.kategoria like 'mini' OR like 'kistestű'";
+        }
+
+
         $result = Allatok::selectRaw('select allat.allat_id,allat.fajta_id, allat.nev, allat.fajta_id, allat.meret_id,allat.szin,allat.nem,meret.meret_id,meret.kategoria, fajta.fajta_id, fajta.faj
                                         FROM allat,meret,fajta
                                         WHERE allat.fajta_id = fajta.fajta_id
-                                        AND allat.meret_id = meret.meret_id')
-                        ->get();
-        return view('allatok', [
+                                        AND allat.meret_id = meret.meret_id
+                                        '.$animalsql);
 
+        return view('allatok', [
+            "allatok" => $result
         ]);
     }
 
