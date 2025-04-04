@@ -85,7 +85,9 @@
                 </div>
                 <div class="col-md-9">
                     <div class="row">
-                        @foreach ($allatok as $allat)
+
+                        @if(isset($result)){
+                            @foreach ($result as $allat)
                                     <div class="col-md-4 mb-4 ">
                                         <a href="/allatok/{{$allat->allat_id}}" class="text-decoration-none">
                                             <div class="card">
@@ -96,7 +98,25 @@
                                             </div>
                                         </a>
                                     </div>
-                        @endforeach
+                            @endforeach
+                        }
+                        @else{
+                            @foreach ($allatok as $allat)
+                                    <div class="col-md-4 mb-4 ">
+                                        <a href="/allatok/{{$allat->allat_id}}" class="text-decoration-none">
+                                            <div class="card">
+                                                <img src="{{asset('img/allatok/k/k'.$allat->allat_id.'.png')}}" alt="{{$allat->allat_id.'.png'}}" class="card-img-top">
+                                                <div class="card-body">
+                                                    <h5 class="card-text">{{$allat->nev}}</h5>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                            @endforeach
+                        }
+                        @endif
+
+
                     </div>
                 </div>
             </div>
