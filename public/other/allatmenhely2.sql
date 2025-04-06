@@ -83,7 +83,8 @@ values
 (3, 'kutya','pitbull jellegű'),
 (4, 'kutya', 'labrador jellegű'),
 (5, 'macska', 'hosszúszőrű házimacska'),
-(6, 'macska', 'rövidszőrű házimacska');
+(6, 'macska', 'rövidszőrű házimacska'),
+(7, 'macska', 'foltos házimacska');
 
 
 insert into allat(allat_id, fajta_id, nev, chip_sorszam, szuldatum, meret_id, szin, nem, ivartalanitott, orokbefogadhato, beerkezes_datuma ,megjegyzes)
@@ -93,17 +94,13 @@ values
 (3, 3, 'Pamacs', NULL, '2017-01-01', 6, 'cirmos', 0, 1, 0, '2020-02-06' ,"Mentett kutyus"),
 (4, 4, 'Füge', NULL, '2019-01-01', 6, 'szurke', 0, 1, 0, '2022-02-06' ,"Játékos"),
 (5, 5, 'Cirmi', NULL, '2020-01-01', 6, 'cirmos', 0, 1, 0, '2023-02-06' ,"Mentett cica"),
-(6, 6, 'Kalóz', NULL, '2018-01-01', 6, 'fekete', 0, 1, 0, '2020-02-06' ,"Félszemű");
+(6, 6, 'Kalóz', NULL, '2018-01-01', 6, 'fekete', 0, 1, 0, '2020-02-06' ,"Félszemű"),
+(7, 7, 'Alfréd', '547693857hg', '2024-04-20', 7, 'foltos', 1, 0, 1, '2024-04-20', 'Itt született nálunk a mi kis Alfrédunk, nagyon kedves jó szívű macska. Jól kijön mint állattal mint emberekkel.');
 
 
 insert into oltas(chip_sorszam, oltas_tipusa, datum)
 values
 ('123456789hh', 'Veszettség', '2024-12-13'),
 ('123456789hh', 'Parvo', '2024-12-28'),
-('987654321pe', 'Veszettség', '2024-12-13');
-
-
-
-
-
-
+('987654321pe', 'Veszettség', '2024-12-13'),
+('547693857hg', 'Veszettség', '2024-07-20');

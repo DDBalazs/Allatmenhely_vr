@@ -1,34 +1,6 @@
 @extends('layout')
 @section('content')
 <main class="mypage">
-    @if (session('logsuccess'))
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Sikeres művelet!',
-                text: '{{session('logsuccess')}}',
-                confirmButtonText: 'Ok'
-            });
-        </script>
-    @elseif (session('loggederror'))
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Sikertelen művelet!',
-                text: '{{session('loggederror')}}',
-                confirmButtonText: 'Ok'
-            })
-        </script>
-    @elseif (session('newpasssuccess'))
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Sikeres művelet!',
-                text: '{{session('newpasssuccess')}}',
-                confirmButtonText: 'Ok'
-            })
-        </script>
-    @endif
     <div class="container mypagebg">
         <div class="py-2">
             <h2><b>Profilod</b></h2>
@@ -43,12 +15,16 @@
         <div class="py-2 profdata d-flex align-items-center">
             <p class="text-start">Telefonszáma: </p>
             @if (Auth::user()->tel != NULL)
-                <p class="text-start"> {{Auth::user()->tel}}</p>
-                <a href="" class="btn btn-dark w-25 mx-2">Telefonszám módosítása</a>
-            @else
-                <form action="/tel" method="POST">
+                <form action="/mypage/deltel" method="POST">
                     @csrf
-                    <input type="text" name="tel" id="tel" class="form-control flex-grow-1 me-2 w-100">
+                    @method('DELETE')
+                    <p class="text-start"> {{Auth::user()->tel}}</p>
+                    <button class="btn btn-dark w-auto mx-2" type="submit">Telefonszám törlése</button>
+                </form>
+            @else
+                <form action="/mypage/tel" method="POST">
+                    @csrf
+                    <input type="text" name="tel" id="tel" class="form-control flex-grow-1 me-2 w-100" placeholder="Pl.: 30 123 4567">
                     <button class="btn btn-dark w-auto mx-2" type="submit">Mentés</button>
                 </form>
                 @if ($errors->any)
@@ -59,8 +35,8 @@
             @endif
         </div>
         <div class="py-2">
-            <a href="/newpass" class="btn btn-dark">Jelszó módosítás</a>
-            <a href="/logout" class="btn btn-dark">Kijelentkezés</a>
+            <a href="/mypage/newpass" class="btn btn-dark">Jelszó módosítás</a>
+            <a href="/mypage/logout" class="btn btn-dark">Kijelentkezés</a>
         </div>
     </div>
 

@@ -14,6 +14,83 @@
 </head>
 <body>
 
+{{-- SWALFIREEK --}}
+@if (session('logsuccess'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sikeres művelet!',
+                text: '{{session('logsuccess')}}',
+                confirmButtonText: 'Ok'
+            });
+        </script>
+    @elseif (session('loggederror'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Sikertelen művelet!',
+                text: '{{session('loggederror')}}',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @elseif (session('newpasssuccess'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sikeres művelet!',
+                text: '{{session('newpasssuccess')}}',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @elseif (session('deltel'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sikeres művelet!',
+                text: '{{session('deltel')}}',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @elseif(session('newpasserror'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Sikertelen művelet!',
+                text: '{{session('newpasserror')}}',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @elseif (session('logerror'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Sikertelen bejelentkezés!',
+                text: '{{session('logerror')}}',
+                confirmButtonText: 'Ok'
+            });
+        </script>
+    @elseif (session('regsuccess'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sikeres művelet!',
+                text: '{{session('regsuccess')}}',
+                confirmButtonText: 'Ok'
+            });
+        </script>
+    @elseif (session('unloggederror'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sikeres regisztráció!',
+                text: '{{session('regsuccess')}}',
+                confirmButtonText: 'Ok'
+            });
+        </script>
+    @endif
+
+
+
   <!--NAV-bar-->
   <nav class="container-fluid nav-bg navbar navbar-expand-lg" aria-label="Thirteenth navbar example"  id="stickyNav">
   <div class="container nav-bg navbar-dark d-flex justify-content-start">

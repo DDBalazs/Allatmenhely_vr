@@ -12,7 +12,7 @@
         <h3 class="text-center py-2"><b>Címünk:</b> 1234 Boldog Város, Állatbarát utca 7.</h3>
         <div class="py-4">
             <table class="table text-center">
-                <thead">
+                <thead>
                     <tr>
                         <th class="col"></th>
                         <th class="col">Hétfő</th>

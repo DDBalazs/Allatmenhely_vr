@@ -8,7 +8,6 @@ use App\Http\Controllers\AllatMenhely;
 Route::get('/', [AllatMenhely::class, 'Welcome']);
 //bladek
 Route::view('/contact', 'contact');
-Route::view('/information', 'information');
 Route::view('/programok', 'programok');
 
 Route::get('/allatok', [AllatMenhely::class, 'Allatok']);
@@ -18,12 +17,13 @@ Route::get('/allatok/foglalas',[AllatMenhely::class, 'Foglalas']);
 Route::get('/allatok/foglalas/{id}', [AllatMenhely::class, 'FoglalasData']);
 
 // documentumok
-Route::view('aszf', 'documents.aszf');
-Route::view('adatved', 'documents.adatved');
-Route::view('gyik', 'documents.gyik');
-Route::view('cookie', 'documents.cookie');
-Route::view('adomany', 'documents.adomany');
-Route::view('jollet', 'documents.jollet');
+Route::view('/information', 'information');
+Route::view('/information/aszf', 'documents.aszf');
+Route::view('/information/adatved', 'documents.adatved');
+Route::view('/information/gyik', 'documents.gyik');
+Route::view('/information/cookie', 'documents.cookie');
+Route::view('/information/adomany', 'documents.adomany');
+Route::view('/information/jollet', 'documents.jollet');
 
 // login & regiszter
 Route::get('/sign', [UserController::class, 'Sign']);
@@ -31,12 +31,12 @@ Route::post('/login', [UserController::class, 'Login']);
 Route::post('/register', [UserController::class, 'Register']);
 //mypage
 Route::get('/mypage', [UserController::class, 'Mypage']);
-Route::post('/tel', [UserController::class, 'Tel']);
-Route::post('/modositas', [UserController::class, 'Modositas']);
-Route::get('/logout', [UserController::class, 'Logout']);
+Route::delete('/mypage/deltel', [UserController::class, 'DelTel']);
+Route::post('/mypage/tel', [UserController::class, 'Tel']);
+Route::get('/mypage/logout', [UserController::class, 'Logout']);
 //newpass
-Route::get('/newpass', [UserController::class, 'Newpass']);
-Route::post('/newpass', [UserController::class, 'NewpassData']);
+Route::get('/mypage/newpass', [UserController::class, 'Newpass']);
+Route::post('/mypage/newpass', [UserController::class, 'NewpassData']);
 
 
 

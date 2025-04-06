@@ -141,6 +141,14 @@ class UserController extends Controller
             return view('auth.newpass')->with('newpasserror', 'Nem sikerült a jelszó módosítás.');
         }
     }
+
+    public function DelTel(Request $req){
+        $user = Auth::user();
+        $user->tel = null;
+        $user->Save();
+
+        return redirect()->back()->with('deltel', 'Telefonszám sikeresen törölve!');
+    }
 }
 
 

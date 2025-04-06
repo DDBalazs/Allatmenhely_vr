@@ -1,16 +1,6 @@
 @extends('layout')
 @section('content')
 <main class="mypage">
-    @if(session('newpasserror'))
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Sikertelen művelet!',
-                text: '{{session('newpasserror')}}',
-                confirmButtonText: 'Ok'
-            })
-        </script>
-    @endif
     <div class="container mypagebg">
         <div class="py-2">
             <h2><b>Jelszó módosítás</b></h2>

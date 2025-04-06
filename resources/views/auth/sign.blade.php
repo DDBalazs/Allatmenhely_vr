@@ -2,34 +2,6 @@
 @section('content')
 
     <main class="reg">
-        @if (session('logerror'))
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Sikertelen bejelentkezés!',
-                text: '{{session('logerror')}}',
-                confirmButtonText: 'Ok'
-            });
-        </script>
-        @elseif (session('regsuccess'))
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Sikeres művelet!',
-                text: '{{session('regsuccess')}}',
-                confirmButtonText: 'Ok'
-            });
-        </script>
-        @elseif (session('unloggederror'))
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Sikeres regisztráció!',
-                text: '{{session('regsuccess')}}',
-                confirmButtonText: 'Ok'
-            });
-        </script>
-        @endif
         <div class="container sign">
             <div class="form-box">
                 {{-- LOGIN --}}
