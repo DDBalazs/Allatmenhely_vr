@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Allatok;
 use App\Models\Fajta;
@@ -30,7 +31,10 @@ class AllatMenhely extends Controller
 
     public function Allatok(){
         return view('allatok',[
-            'allatok'   =>  Allatok::orderBy('allat.allat_id')
+            'allatok'   =>  Allatok::select('allat.allat_id','allat.nev','allat.fajta_id','allat.chip_sorszam','allat.szuldatum','allat.meret_id','allat.szin','allat.ivartalanitott','allat.orokbefogadhato','allat.beerkezes_datuma','allat.megjegyzes','fajta.fajta_id','fajta.faj')
+                                    ->join('fajta','allat.fajta_id','fajta.fajta_id')
+                                    ->where('allat.orokbefogadhato', 1)
+                                    ->orderBy('allat.allat_id')
                                     ->get()
         ]);
     }
@@ -61,59 +65,68 @@ class AllatMenhely extends Controller
             $animalsql = $animalsql." ";
         }
         // Kor keresése
-        if($selectedkor = "puppy"){
+        if($selectedkor == "puppy"){
             $animalsql = $animalsql." AND YEAR(CURRENT_DATE) - year(szuldatum) < 1";
-        }elseif($selectedkor = "young"){
+        }elseif($selectedkor == "young"){
             $animalsql = $animalsql." AND YEAR(CURRENT_DATE) - year(szuldatum) BETWEEN 1 AND 3";
-        }elseif($selectedkor = "adult"){
+        }elseif($selectedkor == "adult"){
             $animalsql = $animalsql." AND YEAR(CURRENT_DATE) - year(szuldatum) BETWEEN 3 AND 8";
-        }elseif($selectedkor = "senior"){
+        }elseif($selectedkor == "senior"){
             $animalsql = $animalsql." AND YEAR(CURRENT_DATE) - year(szuldatum) > 8";
         }else{
             $animalsql = $animalsql." ";
         }
 
         // Méret keresése
-        if($selectedmeret = "small"){
+        if($selectedmeret == "small"){
             $animalsql = $animalsql." AND meret.meret_id = 1 OR meret.meret_id = 2 OR meret.meret_id = 6";
-        }elseif($selectedmeret = "medium"){
+        }elseif($selectedmeret == "medium"){
             $animalsql = $animalsql." AND meret.meret_id = 3 OR meret.meret_id = 7";
-        }elseif($selectedmeret = "large"){
-            $animalsql = $animalsql." AND meret.meret_id = 4 OR meret.mered_id = 5 OR meret.meret_id = 8";
+        }elseif($selectedmeret == "large"){
+            $animalsql = $animalsql." AND meret.meret_id = 4 OR meret.meret_id = 5 OR meret.meret_id = 8";
         }
 
 
         $rendezessql = "";
         $selectedrendezes = $req->input('sort');
         // Rendezés
-        if($selectedrendezes = "newest"){
+        if($selectedrendezes == "newest"){
             $rendezessql = " ORDER BY allat.beerkezes_datuma DESC";
-        }elseif($selectedrendezes = "oldest"){
+        }elseif($selectedrendezes == "oldest"){
             $rendezessql = " ORDER BY allat.beerkezes_datuma ASC";
-        }elseif($selectedrendezes = "name-asc"){
+        }elseif($selectedrendezes == "name-asc"){
             $rendezessql = " Order By allat.nev DESC";
-        }elseif($selectedrendezes = "name-desc"){
+        }elseif($selectedrendezes == "name-desc"){
             $rendezessql = " Order by allat.nev ASC";
         }else{
             $rendezessql = " ";
         }
 
+        $sql = "SELECT allat.allat_id, allat.fajta_id, allat.nev, allat.meret_id, allat.szin, allat.nem, meret.meret_id, meret.kategoria, fajta.faj
+                FROM allat
+                Join fajta ON allat.fajta_id = fajta.fajta_id
+                Join meret ON allat.meret_id = meret.meret_id
+                Where 1=1 ".$animalsql.$rendezessql;
 
-        $result = Allatok::selectRaw('SELECT allat.allat_id, allat.fajta_id, allat.nev, allat.meret_id, allat.szin, allat.nem, meret.meret_id, meret.kategoria, fajta.faj
-                                    FROM allat
-                                    JOIN meret ON allat.meret_id = meret.meret_id
-                                    JOIN fajta ON allat.fajta_id = fajta.fajta_id
-                                    '.$animalsql.$rendezessql);
+        $result = DB::select($sql);
 
 
         return view('allatok', [
-            "result" => $result
+            'allatok'   =>  Allatok::select('allat.allat_id','allat.nev','allat.fajta_id','allat.chip_sorszam','allat.szuldatum','allat.meret_id','allat.szin','allat.ivartalanitott','allat.orokbefogadhato','allat.beerkezes_datuma','allat.megjegyzes','fajta.fajta_id','fajta.faj')
+                                    ->join('fajta','allat.fajta_id','fajta.fajta_id')
+                                    ->where('allat.orokbefogadhato', 1)
+                                    ->orderBy('allat.allat_id')
+                                    ->get(),
+            "result"            =>  $result
         ]);
     }
 
     public function AllatData($id){
         return view('allat',[
-            'lekertallat'   =>  Allatok::find($id),
+            'lekertallat'   =>  Allatok::select('allat.allat_id','allat.nev', 'allat.fajta_id','allat.megjegyzes','allat.szuldatum','allat.beerkezes_datuma','fajta.fajta_id','fajta.faj')
+                                        ->join('fajta', 'allat.fajta_id','fajta.fajta_id')
+                                        ->where('allat.allat_id',$id)
+                                        ->first(),
             'merete'        =>  Allatok::select('allat.allat_id','allat.meret_id', 'meret.meret_id','meret.kategoria')
                                         ->join('meret', 'allat.meret_id','meret.meret_id')
                                         ->where('allat.allat_id',$id)

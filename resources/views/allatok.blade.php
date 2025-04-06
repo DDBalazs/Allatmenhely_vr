@@ -79,19 +79,22 @@
                         </div>
                         <div class="py-3">
                             <button type="submit" class="btn btn-secondary w-100 my-3">Szűrés</button>
-                            <button type="reset" class="btn btn-secondary w-100">Visszaállítás</button>
+                            <button type="reset" onclick="window.location.reload();" class="btn btn-secondary w-100">Visszaállítás</button>
                         </div>
                     </form>
                 </div>
                 <div class="col-md-9">
                     <div class="row">
-
-                        @if(isset($result)){
+                        @if(isset($result) && count($result)>0)
                             @foreach ($result as $allat)
                                     <div class="col-md-4 mb-4 ">
                                         <a href="/allatok/{{$allat->allat_id}}" class="text-decoration-none">
                                             <div class="card">
-                                                <img src="{{asset('img/allatok/k/k'.$allat->allat_id.'.png')}}" alt="{{$allat->allat_id.'.png'}}" class="card-img-top">
+                                                @if ($allat->faj == "kutya")
+                                                    <img src="{{asset('img/allatok/k/k'.$allat->allat_id.'.png')}}" alt="{{$allat->allat_id.'.png'}}" class="card-img-top">
+                                                @else
+                                                    <img src="{{asset('img/allatok/c/c'.$allat->allat_id.'.png')}}" alt="{{$allat->allat_id.'.png'}}" class="card-img-top">
+                                                @endif
                                                 <div class="card-body">
                                                     <h5 class="card-text">{{$allat->nev}}</h5>
                                                 </div>
@@ -99,13 +102,16 @@
                                         </a>
                                     </div>
                             @endforeach
-                        }
-                        @else{
+                        @else
                             @foreach ($allatok as $allat)
                                     <div class="col-md-4 mb-4 ">
                                         <a href="/allatok/{{$allat->allat_id}}" class="text-decoration-none">
                                             <div class="card">
-                                                <img src="{{asset('img/allatok/k/k'.$allat->allat_id.'.png')}}" alt="{{$allat->allat_id.'.png'}}" class="card-img-top">
+                                                @if ($allat->faj == "kutya")
+                                                    <img src="{{asset('img/allatok/k/k'.$allat->allat_id.'.png')}}" alt="{{$allat->allat_id.'.png'}}" class="card-img-top">
+                                                @else
+                                                    <img src="{{asset('img/allatok/c/c'.$allat->allat_id.'.png')}}" alt="{{$allat->allat_id.'.png'}}" class="card-img-top">
+                                                @endif
                                                 <div class="card-body">
                                                     <h5 class="card-text">{{$allat->nev}}</h5>
                                                 </div>
@@ -113,7 +119,6 @@
                                         </a>
                                     </div>
                             @endforeach
-                        }
                         @endif
 
 

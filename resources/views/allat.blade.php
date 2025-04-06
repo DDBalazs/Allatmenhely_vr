@@ -10,7 +10,11 @@
     <div class="container">
         <div class="row">
             <div class="col mx-auto text-center">
-                <img src="{{asset('img/allatok/k/k'.$lekertallat->allat_id.'.png')}}" alt="{{$lekertallat->allat_id}}" class="w-auto h-auto">
+                @if ($lekertallat->faj == "kutya")
+                    <img src="{{asset('img/allatok/k/k'.$lekertallat->allat_id.'.png')}}" alt="{{$lekertallat->allat_id}}" class="w-100 h-100">
+                @else
+                    <img src="{{asset('img/allatok/c/c'.$lekertallat->allat_id.'.png')}}" alt="{{$lekertallat->allat_id}}" class="w-100 h-100">
+                @endif
             </div>
             <div class="col">
                 <p class="px-3 fs-3"><strong>{{$lekertallat->nev}}</strong></p>
