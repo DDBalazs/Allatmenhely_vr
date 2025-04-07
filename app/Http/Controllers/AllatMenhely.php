@@ -106,7 +106,7 @@ class AllatMenhely extends Controller
                 FROM allat
                 Join fajta ON allat.fajta_id = fajta.fajta_id
                 Join meret ON allat.meret_id = meret.meret_id
-                Where 1=1 ".$animalsql.$rendezessql;
+                Where allat.orokbefogadhato = 1 ".$animalsql.$rendezessql;
 
         $result = DB::select($sql);
 
