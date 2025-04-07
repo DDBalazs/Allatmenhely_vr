@@ -42,7 +42,11 @@
             <h2 class="text-center">Foglalj időpontot</h2>
             <h4 class="text-center">Szeretnél időpontot foglalni önkéntes sétáltatásához vagy esetleg, hogy csak meglátogasd és segítsd a munkánkat?</h4>
             <div class="mx-auto text-center">
-                <button class="btn btn-secondary w-50 h-50 d-incline-block" onclick="Foglalas()">Foglalj</button>
+                @if (Auth::check())
+                    <button class="btn btn-secondary w-50 h-50 d-incline-block" onclick="Foglalas()">Foglalj</button>
+                @else
+                    <a href="/sign" class="btn btn-secondary w-50 h-50 d-incline-block">Nem vagy bejelentkezve, kattints ide és jelenkezz be</a>
+                @endif
                 @if(count($foglalte)>0)
                     <h5 class="py-2">Foglalt dátumok:</h5>
                 @foreach ($foglalte as $fog)

@@ -116,6 +116,15 @@
                 confirmButtonText: 'Ok'
             });
         </script>
+    @elseif(session('delfog'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sikeres foglalás törlés',
+                text: '{{session('delfog')}}',
+                confirmButtonText: 'Ok'
+            });
+        </script>
     @endif
 
   <!--NAV-bar-->

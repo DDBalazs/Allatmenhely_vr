@@ -30,6 +30,7 @@ Route::post('/login', [UserController::class, 'Login']);
 Route::post('/register', [UserController::class, 'Register']);
 //mypage
 Route::get('/mypage', [UserController::class, 'Mypage']);
+Route::delete('/mypage/{id}', [UserController::class, 'DelFog']);
 Route::delete('/mypage/deltel', [UserController::class, 'DelTel']);
 Route::post('/mypage/tel', [UserController::class, 'Tel']);
 Route::get('/mypage/logout', [UserController::class, 'Logout']);

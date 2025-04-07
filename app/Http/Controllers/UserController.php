@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\Foglalt;
 
 class UserController extends Controller
 {
@@ -75,10 +76,26 @@ class UserController extends Controller
 
     public function MyPage(Request $req){
         if(Auth::check()){
-            return view('auth.mypage');
+            return view('auth.mypage', [
+                'foglalasaim'   =>  Foglalt::select('foglalt.foglalt_id', 'foglalt.allat_id', 'foglalt.datum', 'foglalt.onkentes_id', 'foglalt.elfogadas', 'foglalt.teljesitve', 'allat.allat_id' ,'allat.nev', 'onkentes.onkentes_id')
+                                            ->Join('allat', 'foglalt.allat_id', 'allat.allat_id')
+                                            ->Join('onkentes', 'foglalt.onkentes_id', 'onkentes.onkentes_id')
+                                            ->Where('foglalt.onkentes_id', Auth::user()->onkentes_id)
+                                            ->get()
+            ]);
         } else {
             return redirect('/login')->with('unloggederror', 'Kérlek előbb jelentkezz be!');
         }
+    }
+
+    public function DelFog(Request $req, $id){
+        $fog = Foglalt::where('foglalt_id', $id)
+                        ->where('onkentes_id', Auth::id())
+                        ->first();
+
+        $fog->delete();
+
+        return back()->with('delfog', 'A foglalást sikeresen törölted!');
     }
 
     public function Tel(Request $req){
@@ -95,6 +112,14 @@ class UserController extends Controller
         if($data->Save()){
             return redirect('/mypage')->with('telsucc', 'Sikeresen módosítottad a telefonszámod!');
         }
+    }
+
+    public function DelTel(Request $req){
+        $user = Auth::user();
+        $user->tel = null;
+        $user->Save();
+
+        return redirect()->back()->with('deltel', 'Telefonszám sikeresen törölve!');
     }
 
     public function Logout(){
@@ -139,13 +164,8 @@ class UserController extends Controller
         }
     }
 
-    public function DelTel(Request $req){
-        $user = Auth::user();
-        $user->tel = null;
-        $user->Save();
 
-        return redirect()->back()->with('deltel', 'Telefonszám sikeresen törölve!');
-    }
+
 }
 
 

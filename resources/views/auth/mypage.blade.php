@@ -38,6 +38,51 @@
             <a href="/mypage/newpass" class="btn btn-dark">Jelszó módosítás</a>
             <a href="/mypage/logout" class="btn btn-dark">Kijelentkezés</a>
         </div>
+        <div class="py-2">
+            <h1 class="text-center">Foglalásaid</h1>
+            @if (count($foglalasaim)>0)
+                <table class="mx-auto text-center table table-stripped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Állat neve</th>
+                            <th>Foglalás dátuma</th>
+                            <th>Elfogadási státusz</th>
+                            <th>Teljesítési státusz</th>
+                            <th>Lemondás</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($foglalasaim as $db)
+                            <tr>
+                                <td>{{$db->nev}}</td>
+                                <td>{{$db->datum}}</td>
+                                @if ($db->elfogadas == "n")
+                                    <td>Elutasítva</td>
+                                    <td></td>
+                                @elseif($db->elfogadas == "i")
+                                    <td>Elfogadva</td>
+                                    @if ($db->teljesitve == 0)
+                                        <td>Még nincs teljesítve</td>
+                                    @else
+                                        <td>Teljesítve</td>
+                                    @endif
+                                @else
+                                    <td>Elfogadásra vár</td>
+                                    <td></td>
+                                @endif
+                                <td>
+                                    <form action="/mypage/{id}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger w-auto mx-2" type="submit">Foglalás lemondása</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            @endif
+        </div>
     </div>
 
 
