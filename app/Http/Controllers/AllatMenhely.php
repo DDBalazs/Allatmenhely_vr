@@ -143,8 +143,8 @@ class AllatMenhely extends Controller
         ]);
     }
 
-    public function Foglalas(){
-        return view('foglalas',[
+    public function Foglalas($id){
+        return view('allat',[
 
         ]);
     }

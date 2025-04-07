@@ -630,7 +630,8 @@ input:-internal-autofill-selected {
         background-color: rgb(97, 49, 21);
     }
     .foglalas{
-        height: 200px;
+        height: auto;
+        margin: 20px;
     }
     .foglalilehetoseg{
         height: auto;

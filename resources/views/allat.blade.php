@@ -44,11 +44,15 @@
             <div class="mx-auto text-center">
                 <button class="btn btn-secondary w-50 h-50 d-incline-block" onclick="Foglalas()">Foglalj</button>
                     <div class="foglalilehetoseg" id="foglalasdiv">
-                        <hr class="w-75 mx-auto border border-dark my-2">
+                        @foreach ($foglalte as $fog)
+                            <p>{{$fog->datum}}</p>
+                        @endforeach
                         <form action="foglalas" method="POST">
                             @csrf
                             <h3 class="text-center">Önkéntes tevékenységeket minden nap a látogatási idő után 14 és 18 óra között lehetséges</h3>
-                            
+                            <label for="idopont">Válassz időpontot</label>
+                            <input type="date" class="form-control w-50 mx-auto" name="idopont" id="idopont" value="idopont" min="2025-04-01">
+                            <button type="submit" class="btn btn-dark my-2">Foglalás</button>
                         </form>
                     </div>
 
