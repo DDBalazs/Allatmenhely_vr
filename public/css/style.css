@@ -1,5 +1,5 @@
 /* https://boxicons.com */
-/* {{-- https://www.youtube.com/watch?v=d-VIORM1X2o --}} */
+/* https://www.youtube.com/watch?v=d-VIORM1X2o */
 
 /* layout */
 body{
@@ -21,24 +21,27 @@ body{
     z-index: 10;
 }
 .carousel-item {
-    height: 100vh;
+    height: 50vh;
 }
 .bg1{
     background-image: url("../img/layout/slide1.png");
-    background-size: cover;
-    background-position: center center;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
 }
 .bg2{
     background-image: url("../img/layout/slide2.png");
-    background-size: cover;
+    background-size: auto;
     background-position: center center;
+    background-repeat: no-repeat;
 
 }
 .bg3{
     background-image: url("../img/layout/slide3.png");
-    background-size: cover;
+    background-size: auto;
     background-position: center center;
+    background-repeat: no-repeat;
 
 }
 
@@ -607,6 +610,17 @@ input:-internal-autofill-selected {
     }
 }
 
+.allatok{
+    background-color: #f9f5f0;
+
+    .szures{
+        background-color: #3498db;
+    }
+    .reset{
+        background-color: #e74c3c;
+    }
+}
+
 .allat{
     .allathead{
         height: 200px;
@@ -617,5 +631,8 @@ input:-internal-autofill-selected {
     }
     .foglalas{
         height: 200px;
+    }
+    .foglalilehetoseg{
+        height: auto;
     }
 }

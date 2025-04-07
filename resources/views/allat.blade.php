@@ -42,23 +42,25 @@
             <h2 class="text-center">Foglalj időpontot</h2>
             <h4 class="text-center">Szeretnél időpontot foglalni önkéntes sétáltatásához vagy esetleg, hogy csak meglátogasd és segítsd a munkánkat?</h4>
             <div class="mx-auto text-center">
-                <button class="btn btn-secondary w-50 h-50 d-incline-block">Foglalj</button>
-                @if (count($foglalte)>0)
-                    <div class="foglalilehetoseg">
-
-                        <p>Dátumok:</p>
-                        @foreach ($foglalte as $fog)
-                            <a href="foglalas/{{$fog->allat_id}}">{{$fog->datum}}</a>
-                        @endforeach
-
+                <button class="btn btn-secondary w-50 h-50 d-incline-block" onclick="Foglalas()">Foglalj</button>
+                    <div class="foglalilehetoseg" id="foglalasdiv">
+                        <hr class="w-75 mx-auto border border-dark my-2">
+                        <form action="foglalas" method="POST">
+                            @csrf
+                            <h3 class="text-center">Önkéntes tevékenységeket minden nap a látogatási idő után 14 és 18 óra között lehetséges</h3>
+                            
+                        </form>
                     </div>
-                @else
-
-                @endif
 
             </div>
         </div>
     </div>
 </main>
 
+    <script>
+        document.getElementById('foglalasdiv').style.visibility = "hidden";
+        function Foglalas(){
+            document.getElementById('foglalasdiv').style.visibility = "visible";
+        }
+    </script>
 @endsection

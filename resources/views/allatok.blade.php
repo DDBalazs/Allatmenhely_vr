@@ -78,8 +78,8 @@
                             </select>
                         </div>
                         <div class="py-3">
-                            <button type="submit" class="btn btn-secondary w-100 my-3">Szűrés</button>
-                            <button type="reset" onclick="window.location.reload();" class="btn btn-secondary w-100">Visszaállítás</button>
+                            <button type="submit" class="btn btn-secondary w-100 my-3 szures">Szűrés</button>
+                            <button type="reset" onclick="window.location.reload();" class="btn btn-secondary w-100 reset">Visszaállítás</button>
                         </div>
                     </form>
                 </div>

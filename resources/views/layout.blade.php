@@ -6,6 +6,8 @@
     <title>Állatmenhely</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/lightstyle.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('css/darkstyle.css')}}"> --}}
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/style.js')}}"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -15,7 +17,7 @@
 <body>
 
 {{-- SWALFIREEK --}}
-@if (session('logsuccess'))
+    @if (session('logsuccess'))
         <script>
             Swal.fire({
                 icon: 'success',
@@ -87,9 +89,16 @@
                 confirmButtonText: 'Ok'
             });
         </script>
+    @elseif(session('logout'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Sikeres művelet!',
+            text: '{{session('logout')}}',
+            confirmButtonText: 'Ok'
+        })
+    </script>
     @endif
-
-
 
   <!--NAV-bar-->
   <nav class="container-fluid nav-bg navbar navbar-expand-lg" aria-label="Thirteenth navbar example"  id="stickyNav">
@@ -97,10 +106,12 @@
     <a class="navbar-brand me-0" href="/"><img src="{{asset('img/layout/logo.png')}}" alt="logo" class="logo"></a>
     <div class="d-flex flex-lg-row-reverse justify-content-between w-lg-100 w-75">
         <div class="d-lg-flex justify-content-end">
+                <a href=""><i class='bx bx-sun'></i></a>
+                <a href=""><i class='bx bx-moon' ></i></a>
             @if (Auth::check())
-                <a class="nav-link" href="/mypage">Fiókod<img src="{{asset('img/layout/auth.png')}}" alt="profile" class="logo"></a>
+                <a class="nav-link" style="display: flex; flex-direction: column; align-items: flex-end; margin-left: 20px;" href="/mypage"><img src="{{asset('img/layout/auth.png')}}" alt="profile" class="logo">Fiókod</a>
             @else
-                <a class="nav-link" href="/sign">Lépj be<img src="{{asset('img/layout/auth.png')}}" alt="profile" class="logo"></a>
+                <a class="nav-link" style="display: flex; flex-direction: column; align-items: flex-end; margin-left: 20px;" href="/sign"><img src="{{asset('img/layout/auth.png')}}" alt="profile" class="logo">Lépj be</a>
             @endif
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">

@@ -1,15 +1,6 @@
 @extends('layout')
 @section('content')
-    @if(session('logout'))
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Sikeres művelet!',
-            text: '{{session('logout')}}',
-            confirmButtonText: 'Ok'
-        })
-    </script>
-    @endif
+    <hr>
   <!--slideshowdown-->
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">

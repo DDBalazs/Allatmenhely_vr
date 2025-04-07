@@ -30,3 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
         LoginForm.classList.remove('active');
     });
 });
+
+
+document.getElementById('foglalasdiv').style.visibility = "hidden";
+function Foglalas(){
+    document.getElementById('foglalasdiv').style.visibility = "visible";
+}

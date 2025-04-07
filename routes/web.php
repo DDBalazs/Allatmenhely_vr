@@ -14,7 +14,7 @@ Route::get('/allatok', [AllatMenhely::class, 'Allatok']);
 Route::post('/allatok',[AllatMenhely::class, 'AllatokPost']);
 Route::get('/allatok/{id}', [AllatMenhely::class, 'AllatData']);
 Route::get('/allatok/foglalas',[AllatMenhely::class, 'Foglalas']);
-Route::get('/allatok/foglalas/{id}', [AllatMenhely::class, 'FoglalasData']);
+Route::get('/allatok/foglalas/{id}', [AllatMenhely::class, 'FoglalasID']);
 
 // documentumok
 Route::view('/information', 'information');

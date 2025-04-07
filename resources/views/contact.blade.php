@@ -30,19 +30,19 @@
                         <td class="col">8-14</td>
                         <th class="col">Zárva</th>
                         <td class="col">8-16</td>
-                        <td class="col">14-18</td>
-                        <td class="col">10-18</td>
+                        <td class="col">14-16</td>
+                        <td class="col">10-16</td>
                         <td class="col">10-16</td>
                         <th class="col">Zárva</th>
                     </tr>
                     <tr>
                         <th class="col">Macska</th>
-                        <td class="col">13-18</td>
+                        <td class="col">13-16</td>
                         <th class="col">Zárva</th>
-                        <td class="col">10-18</td>
-                        <td class="col">14-18</td>
-                        <td class="col">10-18</td>
-                        <td class="col">11-17</td>
+                        <td class="col">10-16</td>
+                        <td class="col">14-16</td>
+                        <td class="col">10-16</td>
+                        <td class="col">11-16</td>
                         <th class="col">Zárva</th>
                     </tr>
                 </tbody>

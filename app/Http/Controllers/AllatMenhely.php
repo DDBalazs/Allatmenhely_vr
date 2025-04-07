@@ -95,9 +95,9 @@ class AllatMenhely extends Controller
         }elseif($selectedrendezes == "oldest"){
             $rendezessql = " ORDER BY allat.beerkezes_datuma ASC";
         }elseif($selectedrendezes == "name-asc"){
-            $rendezessql = " Order By allat.nev DESC";
+            $rendezessql = " Order By allat.nev ASC";
         }elseif($selectedrendezes == "name-desc"){
-            $rendezessql = " Order by allat.nev ASC";
+            $rendezessql = " Order by allat.nev DESC";
         }else{
             $rendezessql = " ";
         }
