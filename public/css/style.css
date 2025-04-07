@@ -28,22 +28,26 @@ body{
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
-
+    width: 100%;
+    height: 50vh;
 }
 .bg2{
     background-image: url("../img/layout/slide2.png");
-    background-size: auto;
-    background-position: center center;
+    background-size:cover;
+    background-position: center;
     background-repeat: no-repeat;
-
+    width: 100%;
+    height: 50vh;
 }
 .bg3{
     background-image: url("../img/layout/slide3.png");
-    background-size: auto;
-    background-position: center center;
+    background-size:cover;
+    background-position: center;
     background-repeat: no-repeat;
-
+    width: 100%;
+    height: 50vh;
 }
+
 
 /* VONAL */
 hr{

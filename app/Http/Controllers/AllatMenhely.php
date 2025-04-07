@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Allatok;
@@ -138,20 +139,51 @@ class AllatMenhely extends Controller
             'foglalte'      =>  Foglalt::select('foglalt.allat_id','foglalt.datum','foglalt.onkentes_id','foglalt.teljesitve','allat.allat_id')
                                         ->Join('allat','foglalt.allat_id','allat.allat_id')
                                         ->where('foglalt.allat_id',$id)
-                                        ->where('foglalt.onkentes_id',NULL)
+                                        ->where('foglalt.onkentes_id','!=', NULL)
                                         ->get()
         ]);
     }
 
-    public function Foglalas($id){
-        return view('allat',[
+    public function FoglalasPost(Request $req, $id){
 
+        $today = now()->addDays(1)->format('Y-m-d');
+        $twoweeks = now()->addWeeks(2)->format('Y-m-d');
+        $allatID = (int)$id;
+
+        if(Foglalt::where('allat_id', $id)
+                    ->where('datum', $req->idopont)
+                    ->exists()){
+                        return back()->with('fogerr','Ez az időpont már foglalt!');
+                    }
+
+        $req->validate([
+            'idopont'       =>  'required|date|after_or_equal:'.$today.'|before_or_equal:'.$twoweeks.'|date_format:Y-m-d'
+        ],[
+            'idopont.required'          =>  'Az időpontot nem töltötte ki!',
+            'idpont.date'               =>  'Az időpontot dátum formájában adja meg!',
+            'idopont.digits'            =>  'Az időpontnak 8 karakterből kell álnia!',
+            'idopont.after_or_equal'    =>  'Az időpontot nem lehet a holnapi napnál korábbra foglalni!',
+            'idopont.before_or_equal'   =>  'Az időpontot előre csak napra pontosan 2 héttel lehet!'
         ]);
-    }
 
-    public function FoglalasData(){
-        return view('foglalas',[
+        // Foglalt::create([
+        //     'allat_id'      => $id,
+        //     'datum'         => $req->idopont,
+        //     'onkentes_id'   => auth()->id(),
+        //     'elfogadas'     => 'e',
+        //     'teljesitve'    => 0
+        // ]);
 
-        ]);
+        $data = new Foglalt;
+        $data->allat_id     = $id;
+        $data->datum        = $req->idopont;
+        $data->onkentes_id  = Auth::id();
+        // n = elutasitva, i = elfogadva, e = elfogadásra vár
+        $data->elfogadas    = 'e';
+        $data->teljesitve   = 0;
+
+        if($data->Save()){
+            return redirect('/mypage')->with('foglalas', 'Sikeresen foglaltál időpontot, hamarosan értesítjük az igénylésről!');
+        }
     }
 }

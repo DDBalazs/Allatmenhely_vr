@@ -98,6 +98,24 @@
             confirmButtonText: 'Ok'
         })
     </script>
+    @elseif(session('foglalas'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sikeres időpont foglalás',
+                text: '{{session('foglalas')}}',
+                confirmButtonText: 'Ok'
+            });
+        </script>
+    @elseif(session('fogerr'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sikeres időpont foglalás',
+                text: '{{session('fogerr')}}',
+                confirmButtonText: 'Ok'
+            });
+        </script>
     @endif
 
   <!--NAV-bar-->

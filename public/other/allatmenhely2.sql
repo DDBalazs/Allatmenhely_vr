@@ -42,11 +42,13 @@ CREATE TABLE `onkentes` (
 );
 
 CREATE TABLE `foglalt` (
+  `foglalt_id` INT PRIMARY KEY AUTO_INCREMENT,
   `allat_id` INT NOT NULL,
   FOREIGN KEY (`allat_id`) REFERENCES `allat` (`allat_id`),
   `datum` DATE NOT NULL,
   `onkentes_id` INT,
   FOREIGN KEY (`onkentes_id`) REFERENCES `onkentes` (`onkentes_id`),
+  `elfogadas` char(1) NOT NULL,
   `teljesitve` BOOLEAN NOT NULL
 );
 

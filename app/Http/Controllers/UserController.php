@@ -72,9 +72,6 @@ class UserController extends Controller
 
     }
 
-    public function Modositas(Request $req){
-
-    }
 
     public function MyPage(Request $req){
         if(Auth::check()){

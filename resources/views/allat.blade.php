@@ -43,19 +43,21 @@
             <h4 class="text-center">Szeretnél időpontot foglalni önkéntes sétáltatásához vagy esetleg, hogy csak meglátogasd és segítsd a munkánkat?</h4>
             <div class="mx-auto text-center">
                 <button class="btn btn-secondary w-50 h-50 d-incline-block" onclick="Foglalas()">Foglalj</button>
+                @if(count($foglalte)>0)
+                    <h5 class="py-2">Foglalt dátumok:</h5>
+                @foreach ($foglalte as $fog)
+                    <p>{{$fog->datum}}</p>
+                @endforeach
+                @endif
                     <div class="foglalilehetoseg" id="foglalasdiv">
-                        @foreach ($foglalte as $fog)
-                            <p>{{$fog->datum}}</p>
-                        @endforeach
-                        <form action="foglalas" method="POST">
+                        <form action="/allatok/{{$lekertallat->allat_id}}/foglalas" method="POST">
                             @csrf
                             <h3 class="text-center">Önkéntes tevékenységeket minden nap a látogatási idő után 14 és 18 óra között lehetséges</h3>
                             <label for="idopont">Válassz időpontot</label>
-                            <input type="date" class="form-control w-50 mx-auto" name="idopont" id="idopont" value="idopont" min="2025-04-01">
+                            <input type="date" class="form-control w-50 mx-auto" name="idopont" id="idopont" value="idopont">
                             <button type="submit" class="btn btn-dark my-2">Foglalás</button>
                         </form>
                     </div>
-
             </div>
         </div>
     </div>

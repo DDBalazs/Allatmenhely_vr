@@ -13,8 +13,7 @@ Route::view('/programok', 'programok');
 Route::get('/allatok', [AllatMenhely::class, 'Allatok']);
 Route::post('/allatok',[AllatMenhely::class, 'AllatokPost']);
 Route::get('/allatok/{id}', [AllatMenhely::class, 'AllatData']);
-Route::get('/allatok/{id}',[AllatMenhely::class, 'Foglalas']);
-Route::post('/allatok/{id}', [AllatMenhely::class, 'FoglalasPost']);
+Route::post('/allatok/{id}/foglalas', [AllatMenhely::class, 'FoglalasPost']);
 
 // documentumok
 Route::view('/information', 'information');
