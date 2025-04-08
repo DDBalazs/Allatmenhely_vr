@@ -129,7 +129,7 @@
 
   <!--NAV-bar-->
   <nav class="container-fluid nav-bg navbar navbar-expand-lg" aria-label="Thirteenth navbar example"  id="stickyNav">
-  <div class="container nav-bg navbar-dark d-flex justify-content-start">
+  <div class="container-fluid nav-bg navbar-dark d-flex justify-content-center">
     <a class="navbar-brand me-0" href="/"><img src="{{asset('img/layout/logo.png')}}" alt="logo" class="logo"></a>
     <div class="d-flex flex-lg-row-reverse justify-content-between w-lg-100 w-75">
         <div class="d-lg-flex justify-content-end">

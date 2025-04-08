@@ -49,7 +49,7 @@ class AllatMenhely extends Controller
         $selectedkor = $req->input('age');
         $selectedmeret = $req->input('size');
 
-        // faj keresése
+        // Faj keresése
         if($selectedanimal == "dog"){
             $animalsql = $animalsql." AND fajta.faj = 'kutya' ";
         } elseif ($selectedanimal == "cat"){

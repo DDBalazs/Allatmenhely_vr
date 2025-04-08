@@ -18,9 +18,9 @@
                         <label for="password">Jelszó</label>
                         <i class="bx bxs-lock-alt"></i>
                     </div>
-                    <div class="forget-section">
+                    {{-- <div class="forget-section">
                         <a href="">Elfelejtette a jelszavát?</a>
-                    </div>
+                    </div> --}}
                     <button class="buttn" type="submit">Bejelentkezés</button>
                     <div class="account-creation">
                         <span>Nincs még fiókod? <a href="" class="RegisterLink">Regisztrálj</a></span><br>
