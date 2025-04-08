@@ -1,5 +1,7 @@
 @extends('layout')
 @section('content')
+<div class="welcome">
+
     <hr>
   <!--slideshowdown-->
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -48,23 +50,25 @@
       <!-- Textboxok -->
       <main id="textboxok" class="welcomepage">
         <div class="container">
-            <div class="mx-auto text-center">
-                <div class="textboxok">
-                    <h2>Rólunk röviden</h2>
-                    <p>A Boldog Menhely egy szeretettel teli, biztonságos menedékhely macskák és kutyák számára, akik új esélyt érdemelnek egy meleg otthonra. Célunk, hogy minden állatunkat szeretettel és törődéssel körülvéve felkészítsük egy új családba való beilleszkedésre.</p>
-                </div>
-                <div class="row">
-                    <div class="col textboxok">
-                        <h2 class="py-2">Miért válassz minket?</h2>
-                        <p><b>Macskák és kutyák:</b> Két tappancsos barátunk is megtalálható nálunk, akik várakoznak, hogy örökbefogadják őket.</p>
-                        <p><b>Személyre szabott gondozás:</b> Minden állatunk egyéni igényei szerint kap táplálékot, orvosi ellátást és szeretetet.</p>
-                        <p><b>Programjaink:</b> Rendszeresen szervezünk nyílt napokat, örökbefogadási programokat és állatvédelmi workshopokat.</p>
-                        <p><b>Önkéntes lehetőség:</b> Ha nem tudsz örökbefogadni, de szeretnél segíteni, csatlakozz önkénteseink közé!</p>
-                    </div>
-                    <div class="col textboxok">
-                        <h2 class="py-2">Állataink</h2>
-                        <p><b>Macskák:</b> Cicusok, kandúrok, kiscicák – mindegyik egyedi személyiséggel és szeretettel teli szívvel várja új gazdiját.</p>
-                        <p><b>Kutyák:</b> Kicsik, nagyok, fiatalok és idősek – mindegyik kutyusunk egy igazi társ, aki hűséggel és örömmel fogadja majd az új családot.</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="bemutatkozas text-center">
+                        <div class="textboxok mb-4">
+                            <h2>Rólunk röviden</h2>
+                            <p>A Boldog Menhely egy szeretettel teli, biztonságos menedékhely macskák és kutyák számára, akik új esélyt érdemelnek egy meleg otthonra. Célunk, hogy minden állatunkat szeretettel és törődéssel körülvéve felkészítsük egy új családba való beilleszkedésre.</p>
+                        </div>
+                        <div class="textboxok mb-4">
+                            <h2 class="py-2">Miért válassz minket?</h2>
+                            <p><strong>Macskák és kutyák:</strong> Két tappancsos barátunk is megtalálható nálunk, akik várakoznak, hogy örökbefogadják őket.</p>
+                            <p><strong>Személyre szabott gondozás:</strong> Minden állatunk egyéni igényei szerint kap táplálékot, orvosi ellátást és szeretetet.</p>
+                            <p><strong>Programjaink:</strong> Rendszeresen szervezünk nyílt napokat, örökbefogadási programokat és állatvédelmi workshopokat.</p>
+                            <p><strong>Önkéntes lehetőség:</strong> Ha nem tudsz örökbefogadni, de szeretnél segíteni, csatlakozz önkénteseink közé!</p>
+                        </div>
+                        <div class="textboxok">
+                            <h2 class="py-2">Állataink</h2>
+                            <p><strong>Macskák:</strong> Cicusok, kandúrok, kiscicák - mindegyik egyedi személyiséggel és szeretettel teli szívvel várja új gazdiját.</p>
+                            <p><strong>Kutyák:</strong> Kicsik, nagyok, fiatalok és idősek - mindegyik kutyusunk egy igazi társ, aki hűséggel és örömmel fogadja majd az új családot.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -130,5 +134,6 @@
               </div>
            </div>
       </main>
+</div>
 
 @endsection

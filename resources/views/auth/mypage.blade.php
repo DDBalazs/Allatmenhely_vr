@@ -71,7 +71,7 @@
                                     <td></td>
                                 @endif
                                 <td>
-                                    <form action="/mypage/{id}" method="POST">
+                                    <form action="/mypage/{{$db->foglalt_id}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger w-auto mx-2" type="submit">Foglalás lemondása</button>
