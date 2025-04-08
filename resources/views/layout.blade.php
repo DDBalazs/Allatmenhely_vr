@@ -6,8 +6,6 @@
     <title>Állatmenhely</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/lightstyle.css')}}">
-    {{-- <link rel="stylesheet" href="{{asset('css/darkstyle.css')}}"> --}}
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/style.js')}}"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -151,23 +149,23 @@
         <div class="collapse navbar-collapse d-lg-flex justify-content-start justify-content-column" id="navbarsExample11">
           <ul class="navbar-nav justify-content-lg-left">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Főoldal</a>
+              <a class="nav-link" aria-current="page" href="/">Főoldal</a>
             </li>
             <div class="vr"></div>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/allatok">Állataink</a>
+              <a class="nav-link" aria-current="page" href="/allatok">Állataink</a>
             </li>
             <div class="vr"></div>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/programok">Programjaink</a>
+              <a class="nav-link" aria-current="page" href="/programok">Programjaink</a>
             </li>
             <div class="vr"></div>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/information">Gyakori kérdések és szabályzatok</a>
+              <a class="nav-link" aria-current="page" href="/information">Gyakori kérdések és szabályzatok</a>
             </li>
             <div class="vr"></div>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/contact">Elérhetőségeink</a>
+              <a class="nav-link" aria-current="page" href="/contact">Elérhetőségeink</a>
             </li>
           </ul>
         </div>
