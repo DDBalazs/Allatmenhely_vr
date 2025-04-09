@@ -2,17 +2,16 @@
 @section('content')
 
 <main class="program">
-    <hr>
     <div class="container">
         <div class="kiemelt">
             <div class="py-4">
                 <h1 class="text-center">Programjaink</h1>
-                <hr class="w-75 mx-auto border border-dark my-2">
+                <hr class="w-75 mx-auto">
                 <h5 class="text-center">Csatlakozz tevékenységeinkhez, és segíts nekünk, hogy az állatmenhelyünkön élő kutyák és macskák boldogabb életet élhessenek! Ismerd meg programjainkat, és válaszd ki, hogyan szeretnél részt venni.</h5>
             </div>
             <div class="py-4">
                 <h2>Kiemelt programjaink</h2>
-                <hr class="w-25 border border-dark my-2">
+                <hr class="w-25">
                 <h3>Kutyasétáltatás</h3>
                 <h5>Szeretnél segíteni, de nincs lehetőséged örökbe fogadni? Csatlakozz kutyasétáltatási programunkhoz! Heti rendszerességgel lehetőséged van sétáltatni menhelyi kutyáinkat, ezzel is hozzájárulva boldogabb életükhöz.</h5>
                 <li>Időpontok: Minden héten <b>szerdán</b>, <b>pénteken</b> és <b>szombaton</b></li>
@@ -40,7 +39,7 @@
         </div>
         <div class="galeria py-4">
                 <h1 class="text-center">Galéria</h1>
-                <hr class="w-75 mx-auto border border-dark my-2">
+                <hr class="w-75 mx-auto">
             <div class="row mx-auto text-center">
                 <div class="col"><img src="{{asset('img/programok/elso.png')}}" alt="elso"></div>
                 <div class="col"><img src="{{asset('img/programok/masodik.png')}}" alt="masodik"></div>
@@ -50,7 +49,7 @@
         <div class="gyik">
             <div class="py-4">
                 <h1 class="text-center">Gyakran ismételt kérdések</h1>
-                <hr class="w-75 mx-auto border border-dark my-2">
+                <hr class="w-75 mx-auto">
                 <h5>Kell-e előzetesen jelentkeznem a kutyasétáltatásra?</h5>
                 <p>Igen kell előzetesen jeletkezni, ha van már fiókod akkor a Időpontfoglalás fűlben, ha még nincs akkor a fiók fülön tudsz regisztrálni.</p>
                 <br>

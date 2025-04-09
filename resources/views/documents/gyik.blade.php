@@ -2,16 +2,21 @@
 @section('content')
 
 <main class="documents">
-    <hr>
     <div class="container">
         <div class="py-2">
-            <a href="/information" class="d-flex mt-3"><i class='bx bx-left-arrow-alt' ></i>Lépj vissza!</a>
-            <h1 class="text-center">Gyakran Ismételt Kérdések (GYIK)</h1>
-            <hr class="w-75 mx-auto border border-dark my-2">
+            <div class="d-flex align-items-center justify-content-between mt-3">
+                <a href="/information" class="d-inline-flex align-items-center custom-link">
+                    <i class='bx bx-left-arrow-alt me-2'></i>
+                    <span>Lépj vissza!</span>
+                </a>
+                <h1 class="text-center mb-0">Gyakran Ismételt Kérdések (GYIK)</h1>
+                <div style="width: 120px;"></div>
+            </div>
+            <hr class="w-100 my-2 mx-auto">
         </div>
         <div class="py-2">
             <h2>1. Általános Kérdések</h2>
-            <hr class="w-25 border border-dark my-2">
+
             <h4>Mi a menhely missziója?</h4>
             <p>A menhely célja, hogy menedéket és gondoskodást biztosítsunk az elhagyott és sérült állatoknak, és segítsünk nekik új otthonra találni.</p>
             <br>
@@ -20,7 +25,7 @@
         </div>
         <div class="py-2">
             <h2>2. Örökbefogadással Kapcsolatos Kérdések</h2>
-            <hr class="w-50 border border-dark my-2">
+
             <h4>Hogyan lehet örökbefogadni egy állatot?</h4>
             <p>Az örökbefogadáshoz töltse ki az online jelentkezési űrlapot, majd vegye fel a kapcsolatot velünk személyesen vagy telefonon.</p>
             <br>
@@ -29,7 +34,7 @@
         </div>
         <div class="py-2">
             <h2>3. Adományozással Kapcsolatos Kérdések</h2>
-            <hr class="w-50 border border-dark my-2">
+
             <h4>Hogyan lehet adományozni?</h4>
             <p>Adományozni online banki átutalással vagy személyesen is lehet.</p>
             <br>
@@ -38,7 +43,7 @@
         </div>
         <div class="py-2">
             <h2>4. Önkéntes Munkával Kapcsolatos Kérdések</h2>
-            <hr class="w-50 border border-dark my-2">
+
             <h4>Hogyan lehet önkéntesként segíteni?</h4>
             <p>Jelentkezzen a profilnál!</a>.</p>
             <br>
@@ -47,7 +52,7 @@
         </div>
         <div class="py-2">
             <h2>5. Állatokkal Kapcsolatos Kérdések</h2>
-            <hr class="w-50 border border-dark my-2">
+
             <h4>Milyen állatok vannak a menhelyen?</h4>
             <p>A menhelyen kutyák, macskák és egyéb kisállatok találhatók.</p>
             <br>
@@ -56,7 +61,7 @@
         </div>
         <div class="py-2">
             <h2>6. Egyéb Kérdések</h2>
-            <hr class="w-25 border border-dark my-2">
+
             <h4>Hogyan lehet kapcsolatba lépni a menhellyel?</h4>
             <p>Kapcsolatba léphet velünk az info@boldogmenhely.hu e-mail címen vagy a +36 1 234 5678 telefonszámon.</p>
             <br>

@@ -15,17 +15,17 @@ class AllatMenhely extends Controller
     public function Welcome(){
         return view('welcome', [
             'oldallatokk'   =>  Allatok::select('allat.allat_id', 'allat.nev','allat.fajta_id','fajta.fajta_id','fajta.faj','allat.beerkezes_datuma','allat.orokbefogadhato')
-                                            ->join('fajta', 'allat.allat_id','=','fajta.fajta_id')
+                                            ->join('fajta', 'allat.fajta_id','=','fajta.fajta_id')
                                             ->where('fajta.faj','kutya')
-                                            // ->where('allat.orokbefogadhato', 1)
-                                            ->OrderBy('allat.beerkezes_datuma', 'DESC')
+                                            ->where('allat.orokbefogadhato', 1)
+                                            ->OrderBy('allat.beerkezes_datuma')
                                             ->limit(3)
                                             ->get(),
 
             'oldallatokc'   =>  Allatok::select('allat.allat_id', 'allat.nev','allat.fajta_id','fajta.fajta_id','fajta.faj','allat.beerkezes_datuma','allat.orokbefogadhato')
-                                            ->join('fajta', 'allat.allat_id','=','fajta.fajta_id')
+                                            ->join('fajta', 'allat.fajta_id','=','fajta.fajta_id')
                                             ->where('fajta.faj','macska')
-                                            // ->where('allat.orokbefogadhato', 1)
+                                            ->where('allat.orokbefogadhato', 1)
                                             ->OrderBy('allat.beerkezes_datuma')
                                             ->limit(3)
                                             ->get()
@@ -126,7 +126,7 @@ class AllatMenhely extends Controller
 
     public function AllatData($id){
         return view('allat',[
-            'lekertallat'   =>  Allatok::select('allat.allat_id','allat.nev', 'allat.fajta_id','allat.megjegyzes','allat.szuldatum','allat.beerkezes_datuma','fajta.fajta_id','fajta.faj')
+            'lekertallat'   =>  Allatok::select('allat.allat_id','allat.nev', 'allat.fajta_id','allat.megjegyzes','allat.szuldatum','allat.beerkezes_datuma','fajta.fajta_id','fajta.faj','allat.szin')
                                         ->join('fajta', 'allat.fajta_id','fajta.fajta_id')
                                         ->where('allat.allat_id',$id)
                                         ->first(),

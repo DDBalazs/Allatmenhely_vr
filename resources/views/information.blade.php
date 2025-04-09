@@ -1,9 +1,7 @@
 @extends('layout')
 @section('content')
 
-
-<hr>
-<main class="information  d-flex align-items-center justify-content-center">
+ <main class="information  d-flex align-items-center justify-content-center">
     <div class="container">
         <div class="row mx-auto text-center">
             <div class="col">

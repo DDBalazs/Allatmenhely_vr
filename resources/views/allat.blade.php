@@ -5,9 +5,9 @@
     <div class="allathead">
         <h1 class="text-center">Állataink</h1>
     </div>
-    <hr class="w-75 mx-auto my-2">
+    <hr class="felso">
     <div class="container">
-        <div class="row">
+        <div class="row asd">
             <div class="col mx-auto text-center">
                 @if ($lekertallat->faj == "kutya")
                     <img src="{{asset('img/allatok/k/k'.$lekertallat->allat_id.'.png')}}" alt="{{$lekertallat->allat_id}}" class="w-100 h-100">
@@ -16,22 +16,34 @@
                 @endif
             </div>
             <div class="col">
-                <p class="px-3 fs-3"><strong>{{$lekertallat->nev}}</strong></p>
+                <p class="fs-3"><strong>{{$lekertallat->nev}}</strong></p>
                 <p>{{$lekertallat->megjegyzes}}</p>
-                <p>Születési ideje: {{$lekertallat->szuldatum}}</p>
-                <p>Bekerülési ideje: {{$lekertallat->beerkezes_datuma}}</p>
-                @foreach ($merete as $kat)
-                    <p>Mérete: {{$kat->kategoria}}</p>
-                @endforeach
-                @foreach ($fajtaja as $faj)
-                    <p>Fajtája: {{$faj->pontos_fajta}}</p>
-                @endforeach
-                @if ($lekertallat->nem ==  1)
-                    <p>Nem: fiú</p>
-                @else
-                    <p>Nem: lány</p>
-                @endif
-                <p>Szín: {{$lekertallat->szin}}</p>
+                <div class="top-0 start-0">
+                    <p>Születési ideje: {{date_format(date_create($lekertallat->szuldatum),'Y.m.d.')}}</p>
+                    <p>Bekerülési ideje: {{date_format(date_create($lekertallat->beerkezes_datuma),'Y.m.d.')}}</p>
+                    @foreach ($merete as $kat)
+                        @if ($kat->kategoria == "XS")
+                                <p>Mérete: Törpe méretű</p>
+                            @elseif ($kat->kategoria == "S")
+                                <p>Mérete: Kis méretű</p>
+                            @elseif ($kat->kategoria == "M")
+                                <p>Mérete: Közepes méretű</p>
+                            @elseif ($kat->kategoria == "L")
+                                <p>Mérete: Nagy méretű</p>
+                            @else
+                                <p>Mérete: Óriás méretű</p>
+                            @endif
+                    @endforeach
+                    @foreach ($fajtaja as $faj)
+                        <p>Fajtája: {{$faj->pontos_fajta}}</p>
+                    @endforeach
+                    @if ($lekertallat->nem ==  1)
+                        <p>Nem: fiú</p>
+                    @else
+                        <p>Nem: lány</p>
+                    @endif
+                    <p>Szín: {{$lekertallat->szin}}</p>
+                </div>
             </div>
         </div>
     </div>
@@ -39,18 +51,20 @@
     <div class="container">
         <div class="foglalas">
             <h2 class="text-center">Foglalj időpontot</h2>
-            <h4 class="text-center">Szeretnél időpontot foglalni önkéntes sétáltatásához vagy esetleg, hogy csak meglátogasd és segítsd a munkánkat?</h4>
+            <h4 class="text-center" style="padding-bottom: 20px">Szeretnél időpontot foglalni önkéntes sétáltatásához vagy esetleg, hogy csak meglátogasd és segítsd a munkánkat?</h4>
             <div class="mx-auto text-center">
                 @if (Auth::check())
-                    <button class="btn btn-secondary w-50 h-50 d-incline-block" onclick="Foglalas()">Foglalj</button>
+                    <button class="btn w-50 h-50 d-incline-block" onclick="Foglalas()">Foglalj</button>
                 @else
-                    <a href="/sign" class="btn btn-secondary w-50 h-50 d-incline-block">Nem vagy bejelentkezve, kattints ide és jelenkezz be</a>
+                    <a href="/sign" class="btn w-50 h-50 d-incline-block">Nem vagy bejelentkezve, kattints ide és jelenkezz be</a>
                 @endif
                 @if(count($foglalte)>0)
                     <h5 class="py-2">Foglalt dátumok:</h5>
+                    <p class="text-danger">
                 @foreach ($foglalte as $fog)
-                    <p>{{$fog->datum}}</p>
+                    {{date_format(date_create($fog->datum),'Y.m.d.')}}
                 @endforeach
+                    </p>
                 @endif
                     <div class="foglalilehetoseg" id="foglalasdiv">
                         <form action="/allatok/{{$lekertallat->allat_id}}/foglalas" method="POST">
@@ -60,6 +74,11 @@
                             <input type="date" class="form-control w-50 mx-auto" name="idopont" id="idopont" value="idopont">
                             <button type="submit" class="btn btn-dark my-2">Foglalás</button>
                         </form>
+                        @if ($errors->any)
+                                @foreach ($errors->all() as $sv)
+                                    <strong><span class="text-danger text-center mx-auto">{{$sv}}</span></strong><br>
+                                @endforeach
+                            @endif
                     </div>
             </div>
         </div>

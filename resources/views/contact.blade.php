@@ -2,48 +2,47 @@
 @section('content')
 
 <main class="contact">
-    <hr>
     <div class="container">
         <div class="py-2 text-center">
             <h1><b>Nyitvatartásunk</b></h1>
             <h3><b>Kutyák és macskák látogatási ideje</b></h3>
         </div>
-        <hr class="w-75 mx-auto border border-dark my-2">
+        <hr class="w-75 mx-auto my-2">
         <h3 class="text-center py-2"><b>Címünk:</b> 1234 Boldog Város, Állatbarát utca 7.</h3>
         <div class="py-4">
-            <table class="table text-center">
+            <table class="table table-hover rounded-3 overflow-hidden shadow-sm text-center">
                 <thead>
                     <tr>
-                        <th class="col"></th>
-                        <th class="col">Hétfő</th>
-                        <th class="col">Kedd</th>
-                        <th class="col">Szerda</th>
-                        <th class="col">Csütörtök</th>
-                        <th class="col">Péntek</th>
-                        <th class="col">Szombat</th>
-                        <th class="col">Vasárnap</th>
+                        <th scope="col" class="fw-semibold text-start ps-4"></th>
+                        <th scope="col" class="fw-semibold">Hétfő</th>
+                        <th scope="col" class="fw-semibold">Kedd</th>
+                        <th scope="col" class="fw-semibold">Szerda</th>
+                        <th scope="col" class="fw-semibold">Csütörtök</th>
+                        <th scope="col" class="fw-semibold">Péntek</th>
+                        <th scope="col" class="fw-semibold">Szombat</th>
+                        <th scope="col" class="fw-semibold pe-4">Vasárnap</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th class="col">Kutyák</th>
-                        <td class="col">8-14</td>
-                        <th class="col">Zárva</th>
-                        <td class="col">8-16</td>
-                        <td class="col">14-16</td>
-                        <td class="col">10-16</td>
-                        <td class="col">10-16</td>
-                        <th class="col">Zárva</th>
+                        <th scope="row" class="text-start ps-4 fw-semibold">Kutyák</th>
+                        <td>8-14</td>
+                        <td class="text-danger fw-medium">Zárva</td>
+                        <td>8-16</td>
+                        <td>14-16</td>
+                        <td>10-16</td>
+                        <td>10-16</td>
+                        <td class="text-danger fw-medium pe-4">Zárva</td>
                     </tr>
                     <tr>
-                        <th class="col">Macska</th>
-                        <td class="col">13-16</td>
-                        <th class="col">Zárva</th>
-                        <td class="col">10-16</td>
-                        <td class="col">14-16</td>
-                        <td class="col">10-16</td>
-                        <td class="col">11-16</td>
-                        <th class="col">Zárva</th>
+                        <th scope="row" class="text-start ps-4 fw-semibold">Macskák</th>
+                        <td>13-16</td>
+                        <td class="text-danger fw-medium">Zárva</td>
+                        <td>10-16</td>
+                        <td>14-16</td>
+                        <td>10-16</td>
+                        <td>11-16</td>
+                        <td class="text-danger fw-medium pe-4">Zárva</td>
                     </tr>
                 </tbody>
             </table>
@@ -56,12 +55,12 @@
             </div>
         </div>
     </div>
-    <hr>
+    <hr class="jo">
     <div class="donation">
         <div class="container">
             <div class="py-2 text-center">
                 <h1 class="py-2">Adományozási lehetőségek – Segíts, hogy segíthessünk!</h1>
-                <hr class="w-75 mx-auto border border-dark my-4">
+                <hr class="w-75 mx-auto my-4">
                 <h4>Menhelyünk működését és az állatok ellátását kizárólag támogatásokból tudjuk fenntartani. Ha szeretnél hozzájárulni a mentett állatok gondozásához, az alábbi módokon támogathatsz minket</h4>
             </div>
             <div class="row text-center mx-auto">
@@ -84,12 +83,12 @@
             </div>
         </div>
     </div>
-    <hr>
+    <hr class="jo">
     <div class="tamogatok">
         <div class="container">
             <div class="py-2 text-center">
                 <h1>Támogatóink</h1>
-                <hr class="w-75 mx-auto border border-dark my-4">
+                <hr class="w-25 mx-auto my-4">
                 <h3>Főbb támogatóink</h3>
             </div>
             <div class="row text-center mx-auto">
@@ -112,12 +111,12 @@
             </div>
         </div>
     </div>
-    <hr>
+    <hr class="jo">
     <div class="surgos">
         <div class="container">
             <div class="py-2 text-center">
                 <h1>Sürgős esetek elérhetősége</h1>
-                <hr class="w-75 mx-auto border border-white my-4">
+                <hr class="w-75 mx-auto my-4">
                 <h3>Ha talált vagy bajba jutott állatról szeretne bejelentést tenni, kérjük, az alábbi elérhetőségeken vegye fel velünk a kapcsolatot</h3>
             </div>
             <div class="row mx-auto text-center">

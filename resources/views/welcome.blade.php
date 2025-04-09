@@ -2,7 +2,6 @@
 @section('content')
 <div class="welcome">
 
-    <hr>
   <!--slideshowdown-->
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -130,7 +129,7 @@
                   <div class="onkentes">
                     <h2>Foglalj önkéntes tevékenységeket!</h2>
                     <p>Szeretnéd, hogy a segítséged valódi változást hozzon? Csatlakozz önkénteseink közé, és segíts, hogy minden állat megtalálja az örök otthonát. Akár néhány óra, akár rendszeres segítség, a te időd és energiád óriási különbséget jelenthet egy állat életében. Legyél részese egy szeretettel teli közösségnek, és éld át, milyen érzés örömet szerezni másoknak!</p>
-                    <a href="/allatok/foglalas" class="btn">Foglalj!</a>
+                    <a href="/allatok" class="btn">Foglalj!</a>
             @endif
                 </div>
               </div>
