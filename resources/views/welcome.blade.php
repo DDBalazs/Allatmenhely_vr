@@ -83,7 +83,7 @@
                         <div class="row mx-auto text-center">
                             <h2 class="py-2">Kutyák:</h2>
                             @foreach ($oldallatokk as $kutyak)
-                                <div class="col">
+                                <div class="col-12 col-lg-4" style="margin-top: 24px">
                                     <a href="/allatok/{{$kutyak->allat_id}}" class="text-decoration-none">
                                         <div class="card">
                                             <img src="{{asset('img/allatok/k/k'.$kutyak->allat_id.'.png')}}" alt="{{$kutyak->allat_id.'.png'}}" class="card-img-top">
@@ -99,7 +99,7 @@
                         <div class="row mx-auto text-center">
                             <h2 class="py-2">Macskák:</h2>
                             @foreach ($oldallatokc as $macskak)
-                                <div class="col">
+                                <div class="col-12 col-lg-4" style="margin-top: 24px">
                                     <a href="/allatok/{{$macskak->allat_id}}" class="text-decoration-none">
                                         <div class="card kartya">
                                             <img src="{{asset('img/allatok/c/c'.$macskak->allat_id.'.png')}}" alt="{{$macskak->allat_id.'.png'}}" class="card-img-top">
@@ -125,7 +125,7 @@
                   <p>Szeretnéd, hogy a segítséged valódi változást hozzon? Csatlakozz önkénteseink közé, és segíts, hogy minden állat megtalálja az örök otthonát. Akár néhány óra, akár rendszeres segítség, a te időd és energiád óriási különbséget jelenthet egy állat életében. Legyél részese egy szeretettel teli közösségnek, és éld át, milyen érzés örömet szerezni másoknak!</p>
                   <a href="/sign" class="btn">Jelentkezz!</a>
             @else
-            <div class="bg-light">
+            <div class="on">
                 <div class="text-center">
                   <div class="onkentes">
                     <h2>Foglalj önkéntes tevékenységeket!</h2>

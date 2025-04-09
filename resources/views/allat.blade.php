@@ -2,11 +2,10 @@
 @section('content')
 
 <main class="allat">
-    <hr>
     <div class="allathead">
         <h1 class="text-center">Állataink</h1>
     </div>
-    <hr class="w-75 mx-auto border border-dark my-2">
+    <hr class="w-75 mx-auto my-2">
     <div class="container">
         <div class="row">
             <div class="col mx-auto text-center">

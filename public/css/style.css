@@ -261,14 +261,14 @@ body{
                 }
             }
         }
-        @media only screen and (max-width: 850px) {
-            .onkentes{
-                width: auto;
-            }
-            .textboxok{
-                width: auto;
-            }
-          }
+    }
+}
+@media only screen and (max-width: 850px) {
+    .onkentes{
+        width: auto;
+    }
+    .textboxok{
+        width: auto;
     }
 }
 
@@ -630,11 +630,12 @@ input:-internal-autofill-selected {
     align-items: center;
 
     color: var(--sign-text);
+
+
     hr{
         border: 1px solid var(--vonal);
         opacity: 1;
     }
-
     .mypagebg{
     height: auto;
     width: 700px;
@@ -856,6 +857,9 @@ input:-internal-autofill-selected {
 
 .allat{
 
+    background-color: var(--base-variant);
+    color: var(--secondary-text);
+
     hr{
         border: 1px solid var(--vonal);
     }
@@ -865,7 +869,8 @@ input:-internal-autofill-selected {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(97, 49, 21);
+        background-color: var(--base-color);
+        color: var(--text-color);
     }
     .foglalas{
         height: auto;

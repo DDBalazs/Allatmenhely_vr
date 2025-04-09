@@ -114,10 +114,10 @@ class UserController extends Controller
         }
     }
 
-    public function DelTel(Request $req){
+    public function DelTel(Request $request){
         $user = Auth::user();
         $user->tel = null;
-        $user->Save();
+        $user->save();
 
         return redirect()->back()->with('deltel', 'Telefonszám sikeresen törölve!');
     }

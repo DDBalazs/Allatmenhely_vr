@@ -18,7 +18,6 @@
                 @if (Auth::user()->tel != NULL)
                     <form action="/mypage/deltel" method="POST" class="d-flex align-items-center">
                         @csrf
-                        @method('DELETE')
                         <p class="text-start mb-0 me-2"> {{Auth::user()->tel}}</p>
                         <button class="btn btn-dark w-auto" type="submit">Telefonszám törlése</button>
                     </form>

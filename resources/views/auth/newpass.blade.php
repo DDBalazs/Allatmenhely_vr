@@ -6,7 +6,7 @@
             <h2><b>Jelszó módosítás</b></h2>
         </div>
         <hr class="w-75 mx-auto border border-dark my-2">
-        <form action="/newpass" method="POST">
+        <form action="/mypage/newpass" method="POST">
             @csrf
             <div class="py-2 profdata d-flex align-items-center">
                 <p class="text-start">Régi jelszó:</p>
