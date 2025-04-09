@@ -28,6 +28,10 @@
     --gbutton-border: #0050a7;
     --button-text: #ffffff;
     --nbutton-color: #e74c3c;
+    --nbutton-border: #ac3629;
+    --wdbutton-color: #585858;
+    --wdbutton-border: #3b3b3b;
+    --wdbutton-text: #eeeeee;
 
     --sign-bg : #ffffff;
     --sign-text: #ffffff;
@@ -37,6 +41,8 @@
     --welbg-image1 : url('../img/layout/light/1.png');
     --welbg-image2 : url('../img/layout/light/2.png');
     --welbg-image3 : url('../img/layout/light/3.png');
+
+    --vonal : #494949 ;
 }
 .darkmode{
     --nav-bg : #2D2D2D;
@@ -64,6 +70,10 @@
     --gbutton-border: #0050a7;
     --button-text: #ffffff;
     --nbutton-color: #e74c3c;
+    --nbutton-border: #ac3629;
+    --wdbutton-color: #b4b4b4;
+    --wdbutton-border: #3b3b3b;
+    --wdbutton-text: #585858;
 
     --sign-bg : #ffffff;
     --sign-text: #ffffff;
@@ -73,6 +83,8 @@
     --welbg-image1 : url('../img/layout/dark/1.png');
     --welbg-image2 : url('../img/layout/dark/2.png');
     --welbg-image3 : url('../img/layout/dark/3.png');
+
+    --vonal : #adadad ;
 
     #theme-switch{
         svg:first-child{
@@ -541,7 +553,7 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:autofill,
 input:-internal-autofill-selected {
-    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition: "background-color 9999s ease-out";
     -webkit-transition-delay: 9999s;
 }
 
@@ -617,13 +629,19 @@ input:-internal-autofill-selected {
     justify-content: center;
     align-items: center;
 
+    color: var(--sign-text);
+    hr{
+        border: 1px solid var(--vonal);
+        opacity: 1;
+    }
+
     .mypagebg{
-    height: 800px;
+    height: auto;
     width: 700px;
     border: 2px solid rgba(255,255,255,.4);
     border-radius: 10px;
     background: rgba(0,0,0,.2);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
     box-shadow: 0 0 5px rgba(0, 0, 0, .2),
     0 0 15px rgba(0,0,0,.2),
     0 0 30px rgba(0,0,0,.2);
@@ -632,7 +650,7 @@ input:-internal-autofill-selected {
     overflow: hidden;
 
         h2{
-            margin: 30px;
+            margin-top: 30px;
         }
         p{
             font-size: 30px;
@@ -640,6 +658,22 @@ input:-internal-autofill-selected {
     }
     .profdata{
         margin-left: 3rem;
+    }
+
+    .kij{
+        background-color: var(--nbutton-color);
+        color: var(--button-text);
+        border: 1px solid var(--nbutton-border);
+    }
+    .change{
+        background-color: var(--gbutton-color);
+        color: var(--button-text);
+        border: 1px solid var(--gbutton-border);
+    }
+    .save{
+        background-color: var(--wdbutton-color);
+        color: var(--wdbutton-text);
+        border: 1px solid var(--wdbutton-border);
     }
 }
 
@@ -821,6 +855,11 @@ input:-internal-autofill-selected {
 }
 
 .allat{
+
+    hr{
+        border: 1px solid var(--vonal);
+    }
+
     .allathead{
         height: 200px;
         display: flex;

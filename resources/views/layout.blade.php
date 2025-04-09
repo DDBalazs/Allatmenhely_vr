@@ -172,6 +172,7 @@
     </div>
     </div>
   </nav>
+  <hr style="border: 10px solid black;opacity: 1;margin: 0px;">
 
   @yield('content')
 

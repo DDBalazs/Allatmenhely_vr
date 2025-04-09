@@ -1,11 +1,10 @@
 @extends('layout')
 @section('content')
-    <hr>
     <div class="allatok">
         <div class="container">
             <div class="text-center">
                 <h1 class="py-3">Állataink</h1>
-                <hr class="w-75 mx-auto border border-dark my-2">
+                <hr class="w-75 mx-auto my-2">
 
             </div>
             <div class="row py-4">
@@ -14,7 +13,7 @@
                         @csrf
                         <div class="py-3">
                             <h3 class="text-center">Állatkereső szűrő</h3>
-                            <hr class="w-75 mx-auto border border-dark my-2">
+                            <hr class="w-75 mx-auto border my-2">
                         </div>
                         <div class="py-3">
                             <h5>Állatfaj</h5>
