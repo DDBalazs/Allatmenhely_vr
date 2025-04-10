@@ -10,42 +10,44 @@
         <hr class="w-75 mx-auto my-2">
         <h3 class="text-center py-2"><b>Címünk:</b> 1234 Boldog Város, Állatbarát utca 7.</h3>
         <div class="py-4">
-            <table class="table table-hover rounded-3 overflow-hidden shadow-sm text-center">
-                <thead>
-                    <tr>
-                        <th scope="col" class="fw-semibold text-start ps-4"></th>
-                        <th scope="col" class="fw-semibold">Hétfő</th>
-                        <th scope="col" class="fw-semibold">Kedd</th>
-                        <th scope="col" class="fw-semibold">Szerda</th>
-                        <th scope="col" class="fw-semibold">Csütörtök</th>
-                        <th scope="col" class="fw-semibold">Péntek</th>
-                        <th scope="col" class="fw-semibold">Szombat</th>
-                        <th scope="col" class="fw-semibold pe-4">Vasárnap</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row" class="text-start ps-4 fw-semibold">Kutyák</th>
-                        <td>8-14</td>
-                        <td class="text-danger fw-medium">Zárva</td>
-                        <td>8-16</td>
-                        <td>14-16</td>
-                        <td>10-16</td>
-                        <td>10-16</td>
-                        <td class="text-danger fw-medium pe-4">Zárva</td>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="text-start ps-4 fw-semibold">Macskák</th>
-                        <td>13-16</td>
-                        <td class="text-danger fw-medium">Zárva</td>
-                        <td>10-16</td>
-                        <td>14-16</td>
-                        <td>10-16</td>
-                        <td>11-16</td>
-                        <td class="text-danger fw-medium pe-4">Zárva</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-hover rounded-3 overflow-hidden shadow-sm text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="fw-semibold text-start ps-4"></th>
+                            <th scope="col" class="fw-semibold">Hétfő</th>
+                            <th scope="col" class="fw-semibold">Kedd</th>
+                            <th scope="col" class="fw-semibold">Szerda</th>
+                            <th scope="col" class="fw-semibold">Csütörtök</th>
+                            <th scope="col" class="fw-semibold">Péntek</th>
+                            <th scope="col" class="fw-semibold">Szombat</th>
+                            <th scope="col" class="fw-semibold pe-4">Vasárnap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start ps-4 fw-semibold">Kutyák</th>
+                            <td>8-14</td>
+                            <td class="text-danger fw-medium">Zárva</td>
+                            <td>8-16</td>
+                            <td>14-16</td>
+                            <td>10-16</td>
+                            <td>10-16</td>
+                            <td class="text-danger fw-medium pe-4">Zárva</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start ps-4 fw-semibold">Macskák</th>
+                            <td>13-16</td>
+                            <td class="text-danger fw-medium">Zárva</td>
+                            <td>10-16</td>
+                            <td>14-16</td>
+                            <td>10-16</td>
+                            <td>11-16</td>
+                            <td class="text-danger fw-medium pe-4">Zárva</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <div>
                 <p class="text">Az adott időpontban bármiféle előre lebeszéltek nélkül nyugodtan jöhetnek megnézni az állatokat. A bármiféle kérdésük lenne kérem hívjon fel minket az adott telefonszámon és/vagy írjon nekünk E-Mailt. Amennyiben telefonon szeretne hívni minket kedden és vasárnap <strong>NEM</strong> vagyunk nyitva. A többi napon reggel 7:30 és 18:30 között nagyon szívesen fogadjuk a hívásukat.</p>
                 <div class="row mx-auto text-center">

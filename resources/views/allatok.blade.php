@@ -8,12 +8,12 @@
 
             </div>
             <div class="row py-4">
-                <div class="col-3">
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
                     <form action="/allatok" method="POST" class="form-control border border-dark rounded">
                         @csrf
                         <div class="py-3">
                             <h3 class="text-center">Állatkereső szűrő</h3>
-                            <hr class="w-75 mx-auto border my-2">
+                            <hr class="w-75 mx-auto my-2">
                         </div>
                         <div class="py-3">
                             <h5>Állatfaj</h5>
@@ -82,9 +82,10 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-md-9">
-                    <div class="row">
+                <div class="col-6 col-sm-6 col-md-7 col-xl-9 col-lg-9">
+                    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3">
                         @if(isset($result) && count($result)>0)
+                        @dd($result)
                             @foreach ($result as $allat)
                                     <div class="col-md-4 mb-4 ">
                                         <a href="/allatok/{{$allat->allat_id}}" class="text-decoration-none">

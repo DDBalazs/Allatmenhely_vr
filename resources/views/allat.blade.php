@@ -7,7 +7,7 @@
     </div>
     <hr class="felso">
     <div class="container">
-        <div class="row asd">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2  asd">
             <div class="col mx-auto text-center">
                 @if ($lekertallat->faj == "kutya")
                     <img src="{{asset('img/allatok/k/k'.$lekertallat->allat_id.'.png')}}" alt="{{$lekertallat->allat_id}}" class="w-100 h-100">
