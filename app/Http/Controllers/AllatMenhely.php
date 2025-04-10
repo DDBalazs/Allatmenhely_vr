@@ -82,11 +82,11 @@ class AllatMenhely extends Controller
 
         // Méret keresése
         if($selectedmeret == "small"){
-            $animalsql = $animalsql." AND meret.meret_id = 1 OR meret.meret_id = 2 OR meret.meret_id = 6";
+            $animalsql = $animalsql." AND meret.meret_id = 1 OR meret.meret_id = 2 ";
         }elseif($selectedmeret == "medium"){
-            $animalsql = $animalsql." AND meret.meret_id = 3 OR meret.meret_id = 7";
+            $animalsql = $animalsql." AND meret.meret_id = 3 ";
         }elseif($selectedmeret == "large"){
-            $animalsql = $animalsql." AND meret.meret_id = 4 OR meret.meret_id = 5 OR meret.meret_id = 8";
+            $animalsql = $animalsql." AND meret.meret_id = 4 OR meret.meret_id = 5 ";
         }
 
 
@@ -122,6 +122,7 @@ class AllatMenhely extends Controller
                                     ->get(),
             "result"            =>  $result
         ]);
+        $result = "";
     }
 
     public function AllatData($id){
