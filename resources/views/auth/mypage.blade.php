@@ -65,20 +65,29 @@
                                     <td>Elfogadva</td>
                                     @if ($db->teljesitve == 0)
                                         <td>Még nincs teljesítve</td>
+                                        <td>
+                                            <form action="/mypage/{{$db->foglalt_id}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-danger w-auto mx-2" type="submit">Foglalás lemondása</button>
+                                            </form>
+                                        </td>
                                     @else
                                         <td>Teljesítve</td>
+                                        <td></td>
                                     @endif
                                 @else
                                     <td>Elfogadásra vár</td>
                                     <td></td>
+                                    <td>
+                                        <form action="/mypage/{{$db->foglalt_id}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger w-auto mx-2" type="submit">Foglalás lemondása</button>
+                                        </form>
+                                    </td>
                                 @endif
-                                <td>
-                                    <form action="/mypage/{{$db->foglalt_id}}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger w-auto mx-2" type="submit">Foglalás lemondása</button>
-                                    </form>
-                                </td>
+
                             </tr>
                         @endforeach
                     </tbody>
