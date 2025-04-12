@@ -51,7 +51,7 @@
             <div>
                 <p class="text">Az adott időpontban bármiféle előre lebeszéltek nélkül nyugodtan jöhetnek megnézni az állatokat. A bármiféle kérdésük lenne kérem hívjon fel minket az adott telefonszámon és/vagy írjon nekünk E-Mailt. Amennyiben telefonon szeretne hívni minket kedden és vasárnap <strong>NEM</strong> vagyunk nyitva. A többi napon reggel 7:30 és 18:30 között nagyon szívesen fogadjuk a hívásukat.</p>
                 <div class="row mx-auto text-center">
-                    <div class="col"><p class="ikonok"><i class='bx bxs-mobile'></i><br>+36 1 234 5678</p></div>
+                    <div class="col"><p class="ikonok"><i class='bx bxs-mobile'></i><br><a href="tel:+3612345678">+36 1 234 5678</a></p></div>
                     <div class="col"><p class="ikonok"><i class='bx bx-mail-send'></i><br><a href="mailto:info@boldogmenhely.hu">info@boldogmenhely.hu</a></p></div>
                 </div>
             </div>
@@ -119,10 +119,10 @@
             <div class="py-2 text-center">
                 <h1>Sürgős esetek elérhetősége</h1>
                 <hr class="w-75 mx-auto my-4">
-                <h3>Ha talált vagy bajba jutott állatról szeretne bejelentést tenni, kérjük, az alábbi elérhetőségeken vegye fel velünk a kapcsolatot</h3>
+                <h3>Ha talált vagy bajba jutott állatról szeretne bejelentést tenni, kérjük, az alábbi elérhetőségeken vegye fel velünk a kapcsolatot a hét bármelyik napján.</h3>
             </div>
             <div class="row mx-auto text-center">
-                <div class="col"><p class="sosikonok"><i class='bx bxs-mobile'></i><br>+36 2 345 6789</p></div>
+                <div class="col"><p class="sosikonok"><i class='bx bxs-mobile'></i><br><a href="+3623456789">+36 2 345 6789</a></p></div>
                 <div class="col"><p class="sosikonok"><i class='bx bx-mail-send'></i><br><a href="mailto:info@boldogmenhely.hu">surgos@boldogmenhely.hu</a></p></div>
             </div>
             <p class="py-2">Kérjük, hogy a bejelentésben adja meg az állat pontos helyét, állapotát, és ha lehetséges, mellékeljen képet is. Köszönjük, hogy segít nekünk gondoskodni a rászoruló állatokról!</p>

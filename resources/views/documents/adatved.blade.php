@@ -24,8 +24,8 @@
 
             <li>Az adatkezelő neve: Boldog Menhely</li>
             <li>Székhely: 1234 Boldog Város, Állatbarát utca 7.</li>
-            <li>Kapcsolattartási e-mail: info@boldogmenhely.hu</li>
-            <li>Telefonszám: +36 1 234 5678</li>
+            <li>Kapcsolattartási e-mail: <a href="mailto:info@boldogmenhely.hu" class="kat">info@boldogmenhely.hu</a></li>
+            <li>Telefonszám: <a href="tel:+3612345678" class="kat">+36 1 234 5678</a></li>
         </div>
         <div class="py-2">
             <h2>3. Milyen Adatokat Gyűjtünk?</h2>

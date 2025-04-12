@@ -182,9 +182,9 @@
       <div class="row">
         <div class="col text-center py-4">
           <h2>Elérhetőségeink</h2>
-          <p><i class='bx bxs-mobile'></i>Telefon: +36 1 234 5678</p>
-          <p><i class='bx bx-mail-send'></i><a href="mailto:info@boldogmenhely.hu">Email: info@boldogmenhely.hu</a></p>
-          <p><i class='bx bx-current-location'></i><a href="https://maps.app.goo.gl/1fQM3uQHkHQVvYU27" target="_blank">Cím: 1234 Boldog Város, Állatbarát utca 7.</a></p>
+          <p><i class='bx bxs-mobile'></i>Telefon: <a href="tel:+3612345678">+36 1 234 5678</a></p>
+          <p><i class='bx bx-mail-send'></i>Email: <a href="mailto:info@boldogmenhely.hu">info@boldogmenhely.hu</a></p>
+          <p><i class='bx bx-current-location'></i>Cím: <a href="https://maps.app.goo.gl/1fQM3uQHkHQVvYU27" target="_blank">1234 Boldog Város, Állatbarát utca 7.</a></p>
         </div>
         <div class="col text-center pt-4">
           <h2>Közösségi média</h2>

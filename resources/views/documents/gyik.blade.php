@@ -30,7 +30,7 @@
             <p>Az örökbefogadáshoz töltse ki az online jelentkezési űrlapot, majd vegye fel a kapcsolatot velünk személyesen vagy telefonon.</p>
             <br>
             <h4>Milyen állatok vannak örökbefogadásra?</h4>
-            <p>Az örökbefogadható állatok listáját az "Állataink" oldalon találja vagy <a href="">KATT IDE</a>.</p>
+            <p>Az örökbefogadható állatok listáját az "Állataink" oldalon találja vagy <a href="/allatok">KATT IDE</a>.</p>
         </div>
         <div class="py-2">
             <h2>3. Adományozással Kapcsolatos Kérdések</h2>
@@ -63,7 +63,7 @@
             <h2>6. Egyéb Kérdések</h2>
 
             <h4>Hogyan lehet kapcsolatba lépni a menhellyel?</h4>
-            <p>Kapcsolatba léphet velünk az info@boldogmenhely.hu e-mail címen vagy a +36 1 234 5678 telefonszámon.</p>
+            <p>Kapcsolatba léphet velünk az <a href="mailto:info@boldogmenhely.hu" class="kat">info@boldogmenhely.hu</a> e-mail címen vagy a <a href="tel:+3612345678" class="kat">+36 1 234 5678</a> telefonszámon.</p>
             <br>
             <h4>Szerveztek-e nyílt napokat vagy eseményeket?</h4>
             <p>Igen, rendszeresen szervezünk nyílt napokat és eseményeket.Lásd a programjain fülben.</p>

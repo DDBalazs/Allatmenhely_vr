@@ -59,13 +59,15 @@
                             <input type="checkbox" name="traits" id="nofriend" value="nofriend">
                             <label for="nofriend">Különleges igényű</label>
                         </div> --}}
-                        {{-- <div class="py-3">
+                        <div class="py-3">
                             <h5>Örökbefogadási státusz</h5>
                             <input type="radio" name="status" id="adoptable" value="adoptable">
                             <label for="adoptable">Örökbefogadható</label><br>
-                            <input type="radio" name="status" id="foster" value="foster">
-                            <label for="foster">Ideiglenes befogadásra vár</label>
-                        </div> --}}
+                            <input type="radio" name="status" id="cannotad" value="cannotad">
+                            <label for="cannotad">Átmenetileg nem fogható örökbe</label><br>
+                            <input type="radio" name="status" id="allorok" value="allorok">
+                            <label for="allorok">Összes állat</label>
+                        </div>
                         <div class="py-3">
                             <h5>Rendezés</h5>
                             <select name="sort" id="sort" class="form-control">
@@ -85,7 +87,6 @@
                 <div class="col-6 col-sm-6 col-md-7 col-xl-9 col-lg-9">
                     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3">
                         @if(isset($result) && count($result)>0)
-                        @dd($result)
                             @foreach ($result as $allat)
                                     <div class="col-md-4 mb-4 ">
                                         <a href="/allatok/{{$allat->allat_id}}" class="text-decoration-none">

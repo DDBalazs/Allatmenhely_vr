@@ -14,12 +14,12 @@
                 <hr class="w-25">
                 <h3>Kutyasétáltatás</h3>
                 <h5>Szeretnél segíteni, de nincs lehetőséged örökbe fogadni? Csatlakozz kutyasétáltatási programunkhoz! Heti rendszerességgel lehetőséged van sétáltatni menhelyi kutyáinkat, ezzel is hozzájárulva boldogabb életükhöz.</h5>
-                <li>Időpontok: Minden héten <b>szerdán</b>, <b>pénteken</b> és <b>szombaton</b></li>
+                <li>Időpontok: Minden héten, minden nap <b>kedden</b> és <b>szerdán</b> kívül.</li>
                 <li>Helyszín: Változó álltalában</li>
                 @if (Auth::check())
-                    <li>Jelentkezési lehetőség: <a href="#">Regisztrálj most!</a></li>
+                    <li>Jelentkezési lehetőség: <a href="/sign">Regisztrálj most!</a></li>
                 @else
-                    <li>Jelentkezési lehetőség: <a href="#">Jelentkezz most!</a></li>
+                    <li>Jelentkezési lehetőség: <a href="/sign">Jelentkezz most!</a></li>
                 @endif
             </div>
             <div class="py-4">
@@ -58,7 +58,7 @@
                 <br>
                 <h5>Hogyan lehet önkéntes lenni?</h5>
                 <p>Regisztrálni tudsz a progil fülön belül.</p>
-                <h4><a href="/gyik">További kérdésekért kattints ide!</a></h4>
+                <h4><a href="/information/gyik">További kérdésekért kattints ide!</a></h4>
             </div>
         </div>
     </div>

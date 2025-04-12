@@ -10,14 +10,14 @@
         <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2  asd">
             <div class="col mx-auto text-center">
                 @if ($lekertallat->faj == "kutya")
-                    <img src="{{asset('img/allatok/k/k'.$lekertallat->allat_id.'.png')}}" alt="{{$lekertallat->allat_id}}" class="w-100 h-100">
+                    <img src="{{asset('img/allatok/k/k'.$lekertallat->allat_id.'.png')}}" alt="{{$lekertallat->allat_id}}">
                 @else
-                    <img src="{{asset('img/allatok/c/c'.$lekertallat->allat_id.'.png')}}" alt="{{$lekertallat->allat_id}}" class="w-100 h-100">
+                    <img src="{{asset('img/allatok/c/c'.$lekertallat->allat_id.'.png')}}" alt="{{$lekertallat->allat_id}}">
                 @endif
             </div>
             <div class="col">
                 <p class="fs-3"><strong>{{$lekertallat->nev}}</strong></p>
-                <p>{{$lekertallat->megjegyzes}}</p>
+                <p class="megjegy">{{$lekertallat->megjegyzes}}</p>
                 <div class="top-0 start-0">
                     <p>Születési ideje: {{date_format(date_create($lekertallat->szuldatum),'Y.m.d.')}}</p>
                     <p>Bekerülési ideje: {{date_format(date_create($lekertallat->beerkezes_datuma),'Y.m.d.')}}</p>
@@ -43,6 +43,11 @@
                         <p>Nem: lány</p>
                     @endif
                     <p>Szín: {{$lekertallat->szin}}</p>
+                    @if($lekertallat->orokbefogadhato == 1)
+                        <p>Örökbefogadhatósága: Az állat örökbefogadható</p>
+                    @else
+                        <p>Örökbefogadhatósága: Az állat átmenetileg <span class="text-danger">NEM</span> fogadható örökbe.</p>
+                    @endif
                 </div>
             </div>
         </div>

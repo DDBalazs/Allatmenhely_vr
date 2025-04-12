@@ -8,14 +8,15 @@
     --nav-active : #E67E22;
     --nav-hover: #3A5A20;
 
-    --main-link: #4c8880;
-    --main-link-hover: #64c23f;
-
     --footer-bg: #a57c4e;
     --footer-text: #FFFFFF;
     --footer-link: #E6D5C3;
     --footer-link-hover: #E67E22;
     --footer-border: #3A5A20;
+
+    --main-link: #4c8880;
+    --main-link-hover: #64c23f;
+
 
     --base-color : #c5b9ae;
     --text-color: #111528;
@@ -51,6 +52,9 @@
 
     --tableh: #99d4ca;
     --tableb: #dfdfdf;
+
+    --box-shadow: #888888;
+    --box-shadow-hover: #5e97a8;
 }
 .darkmode{
     --nav-bg : #2D2D2D;
@@ -67,7 +71,7 @@
     --footer-link-hover: #FF9800;
     --footer-border: #3A3A3A;
 
-    --base-color : #070b1d;
+    --base-color : #171f46;
     --text-color: #ffffff;
     --base-variant: #101425;
     --secondary-text: #a4a5b8;
@@ -101,6 +105,9 @@
 
     --tableh: #424242;
     --tableb: #a0a0a0;
+
+    --box-shadow: #4b4b4b;
+    --box-shadow-hover: #3a5c66;
 
     #theme-switch{
         svg:first-child{
@@ -204,7 +211,7 @@ body{
             margin-top: 350px;
             font-size: 1.2rem;
             padding: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 0px 8px 8px var(--box-shadow);
             transition: transform 0.3s ease;
 
             animation: scroll linear;
@@ -223,6 +230,7 @@ body{
         }
         .textboxok:hover {
             transform: translateY(-5px);
+            box-shadow: 0 0px 8px 8px var(--box-shadow-hover);
         }
 
         .oldanimals{
@@ -239,7 +247,7 @@ body{
                 border-radius: 8px;
                 border: 1px solid var(--card-border) !important;
                 transition: transform 0.3s ease;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                box-shadow: 0 0px 8px 8px var(--box-shadow);
 
                 .card-body{
                     background-color: var(--card-body) !important;
@@ -253,6 +261,7 @@ body{
             }
             .card:hover{
                 transform: translateY(-5px);
+                box-shadow: 0 0px 8px 8px var(--box-shadow-hover);
             }
 
 
@@ -393,7 +402,7 @@ nav {
         border-radius: 10px;
         background: rgba(0,0,0,.2);
         backdrop-filter: blur(4px);
-        box-shadow: 0 0 5px rgba(0, 0, 0, .2),
+        box-shadow: 0 0 5px var(--box-shadow),
         0 0 15px rgba(0,0,0,.2),
         0 0 30px rgba(0,0,0,.2);
         display: flex;
@@ -668,7 +677,7 @@ input:-internal-autofill-selected {
     border-radius: 10px;
     background: rgba(0,0,0,.2);
     backdrop-filter: blur(6px);
-    box-shadow: 0 0 5px rgba(0, 0, 0, .2),
+    box-shadow: 0 0 5px var(--box-shadow),
     0 0 15px rgba(0,0,0,.2),
     0 0 30px rgba(0,0,0,.2);
     text-align: center;
@@ -906,6 +915,15 @@ input:-internal-autofill-selected {
     a:hover{
         transform: scale(1.1);
     }
+    .kat{
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: large;
+    }
+    .kat:hover{
+        color: var(--footer-link-hover);
+        text-decoration: underline;
+    }
 }
 
 .program{
@@ -985,7 +1003,7 @@ input:-internal-autofill-selected {
         border-radius: 8px;
         border: 1px solid var(--card-border) !important;
         transition: transform 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 0px 8px 8px var(--box-shadow);
 
         .card-body{
             background-color: var(--card-body) !important;
@@ -996,6 +1014,7 @@ input:-internal-autofill-selected {
     }
     .card:hover{
         transform: translateY(-5px);
+        box-shadow: 0 0px 8px 8px var(--box-shadow-hover);
     }
 
 
@@ -1007,6 +1026,12 @@ input:-internal-autofill-selected {
     background-color: var(--base-variant);
     color: var(--secondary-text);
 
+    .megjegy{
+        margin-bottom: 20px;
+    }
+    p{
+        margin: 2px;
+    }
     .felso{
         border: 10px solid black;
         opacity: 1;
@@ -1022,9 +1047,16 @@ input:-internal-autofill-selected {
         margin-bottom: 30px;
 
         img{
-            width: auto;
-            height: auto;
-            border: 1px solid var(--card-border);
+            margin-top: 60px;
+            width: 650px;
+            height: 650px;
+            border: 5px solid var(--card-border);
+            box-shadow: 0px 0px 8px 8px var(--box-shadow);
+            transition: 0.3s ease;
+        }
+        img:hover{
+            transform: translateY(-3px);
+            box-shadow: 0px 0px 8px 8px var(--box-shadow-hover);
         }
     }
     /* @media screen and (max-width: 500px) {

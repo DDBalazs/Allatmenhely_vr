@@ -61,8 +61,8 @@
             <h2>8. Kapcsolatfelvétel</h2>
 
             <h4>Ha kérdése van a cookie-kkal kapcsolatban, kérjük, lépjen kapcsolatba velünk az alábbi elérhetőségeken:</h4>
-            <li>E-mail: info@boldogmenhely.hu</li>
-            <li>Telefonszám: +36 1 234 5678</li>
+            <li>E-mail: <a href="mailto:info@boldogmenhely.hu" class="kat">info@boldogmenhely.hu</a></li>
+            <li>Telefonszám: <a href="tel:+3612345678" class="kat">+36 1 234 5678</a></li>
         </div>
     </div>
 </main>

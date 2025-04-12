@@ -57,8 +57,8 @@
             <h2>7. Kapcsolatfelvétel</h2>
 
             <h4>Ha kérdése van az adományozással kapcsolatban, kérjük, lépjen kapcsolatba velünk az alábbi elérhetőségeken:</h4>
-            <li>E-mail: info@boldogmenhely.hu</li>
-            <li>Telefonszám: +36 1 234 5678</li>
+            <li>E-mail: <a href="mailto:info@boldogmenhely.hu" class="kat">info@boldogmenhely.hu</a></li>
+            <li>Telefonszám: <a href="tel:+3612345678" class="kat">+36 1 234 5678</a></li>
         </div>
         <div class="py-2">
             <h2>8. Változtatások a Szabályzatban</h2>
