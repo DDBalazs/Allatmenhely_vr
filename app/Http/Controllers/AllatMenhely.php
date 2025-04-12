@@ -42,109 +42,106 @@ class AllatMenhely extends Controller
     }
 
     public function AllatokPost(Request $req){
-        $result = " ";
+        $conditions = [];
+        $params = [];
 
-        // Faj keresése
-        $selectedanimal = $req->input('kperm');
-        $animalfaj = " ";
-        if($selectedanimal == "dog"){
-            $animalfaj = $animalfaj." AND fajta.fajta_id = 1 OR fajta.fajta_id = 2 OR fajta.fajta_id = 3 OR fajta.fajta_id = 4 OR fajta.fajta_id = 8 ";
-        } elseif ($selectedanimal == "cat"){
-            $animalfaj = $animalfaj." AND fajta.fajta_id = 5 OR fajta.fajta_id = 6 OR fajta.fajta_id = 7 OR fajta.fajta_id = 9 ";
-        } else{
-            $animalfaj = " ";
+        // Faj szűrés
+        if($req->has('kperm') && in_array($req->input('kperm'), ['dog', 'cat'])) {
+            $selectedanimal = $req->input('kperm');
+            if($selectedanimal == "dog") {
+                $conditions[] = "(fajta.fajta_id IN (1, 2, 3, 4, 8))";
+            } elseif ($selectedanimal == "cat") {
+                $conditions[] = "(fajta.fajta_id IN (5, 6, 7, 9))";
+            }
         }
 
-        // Nem keresése
-        $selectednem = $req->input('nem');
-        $animalnem = " ";
-        if($selectednem == "him"){
-            $animalnem = $animalnem." AND nem = 1 ";
-        } elseif($selectednem == "nosteny"){
-            $animalnem = $animalnem." AND nem = 0 ";
-        } else{
-            $animalnem = " ";
+        // Nem szűrés
+        if($req->has('nem') && in_array($req->input('nem'), ['him', 'nosteny'])) {
+            $conditions[] = "allat.nem = " . ($req->input('nem') == 'him' ? 1 : 0);
         }
 
-        // Kor keresése
-        $selectedkor = $req->input('age');
-        $animalkor = " ";
-        if($selectedkor == "puppy"){
-            $animalkor = $animalkor." AND YEAR(CURRENT_DATE) - year(szuldatum) < 1 ";
-        }elseif($selectedkor == "young"){
-            $animalkor = $animalkor." AND YEAR(CURRENT_DATE) - year(szuldatum) BETWEEN 1 AND 3 ";
-        }elseif($selectedkor == "adult"){
-            $animalkor = $animalkor." AND YEAR(CURRENT_DATE) - year(szuldatum) BETWEEN 3 AND 8 ";
-        }elseif($selectedkor == "senior"){
-            $animalkor = $animalkor." AND YEAR(CURRENT_DATE) - year(szuldatum) > 8 ";
-        }else{
-            $animalkor = " ";
+        // Kor szűrés
+        if($req->has('age') && in_array($req->input('age'), ['puppy', 'young', 'adult', 'senior'])) {
+            $selectedkor = $req->input('age');
+            switch($selectedkor) {
+                case 'puppy':
+                    $conditions[] = "YEAR(CURRENT_DATE) - YEAR(allat.szuldatum) < 1";
+                    break;
+                case 'young':
+                    $conditions[] = "YEAR(CURRENT_DATE) - YEAR(allat.szuldatum) BETWEEN 1 AND 3";
+                    break;
+                case 'adult':
+                    $conditions[] = "YEAR(CURRENT_DATE) - YEAR(allat.szuldatum) BETWEEN 3 AND 8";
+                    break;
+                case 'senior':
+                    $conditions[] = "YEAR(CURRENT_DATE) - YEAR(allat.szuldatum) > 8";
+                    break;
+            }
         }
 
-        // Méret keresése
-        $selectedmeret = $req->input('size');
-        $animalmeret = " ";
-        if($selectedmeret == "small"){
-            $animalmeret = $animalmeret." AND meret.meret_id = 1 OR meret.meret_id = 2 ";
-        }elseif($selectedmeret == "medium"){
-            $animalmeret = $animalmeret." AND meret.meret_id = 3 ";
-        }elseif($selectedmeret == "large"){
-            $animalmeret = $animalmeret." AND meret.meret_id = 4 OR meret.meret_id = 5 ";
-        }else{
-            $animalmeret = " ";
+        // Méret szűrés (itt most csak egy értéket kezel, checkbox-okhoz módosítani kell)
+        if($req->has('size') && in_array($req->input('size'), ['small', 'medium', 'large'])) {
+            $selectedmeret = $req->input('size');
+            switch($selectedmeret) {
+                case 'small':
+                    $conditions[] = "(allat.meret_id IN (1, 2))";
+                    break;
+                case 'medium':
+                    $conditions[] = "allat.meret_id = 3";
+                    break;
+                case 'large':
+                    $conditions[] = "(allat.meret_id IN (4, 5))";
+                    break;
+            }
         }
 
+        // Örökbefogadhatóság
+        if($req->has('status') && in_array($req->input('status'), ['adoptable', 'cannotad'])) {
+            $conditions[] = "allat.orokbefogadhato = " . ($req->input('status') == 'adoptable' ? 1 : 0);
+        }
 
-        $selectedrendezes = $req->input('sort');
+        // Alap lekérdezés
+        $query = DB::table('allat')
+            ->select('allat.allat_id', 'allat.fajta_id', 'allat.nev', 'allat.meret_id', 'allat.szin', 'allat.nem',
+                    'meret.meret_id', 'meret.kategoria', 'fajta.faj')
+            ->join('fajta', 'allat.fajta_id', '=', 'fajta.fajta_id')
+            ->join('meret', 'allat.meret_id', '=', 'meret.meret_id');
+
+        // Feltételek hozzáadása
+        if(!empty($conditions)) {
+            $query->whereRaw(implode(' AND ', $conditions));
+        }
+
         // Rendezés
-        $rendezessql = "";
-        if($selectedrendezes == "newest"){
-            $rendezessql = " ORDER BY allat.beerkezes_datuma DESC ";
-        }
-        elseif($selectedrendezes == "oldest"){
-            $rendezessql = " ORDER BY allat.beerkezes_datuma ASC ";
-        }
-        elseif($selectedrendezes == "name-asc"){
-            $rendezessql = " Order By allat.nev ASC ";
-        }
-        elseif($selectedrendezes == "name-desc"){
-            $rendezessql = " Order by allat.nev DESC ";
-        }
-        else{
-            $rendezessql = " ";
-        }
-
-        // Örökbefogadható
-        $selectedorokbe = $req->input('status');
-        $animalorok = " ";
-        if($selectedorokbe == "adoptable"){
-            $animalorok = $animalorok." AND allat.orokbefogadhato = 1 ";
-        }
-        else if($selectedorokbe == "cannotad"){
-            $animalorok = $animalorok." AND allat.orokbefogadhato = 0 ";
-        }
-        else if($selectedorokbe == "allorok"){
-             $animalorok = " ";
-        }
-        else{
-            $animalorok = " ";
+        if($req->has('sort')) {
+            switch($req->input('sort')) {
+                case 'newest':
+                    $query->orderBy('allat.beerkezes_datuma', 'desc');
+                    break;
+                case 'oldest':
+                    $query->orderBy('allat.beerkezes_datuma', 'asc');
+                    break;
+                case 'name-asc':
+                    $query->orderBy('allat.nev', 'asc');
+                    break;
+                case 'name-desc':
+                    $query->orderBy('allat.nev', 'desc');
+                    break;
+            }
         }
 
-        $sql = "SELECT allat.allat_id, allat.fajta_id, allat.nev, allat.meret_id, allat.szin, allat.nem, meret.meret_id, meret.kategoria, fajta.faj
-                FROM allat
-                Join fajta ON allat.fajta_id = fajta.fajta_id
-                Join meret ON allat.meret_id = meret.meret_id
-                Where allat.allat_id = allat.allat_id ".$animalfaj.$animalnem.$animalkor.$animalmeret.$animalorok.$rendezessql;
-
-        $result = DB::select($sql);
-
+        $result = $query->get();
 
         return view('allatok', [
-            'allatok'   =>  Allatok::select('allat.allat_id','allat.nev','allat.fajta_id','allat.chip_sorszam','allat.szuldatum','allat.meret_id','allat.szin','allat.ivartalanitott','allat.orokbefogadhato','allat.beerkezes_datuma','allat.megjegyzes','fajta.fajta_id','fajta.faj')
-                                    ->join('fajta','allat.fajta_id','fajta.fajta_id')
-                                    ->orderBy('allat.allat_id')
-                                    ->get(),
-            "result"            =>  $result
+            'allatok' => Allatok::query()
+                ->select('allat.allat_id','allat.nev','allat.fajta_id','allat.chip_sorszam',
+                         'allat.szuldatum','allat.meret_id','allat.szin','allat.ivartalanitott',
+                         'allat.orokbefogadhato','allat.beerkezes_datuma','allat.megjegyzes',
+                         'fajta.fajta_id','fajta.faj')
+                ->join('fajta','allat.fajta_id','fajta.fajta_id')
+                ->orderBy('allat.allat_id')
+                ->get(),
+            "result" => $result
         ]);
     }
 

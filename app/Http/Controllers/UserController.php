@@ -40,7 +40,7 @@ class UserController extends Controller
 
     public function Register(Request $req){
             // Regiszter
-            $req->validate([
+            $validated = $req->validate([
                 'nev'                               =>  'required',
                 'email'                             =>  'required|email|unique:onkentes,email',
                 'password'                          =>  ['required','confirmed',Password::min(8)
@@ -63,14 +63,21 @@ class UserController extends Controller
                 'password.symbols'                  =>  'A jelszónak tartalmazni kell speciális karaktert!',
                 'password_confirmation.required'    =>  'A jelszó ismétlést kötelező megadni!'
             ]);
+
+            if ($validated->fails()) {
+                return back()->withErrors($validated)->withInput();
+            }
+
             $data               = new User;
             $data->nev          = $req->nev;
             $data->email        = $req->email;
             $data->password     = Hash::make($req->password);
 
-            if($data->Save())
+            if($data->Save()){
                 return redirect('/sign')->with('regsuccess','Sikeres regisztráció!');
+            }
 
+            return back()->with('regerror', 'Hiba történt a mentés során!')->withInput();
     }
 
 

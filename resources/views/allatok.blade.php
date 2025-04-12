@@ -43,11 +43,11 @@
                         </div>
                         <div class="py-3">
                             <h5>Méret</h5>
-                            <input type="checkbox" name="size" id="small"  value="small">
+                            <input type="radio" name="size" id="small"  value="small">
                             <label for="small">Kicsi</label><br>
-                            <input type="checkbox" name="size" id="medium"  value="medium">
+                            <input type="radio" name="size" id="medium"  value="medium">
                             <label for="medium">Közepes</label><br>
-                            <input type="checkbox" name="size" id="large" value="large">
+                            <input type="radio" name="size" id="large" value="large">
                             <label for="large">Nagy</label>
                         </div>
                         {{-- <div class="py-3">
