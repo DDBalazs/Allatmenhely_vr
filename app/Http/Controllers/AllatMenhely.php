@@ -14,18 +14,20 @@ class AllatMenhely extends Controller
 {
     public function Welcome(){
         return view('welcome', [
-            'oldallatokk'   =>  Allatok::select('allat.allat_id', 'allat.nev','allat.fajta_id','fajta.fajta_id','fajta.faj','allat.beerkezes_datuma','allat.orokbefogadhato')
+            'oldallatokk'   =>  Allatok::select('allat.allat_id', 'allat.nev','allat.fajta_id','fajta.fajta_id','fajta.faj','allat.beerkezes_datuma','allat.orokbefogadhato','allat.aktiv')
                                             ->join('fajta', 'allat.fajta_id','=','fajta.fajta_id')
                                             ->where('fajta.faj','kutya')
-                                            ->where('allat.orokbefogadhato', 1)
+                                            ->where('allat.orokbefogadhato', '1')
+                                            ->where('allat.aktiv', '1')
                                             ->OrderBy('allat.beerkezes_datuma')
                                             ->limit(3)
                                             ->get(),
 
-            'oldallatokc'   =>  Allatok::select('allat.allat_id', 'allat.nev','allat.fajta_id','fajta.fajta_id','fajta.faj','allat.beerkezes_datuma','allat.orokbefogadhato')
+            'oldallatokc'   =>  Allatok::select('allat.allat_id', 'allat.nev','allat.fajta_id','fajta.fajta_id','fajta.faj','allat.beerkezes_datuma','allat.orokbefogadhato','allat.aktiv')
                                             ->join('fajta', 'allat.fajta_id','=','fajta.fajta_id')
                                             ->where('fajta.faj','macska')
-                                            ->where('allat.orokbefogadhato', 1)
+                                            ->where('allat.orokbefogadhato', '1')
+                                            ->where('allat.aktiv', '1')
                                             ->OrderBy('allat.beerkezes_datuma')
                                             ->limit(3)
                                             ->get()
@@ -34,9 +36,10 @@ class AllatMenhely extends Controller
 
     public function Allatok(){
         return view('allatok',[
-            'allatok'   =>  Allatok::select('allat.allat_id','allat.nev','allat.fajta_id','allat.chip_sorszam','allat.szuldatum','allat.meret_id','allat.szin','allat.ivartalanitott','allat.orokbefogadhato','allat.beerkezes_datuma','allat.megjegyzes','fajta.fajta_id','fajta.faj')
+            'allatok'   =>  Allatok::select('allat.allat_id','allat.nev','allat.fajta_id','allat.chip_sorszam','allat.szuldatum','allat.meret_id','allat.szin','allat.ivartalanitott','allat.orokbefogadhato','allat.beerkezes_datuma','allat.megjegyzes','fajta.fajta_id','fajta.faj','allat.aktiv')
                                     ->join('fajta','allat.fajta_id','fajta.fajta_id')
-                                    ->orderBy('allat.allat_id')
+                                    ->join('meret', 'allat.meret_id', '=', 'meret.meret_id')
+                                    ->where('allat.aktiv', '1')
                                     ->get()
         ]);
     }
@@ -103,9 +106,10 @@ class AllatMenhely extends Controller
         // Alap lekérdezés
         $query = DB::table('allat')
             ->select('allat.allat_id', 'allat.fajta_id', 'allat.nev', 'allat.meret_id', 'allat.szin', 'allat.nem',
-                    'meret.meret_id', 'meret.kategoria', 'fajta.faj')
+                    'meret.meret_id', 'meret.kategoria', 'fajta.faj','allat.aktiv')
             ->join('fajta', 'allat.fajta_id', '=', 'fajta.fajta_id')
-            ->join('meret', 'allat.meret_id', '=', 'meret.meret_id');
+            ->join('meret', 'allat.meret_id', '=', 'meret.meret_id')
+            ->where('allat.aktiv','1');
 
         // Feltételek hozzáadása
         if(!empty($conditions)) {
@@ -139,7 +143,8 @@ class AllatMenhely extends Controller
                          'allat.orokbefogadhato','allat.beerkezes_datuma','allat.megjegyzes',
                          'fajta.fajta_id','fajta.faj')
                 ->join('fajta','allat.fajta_id','fajta.fajta_id')
-                ->orderBy('allat.allat_id')
+                ->join('meret', 'allat.meret_id', '=', 'meret.meret_id')
+                ->where('allat.aktiv', '1')
                 ->get(),
             "result" => $result
         ]);
