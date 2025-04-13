@@ -43,7 +43,7 @@
         <div class="py-2">
             @if (count($foglalasaim)>0)
             <h1 class="text-center">Foglalásaid</h1>
-                <table class="mx-auto text-center table table-stripped table-bordered">
+                <table class="table table-hover rounded-3 overflow-hidden shadow-sm text-center">
                     <thead>
                         <tr>
                             <th>Állat neve</th>
@@ -57,7 +57,7 @@
                         @foreach ($foglalasaim as $db)
                             <tr>
                                 <td>{{$db->nev}}</td>
-                                <td>{{$db->datum}}</td>
+                                <td>{{date_format(date_create($db->datum),'Y.m.d.')}}</td>
                                 @if ($db->elfogadas == "n")
                                     <td>Elutasítva</td>
                                     <td></td>

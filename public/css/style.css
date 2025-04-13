@@ -74,7 +74,7 @@
     --base-color : #171f46;
     --text-color: #ffffff;
     --base-variant: #101425;
-    --secondary-text: #a4a5b8;
+    --secondary-text: #c3c4d8;
     --primary-color: #3a435d;
 
     --card-body: #888888;
@@ -477,19 +477,35 @@ nav {
                 transform: translateX(0px) rotate(0deg);
                 transition: .5s ease;
                 transition-delay: .4s;
+
+                #loginerror{
+                    visibility: hidden;
+                }
             }
             .LoginForm.active{
                 transform: translateX(-500px) rotate(-50deg);
                 transition-delay: .2s;
+
+                #loginerror{
+                    visibility: visible;
+                }
             }
             .RegisterForm{
                 transform: translateX(600px) rotate(50deg);
                 transition: .5s ease;
                 transition-delay: .2s;
+
+                #registererror{
+                    visibility: hidden;
+                }
             }
             .RegisterForm.active{
                 transform: translateX(0px) rotate(0deg);
                 transition-delay: .4s;
+
+                #registererror{
+                    visibility: visible;
+                }
             }
             h2{
                 text-align: center;
@@ -749,6 +765,32 @@ input:-internal-autofill-selected {
     text-align: center;
     justify-content: center;
     overflow: hidden;
+
+    .table {
+        border-collapse: separate;
+        border-spacing: 0;
+
+        thead th {
+            border-bottom: 2px solid var(--border-color);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            background-color: var(--tableh);
+            color: var(--text-color);
+        }
+        tbody{
+            td,th{
+                padding: 0.75rem;
+                vertical-align: middle;
+                border-top: 1px solid var(--border-color);
+                background-color: var(--tableb);
+            }
+            tr:last-child{
+                td, th{
+                    border-bottom: 1px solid var(--border-color);
+                }
+            }
+        }
+    }
 
         h2{
             margin-top: 30px;

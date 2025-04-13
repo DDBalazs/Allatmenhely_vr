@@ -27,7 +27,7 @@
                         <div class="py-3">
                             <h5>Nem</h5>
                             <input type="radio" name="nem" id="him" value="him">
-                            <label for="him">Hím</label>
+                            <label for="him">Hím</label><br>
                             <input type="radio" name="nem" id="nosteny" value="nosteny">
                             <label for="nosteny">Nőstény</label>
                         </div>
