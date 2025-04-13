@@ -74,9 +74,9 @@
                     <div class="foglalilehetoseg" id="foglalasdiv">
                         <form action="/allatok/{{$lekertallat->allat_id}}/foglalas" method="POST">
                             @csrf
-                            <h3 class="text-center">Önkéntes tevékenységeket minden nap a látogatási idő után 14 és 18 óra között lehetséges</h3>
+                            <h3 class="text-center">Önkéntes tevékenységeket <strong>kedden</strong> és <strong>vasárnapon</strong> kívül minden nap a látogatási idő után 14 és 18 óra között lehetséges</h3>
                             <label for="idopont">Válassz időpontot</label>
-                            <input type="date" class="form-control w-50 mx-auto" name="idopont" id="idopont" value="idopont">
+                            <input type="date" class="form-control w-50 mx-auto" name="idopont" id="idopont" value="{{ date('Y-m-d') }}">
                             <button type="submit" class="btn btn-dark my-2">Foglalás</button>
                         </form>
                         @if ($errors->any)

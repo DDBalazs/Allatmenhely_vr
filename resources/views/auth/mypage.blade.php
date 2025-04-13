@@ -74,7 +74,7 @@
                                         </td>
                                     @else
                                         <td>Teljesítve</td>
-                                        <td></td>
+                                        <td>X</td>
                                     @endif
                                 @else
                                     <td>Elfogadásra vár</td>

@@ -109,8 +109,8 @@
     @elseif(session('fogerr'))
         <script>
             Swal.fire({
-                icon: 'success',
-                title: 'Sikeres időpont foglalás',
+                icon: 'warning',
+                title: 'Sikertelen időpont foglalás',
                 text: '{{session('fogerr')}}',
                 confirmButtonText: 'Ok'
             });

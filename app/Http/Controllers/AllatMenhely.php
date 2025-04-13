@@ -173,6 +173,12 @@ class AllatMenhely extends Controller
         $twoweeks = now()->addWeeks(2)->format('Y-m-d');
         $allatID = (int)$id;
 
+        // Ellenőrizzük, hogy a kiválasztott nap kedd vagy vasárnap-e
+        $selectedDay = date('N', strtotime($req->idopont)); // 1 (hétfő) - 7 (vasárnap)
+        if ($selectedDay == 2 || $selectedDay == 7) { // 2 = kedd, 7 = vasárnap
+            return back()->with('fogerr', 'Sajnos kedden és vasárnap nem lehet foglalni!');
+        }
+
         if(Foglalt::where('allat_id', $id)
                     ->where('datum', $req->idopont)
                     ->exists()){

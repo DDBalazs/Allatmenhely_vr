@@ -47,8 +47,23 @@
                         <i class='bx bxs-envelope'></i>
                     </div>
                     <div class="input-box">
+                        <div class="password-header">
+                            <label for="password1" class="password-label">Jelszó</label>
+                            <span class="password-info-icon">i
+                                <span class="password-tooltip">
+                                    A jelszónak tartalmaznia kell:
+                                    <ul>
+                                        <li>Minimum 8 karakter</li>
+                                        <li>Legalább 1 nagybetű (A-Z)</li>
+                                        <li>Legalább 1 kisbetű (a-z)</li>
+                                        <li>Legalább 1 szám (0-9)</li>
+                                        <li>Legalább 1 speciális karakter (!@#$%^&*)</li>
+                                    </ul>
+                                </span>
+                            </span>
+                        </div>
                         <input type="password" name="password" id="password1">
-                        <label for="password">Jelszó</label>
+                        {{-- <img src="{{asset('img/visibility_off.png')}}" alt="visibilityoff" id="eyeicon"> --}}
                         <i class="bx bxs-lock-alt"></i>
                     </div>
                     <div class="input-box">
@@ -69,6 +84,21 @@
             </div>
         </div>
 
+        {{-- <script>
+            let eyeicon = document.getElementById('eyeicon');
+            let password = document.getElementById('password1');
+
+            eyeicon.onclick = function(){
+            if(password.type == "password"){
+                password.type = "text";
+                eyeicon.src = "{{asset('img/visibility_off.png')}}";
+            }
+            else{
+                password.type = "password";
+                eyeicon.src = "{{asset('img/visibility.png')}}";
+            }
+            }
+        </script> --}}
 
     </main>
 

@@ -36,3 +36,17 @@ document.getElementById('foglalasdiv').style.visibility = "hidden";
 function Foglalas(){
     document.getElementById('foglalasdiv').style.visibility = "visible";
 }
+
+// let eyeicon = document.getElementById('eyeicon');
+// let password = document.getElementById('password1');
+
+// eyeicon.onclick = function(){
+//     if(password.type == "password"){
+//         password.type = "text";
+//         eyeicon.src = "{{asset('img/visibility_off.png')}}";
+//     }
+//     else{
+//         password.type = "password";
+//         eyeicon.src = "{{asset('img/visibility.png')}}";
+//     }
+// }

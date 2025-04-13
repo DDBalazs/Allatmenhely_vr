@@ -10,6 +10,7 @@ use App\Models\User;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Foglalt;
 
+
 class UserController extends Controller
 {
     public function Sign(){
@@ -38,47 +39,55 @@ class UserController extends Controller
             }
     }
 
-    public function Register(Request $req){
-            // Regiszter
-            $validated = $req->validate([
-                'nev'                               =>  'required',
-                'email'                             =>  'required|email|unique:onkentes,email',
-                'password'                          =>  ['required','confirmed',Password::min(8)
-                                                                                        ->letters()
-                                                                                        ->numbers()
-                                                                                        ->symbols()
-                                                                                        ->mixedCase()],
-                'password_confirmation'             =>  'required'
-            ],[
-                'nev.required'                      =>  'A nevet kötelező megadni!',
-                'email.required'                    =>  'Az emeailt kötelező megadni!',
-                'email.email'                       =>  'Létező email címet adjon meg!',
-                'email.unique'                      =>  'Ezzel az emaillal már regisztráltak!',
-                'password.required'                 =>  'A jelszót kötelező megadni!',
-                'password.confirmed'                =>  'A két jelszó nem egyezik!',
-                'password.min'                      =>  'A jelszónak legalább 8 karakter hosszúságúnak kell lennie!',
-                'password.numbers'                  =>  'A jelszónak tartalmazni kell számot!',
-                'password.letters'                  =>  'A jelszónak tartalmazni kell betűket!',
-                'password.mixed'                    =>  'A jelszónak tartalmazni kell kis és nagy betűt!',
-                'password.symbols'                  =>  'A jelszónak tartalmazni kell speciális karaktert!',
-                'password_confirmation.required'    =>  'A jelszó ismétlést kötelező megadni!'
-            ]);
+    public function Register(Request $req)
+{
+    try {
+        // Regisztráció - automatikusan kezeli a hibákat
+        $validatedData = $req->validate([
+            'nev' => 'required',
+            'email' => 'required|email|unique:onkentes,email',
+            'password' => [
+                'required',
+                'confirmed',
+                Password::min(8)
+                    ->letters()
+                    ->numbers()
+                    ->symbols()
+                    ->mixedCase()
+            ],
+            'password_confirmation' => 'required'
+        ], [
+            'nev.required' => 'A nevet kötelező megadni!',
+            'email.required' => 'Az emailt kötelező megadni!',
+            'email.email' => 'Létező email címet adjon meg!',
+            'email.unique' => 'Ezzel az emaillal már regisztráltak!',
+            'password.required' => 'A jelszót kötelező megadni!',
+            'password.confirmed' => 'A két jelszó nem egyezik!',
+            'password.min' => 'A jelszónak legalább 8 karakter hosszúságúnak kell lennie!',
+            'password.numbers' => 'A jelszónak tartalmazni kell számot!',
+            'password.letters' => 'A jelszónak tartalmazni kell betűket!',
+            'password.mixed' => 'A jelszónak tartalmazni kell kis és nagy betűt!',
+            'password.symbols' => 'A jelszónak tartalmazni kell speciális karaktert!',
+            'password_confirmation.required' => 'A jelszó ismétlést kötelező megadni!'
+        ]);
 
-            if ($validated->fails()) {
-                return back()->withErrors($validated)->withInput();
-            }
+        // Ha ide eljut, akkor a validáció sikeres
+        $data = new User;
+        $data->nev = $req->nev;
+        $data->email = $req->email;
+        $data->password = Hash::make($req->password);
 
-            $data               = new User;
-            $data->nev          = $req->nev;
-            $data->email        = $req->email;
-            $data->password     = Hash::make($req->password);
+        if ($data->save()) {
+            return redirect('/sign')->with('regsuccess', 'Sikeres regisztráció!');
+        }
 
-            if($data->Save()){
-                return redirect('/sign')->with('regsuccess','Sikeres regisztráció!');
-            }
+        return back()->with('regerror', 'Hiba történt a mentés során!')->withInput();
 
-            return back()->with('regerror', 'Hiba történt a mentés során!')->withInput();
+    } catch (\Illuminate\Validation\ValidationException $e) {
+        // A validate() metódus automatikusan dob ValidationException-t hibák esetén
+        return back()->withErrors($e->validator)->withInput();
     }
+}
 
 
     public function MyPage(Request $req){

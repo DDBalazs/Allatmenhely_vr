@@ -103,6 +103,10 @@
                                         </a>
                                     </div>
                             @endforeach
+                        @elseif(isset($result) && count($result) == 0)
+                                    <div class="mx-auto">
+                                        <h2 class="text-center">Nincsenek ilyen állatok!</h2>
+                                    </div>
                         @else
                             @foreach ($allatok as $allat)
                                     <div class="col-md-4 mb-4 ">
