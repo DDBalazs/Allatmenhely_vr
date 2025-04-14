@@ -52,9 +52,9 @@ class AllatMenhely extends Controller
         if($req->has('kperm') && in_array($req->input('kperm'), ['dog', 'cat'])) {
             $selectedanimal = $req->input('kperm');
             if($selectedanimal == "dog") {
-                $conditions[] = "(fajta.fajta_id IN (1, 2, 3, 4, 8))";
+                $conditions[] = "(fajta.fajta_id IN (1, 2, 3, 4))";
             } elseif ($selectedanimal == "cat") {
-                $conditions[] = "(fajta.fajta_id IN (5, 6, 7, 9))";
+                $conditions[] = "(fajta.fajta_id IN (5, 6, 7))";
             }
         }
 
