@@ -93,14 +93,14 @@ class UserController extends Controller
     public function MyPage(Request $req){
         if(Auth::check()){
             return view('auth.mypage', [
-                'foglalasaim'   =>  Foglalt::select('foglalt.foglalt_id', 'foglalt.allat_id', 'foglalt.datum', 'foglalt.onkentes_id', 'foglalt.elfogadas', 'foglalt.teljesitve', 'allat.allat_id' ,'allat.nev', 'onkentes.onkentes_id')
+                'foglalasaim'   =>  Foglalt::select('foglalt.foglalt_id', 'foglalt.allat_id', 'foglalt.datumido', 'foglalt.onkentes_id', 'foglalt.elfogadas', 'foglalt.teljesitve', 'allat.allat_id' ,'allat.nev', 'onkentes.onkentes_id')
                                             ->Join('allat', 'foglalt.allat_id', 'allat.allat_id')
                                             ->Join('onkentes', 'foglalt.onkentes_id', 'onkentes.onkentes_id')
                                             ->Where('foglalt.onkentes_id', Auth::user()->onkentes_id)
                                             ->get()
             ]);
         } else {
-            return redirect('/login')->with('unloggederror', 'Kérlek előbb jelentkezz be!');
+            return redirect('/sign')->with('unloggederror', 'Kérlek előbb jelentkezz be!');
         }
     }
 

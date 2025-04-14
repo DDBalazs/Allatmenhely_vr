@@ -57,12 +57,12 @@
                         @foreach ($foglalasaim as $db)
                             <tr>
                                 <td>{{$db->nev}}</td>
-                                <td>{{date_format(date_create($db->datum),'Y.m.d.')}}</td>
+                                <td>{{date_format(date_create($db->datumido),'Y.m.d.')}}</td>
                                 @if ($db->elfogadas == "n")
-                                    <td>Elutasítva</td>
+                                    <td class="text-danger">Elutasítva</td>
                                     <td></td>
                                 @elseif($db->elfogadas == "i")
-                                    <td>Elfogadva</td>
+                                    <td class="text-sucess">Elfogadva</td>
                                     @if ($db->teljesitve == 0)
                                         <td>Még nincs teljesítve</td>
                                         <td>
@@ -73,11 +73,11 @@
                                             </form>
                                         </td>
                                     @else
-                                        <td>Teljesítve</td>
+                                        <td class="text-sucess">Teljesítve</td>
                                         <td>X</td>
                                     @endif
                                 @else
-                                    <td>Elfogadásra vár</td>
+                                    <td class="text-warning">Elfogadásra vár</td>
                                     <td></td>
                                     <td>
                                         <form action="/mypage/{{$db->foglalt_id}}" method="POST">

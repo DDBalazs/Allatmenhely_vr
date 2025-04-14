@@ -67,7 +67,7 @@
                     <h5 class="py-2">Foglalt dátumok:</h5>
                     <p class="text-danger">
                 @foreach ($foglalte as $fog)
-                    {{date_format(date_create($fog->datum),'Y.m.d.')}}
+                    {{date_format(date_create($fog->datumido),'Y.m.d.')}}
                 @endforeach
                     </p>
                 @endif

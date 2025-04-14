@@ -164,7 +164,7 @@ class AllatMenhely extends Controller
                                         ->join('fajta','allat.fajta_id', 'fajta.fajta_id')
                                         ->where('allat.allat_id',$id)
                                         ->get(),
-            'foglalte'      =>  Foglalt::select('foglalt.allat_id','foglalt.datum','foglalt.onkentes_id','foglalt.teljesitve','allat.allat_id')
+            'foglalte'      =>  Foglalt::select('foglalt.allat_id','foglalt.datumido','foglalt.onkentes_id','foglalt.teljesitve','allat.allat_id')
                                         ->Join('allat','foglalt.allat_id','allat.allat_id')
                                         ->where('foglalt.allat_id',$id)
                                         ->where('foglalt.onkentes_id','!=', NULL)
@@ -185,7 +185,7 @@ class AllatMenhely extends Controller
         }
 
         if(Foglalt::where('allat_id', $id)
-                    ->where('datum', $req->idopont)
+                    ->where('datumido', $req->idopont)
                     ->exists()){
                         return back()->with('fogerr','Ez az időpont már foglalt!');
                     }
@@ -210,7 +210,7 @@ class AllatMenhely extends Controller
 
         $data = new Foglalt;
         $data->allat_id     = $id;
-        $data->datum        = $req->idopont;
+        $data->datumido        = $req->idopont;
         $data->onkentes_id  = Auth::id();
         // n = elutasitva, i = elfogadva, e = elfogadásra vár
         $data->elfogadas    = 'e';
