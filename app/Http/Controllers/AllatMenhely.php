@@ -12,6 +12,7 @@ use App\Models\Meret;
 
 class AllatMenhely extends Controller
 {
+    
     public function Welcome(){
         return view('welcome', [
             'oldallatokk'   =>  Allatok::select('allat.allat_id', 'allat.nev','allat.fajta_id','fajta.fajta_id','fajta.faj','allat.beerkezes_datuma','allat.orokbefogadhato','allat.aktiv')
