@@ -43,6 +43,8 @@
         <div class="py-2">
             @if (count($foglalasaim)>0)
             <h1 class="text-center">Foglalásaid</h1>
+            <div class="table-responsive">
+
                 <table class="table table-hover rounded-3 overflow-hidden shadow-sm text-center">
                     <thead>
                         <tr>
@@ -56,16 +58,16 @@
                     <tbody>
                         @foreach ($foglalasaim as $db)
                             <tr>
-                                <td>{{$db->nev}}</td>
-                                <td>{{date_format(date_create($db->datumido),'Y.m.d.')}}</td>
+                                <td class="text-nowrap">{{$db->nev}}</td>
+                                <td class="text-nowrap">{{date_format(date_create($db->datumido),'Y.m.d.')}}</td>
                                 @if ($db->elfogadas == "n")
-                                    <td class="text-danger">Elutasítva</td>
-                                    <td></td>
+                                    <td class="text-danger text-nowrap">Elutasítva</td>
+                                    <td class="text-nowrap"></td>
                                 @elseif($db->elfogadas == "i")
-                                    <td class="text-sucess">Elfogadva</td>
+                                    <td class="text-sucess text-nowrap">Elfogadva</td>
                                     @if ($db->teljesitve == 0)
-                                        <td>Még nincs teljesítve</td>
-                                        <td>
+                                        <td class="text-nowrap">Még nincs teljesítve</td>
+                                        <td class="text-nowrap">
                                             <form action="/mypage/{{$db->foglalt_id}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
@@ -73,13 +75,13 @@
                                             </form>
                                         </td>
                                     @else
-                                        <td class="text-sucess">Teljesítve</td>
-                                        <td>X</td>
+                                        <td class="text-sucess text-nowrap">Teljesítve</td>
+                                        <td class="text-nowrap">X</td>
                                     @endif
                                 @else
-                                    <td class="text-warning">Elfogadásra vár</td>
-                                    <td></td>
-                                    <td>
+                                    <td class="text-warning text-nowrap">Elfogadásra vár</td>
+                                    <td class="text-nowrap"></td>
+                                    <td class="text-nowrap">
                                         <form action="/mypage/{{$db->foglalt_id}}" method="POST">
                                             @csrf
                                             @method('DELETE')
@@ -92,6 +94,7 @@
                         @endforeach
                     </tbody>
                 </table>
+            </div>
             @endif
         </div>
     </div>

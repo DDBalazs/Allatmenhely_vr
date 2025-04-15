@@ -14,7 +14,7 @@
             <div class="container">
               <div class="carousel-caption">
                 <h1>Nézd meg a kutyáinkat!</h1>
-                <a href="/allatok" class="btn btn-dark">Kattints ide!</a>
+                <a href="/allatok" class="btn btn-primary">Kattints ide!</a>
               </div>
             </div>
           </div>
@@ -22,7 +22,7 @@
             <div class="container">
               <div class="carousel-caption">
                 <h1>Látogass meg minket!</h1>
-                <a href="https://maps.app.goo.gl/1fQM3uQHkHQVvYU27" target="_blank" class="btn btn-dark">Kattints ide!</a>
+                <a href="https://maps.app.goo.gl/1fQM3uQHkHQVvYU27" target="_blank" class="btn btn-primary">Kattints ide!</a>
               </div>
             </div>
           </div>
@@ -30,7 +30,7 @@
             <div class="container">
               <div class="carousel-caption">
                 <h1>Nézd meg a macskáinkat!</h1>
-                <a href="/allatok" class="btn btn-dark">Kattints ide!</a>
+                <a href="/allatok" class="btn btn-primary">Kattints ide!</a>
               </div>
             </div>
           </div>

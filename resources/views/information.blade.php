@@ -17,13 +17,13 @@
                 <a href="/information/cookie"><i class='bx bx-cookie'></i><br>Cookie</a>
             </div>
             <div class="col py-2 px-2">
-                <a href="{{asset('other/orokbefog.pdf')}}" download="{{asset('other/orokbefog.pdf')}}"><i class='bx bx-building-house'></i><br>Örökbefogadási szerződés</a>
-            </div>
-            <div class="col py-2 px-2">
                 <a href="/information/adomany"><i class='bx bx-gift' ></i><br>Adományozási Szabályzat</a>
             </div>
             <div class="col py-2 px-2">
                 <a href="/information/jollet"><i class='bx bxs-dog' ></i><br>Állatjóléti Szabályzat</a>
+            </div>
+            <div class="col py-2 px-2">
+                <a href="{{asset('other/orokbefog.pdf')}}" download="{{asset('other/orokbefog.pdf')}}"><i class='bx bx-building-house'></i><br>Örökbefogadási szerződés</a>
             </div>
         </div>
     </div>

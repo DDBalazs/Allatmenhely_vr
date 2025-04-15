@@ -27,22 +27,22 @@
                     <tbody>
                         <tr>
                             <th scope="row" class="text-start ps-4 fw-semibold">Kutyák</th>
-                            <td>8-14</td>
+                            <td class="text-nowrap">8-14</td>
                             <td class="text-danger fw-medium">Zárva</td>
-                            <td>8-16</td>
-                            <td>14-16</td>
-                            <td>10-16</td>
-                            <td>10-16</td>
+                            <td class="text-nowrap">8-16</td>
+                            <td class="text-nowrap">14-16</td>
+                            <td class="text-nowrap">10-16</td>
+                            <td class="text-nowrap">10-16</td>
                             <td class="text-danger fw-medium pe-4">Zárva</td>
                         </tr>
                         <tr>
                             <th scope="row" class="text-start ps-4 fw-semibold">Macskák</th>
-                            <td>13-16</td>
+                            <td class="text-nowrap">13-16</td>
                             <td class="text-danger fw-medium">Zárva</td>
-                            <td>10-16</td>
-                            <td>14-16</td>
-                            <td>10-16</td>
-                            <td>11-16</td>
+                            <td class="text-nowrap">10-16</td>
+                            <td class="text-nowrap">14-16</td>
+                            <td class="text-nowrap">10-16</td>
+                            <td class="text-nowrap">11-16</td>
                             <td class="text-danger fw-medium pe-4">Zárva</td>
                         </tr>
                     </tbody>

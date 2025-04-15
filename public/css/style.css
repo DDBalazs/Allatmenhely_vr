@@ -117,6 +117,7 @@
         }
         svg:last-child{
             display: block;
+            margin: auto;
         }
     }
 }
@@ -127,10 +128,10 @@
     padding: 0;
     border-radius: 50%;
     background-color: var(--nav-bg);
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: fixed; */
     top: 20px;
     right: 20px;
 
@@ -155,10 +156,16 @@ body{
     /* main page */
     .carousel {
         margin-bottom: -8px;
+        text-shadow: 2px 2px 5px grey;
     }
     .carousel-caption {
         bottom: 3rem;
         z-index: 10;
+        color: var(--text-color);
+
+        a{
+            color: var(--button-text);
+        }
     }
     .carousel-item {
         height: 60vh;
@@ -350,6 +357,9 @@ nav {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .nav-link{
+        color: var(--nav-text);
     }
 
     li{
@@ -770,6 +780,7 @@ input:-internal-autofill-selected {
     .table {
         border-collapse: separate;
         border-spacing: 0;
+        display: inline;
 
         thead th {
             border-bottom: 2px solid var(--border-color);
