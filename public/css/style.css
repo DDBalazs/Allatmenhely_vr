@@ -111,15 +111,14 @@
     --box-shadow: #4b4b4b;
     --box-shadow-hover: #3a5c66;
 
-    #theme-switch{
-        svg:first-child{
-            display: none;
-        }
-        svg:last-child{
-            display: block;
-            margin: auto;
-        }
-    }
+}
+.darkmode #theme-switch svg:first-child{
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child{
+    display: block;
+    margin: auto;
 }
 
 #theme-switch{
@@ -135,12 +134,12 @@
     top: 20px;
     right: 20px;
 
-    svg{
-        fill: var(--secondary-text);
-    }
-    svg:last-child{
-        display: none;
-    }
+}
+#theme-switch svg{
+    fill: var(--secondary-text);
+}
+#theme-switch svg:last-child{
+    display: none;
 }
 
 /* layout */
@@ -151,194 +150,171 @@ body{
     background-size: cover;
 }
 
-/* Welcome page */
-.welcome{
-    /* main page */
-    .carousel {
-        margin-bottom: -8px;
-        text-shadow: 2px 2px 5px grey;
+/* ------------------------ Welcome ------------------------*/
+.welcome .carousel {
+    margin-bottom: -8px;
+    text-shadow: 2px 2px 5px grey;
+}
+.welcome .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+    color: var(--text-color);
+}
+.welcome .carousel-caption a {
+    color: var(--button-text);
+}
+.welcome .carousel-item {
+    height: 60vh;
+}
+.welcome .bg1 {
+    background-image: var(--welbg-image1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.welcome .bg2 {
+    background-image: var(--welbg-image2);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.welcome .bg3 {
+    background-image: var(--welbg-image3);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.welcome hr {
+    border: 10px solid black;
+    opacity: 1;
+    margin: 0px;
+}
+.welcome .vonal {
+    margin-top: 200px;
+}
+.welcome .welcomepage {
+    background-color: var(--base-color);
+    color: var(--text-color);
+}
+.welcome .welcomepage .bemutatkozas {
+    height: auto;
+}
+.welcome .welcomepage .textboxok {
+    background-color: var(--base-variant);
+    color: var(--secondary-text);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    width: 100%;
+    margin: 0 auto 1.5rem;
+    margin-top: 350px;
+    font-size: 1.2rem;
+    padding: 30px;
+    box-shadow: 0 0px 8px 8px var(--box-shadow);
+    transition: transform 0.3s ease;
+    animation: scroll linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 50%;
+}
+.welcome .welcomepage .textboxok p {
+    text-align: left;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+.welcome .welcomepage .textboxok h2 {
+    color: var(--border-color);
+    margin-bottom: 1.5rem;
+}
+.welcome .welcomepage .textboxok:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0px 8px 8px var(--box-shadow-hover);
+}
+.welcome .welcomepage .oldanimals {
+    background-color: var(--primary-color);
+    color: var(--secondary-text);
+    padding-top: 30px;
+    padding-bottom: 40px;
+    transition: transform 0.3s ease;
+}
+.welcome .welcomepage .oldanimals h2 {
+    margin: 20px;
+}
+.welcome .welcomepage .oldanimals .card {
+    border-radius: 8px;
+    border: 1px solid var(--card-border) !important;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0px 8px 8px var(--box-shadow);
+}
+.welcome .welcomepage .oldanimals .card .card-body {
+    background-color: var(--card-body) !important;
+    color: var(--card-text) !important;
+    border: 1px solid var(--card-border) !important;
+}
+.welcome .welcomepage .oldanimals .card img {
+    height: 400px;
+}
+.welcome .welcomepage .oldanimals .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0px 8px 8px var(--box-shadow-hover);
+}
+.welcome .welcomepage .on {
+    background-color: var(--base-variant);
+}
+.welcome .welcomepage .on .onkentes {
+    color: var(--secondary-text);
+    height: auto;
+    width: 800px;
+    margin: auto;
+    font-size: x-large;
+    padding: 20px;
+    animation: scroll linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 30%;
+}
+.welcome .welcomepage .on .onkentes p {
+    text-align: left;
+}
+.welcome .welcomepage .on .onkentes a {
+    background-color: var(--gbutton-color);
+    color: var(--button-text);
+    border: 1px solid var(--gbutton-border);
+    transition: transform 0.3s ease;
+}
+.welcome .welcomepage .on .onkentes a:hover {
+    transform: scale(1.2);
+}
+@media only screen and (max-width: 850px) {
+    .welcome .welcomepage .on .onkentes {
+        width: auto;
     }
-    .carousel-caption {
-        bottom: 3rem;
-        z-index: 10;
-        color: var(--text-color);
 
-        a{
-            color: var(--button-text);
-        }
-    }
-    .carousel-item {
-        height: 60vh;
-    }
-    .bg1{
-        background-image: var(--welbg-image1);
-        background-size:cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-    }
-    .bg2{
-        background-image: var(--welbg-image2);
-        background-size:cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-    }
-    .bg3{
-        background-image: var(--welbg-image3);
-        background-size:cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-    }
-    /* VONAL */
-    hr{
-        border: 10px solid black;
-        opacity: 1;
-        margin: 0px;
-    }
-    .vonal{
-        margin-top: 200px;
-    }
-
-    .welcomepage{
-        background-color: var(--base-color);
-        color: var(--text-color);
-
-        .bemutatkozas{
-            height: auto;
-        }
-
-        .textboxok {
-            background-color: var(--base-variant);
-            color: var(--secondary-text);
-            border: 1px solid var(--border-color);
-            border-radius: 50px;
-            width: 100%;
-            margin: 0 auto 1.5rem;
-            margin-top: 350px;
-            font-size: 1.2rem;
-            padding: 30px;
-            box-shadow: 0 0px 8px 8px var(--box-shadow);
-            transition: transform 0.3s ease;
-
-            animation: scroll linear;
-            animation-timeline: view();
-            animation-range: entry 0 cover 50%;
-
-            p{
-                text-align: left;
-                margin-bottom: 1rem;
-                line-height: 1.6;
-            }
-            h2{
-                color: var(--border-color);
-                margin-bottom: 1.5rem;
-            }
-        }
-        .textboxok:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0px 8px 8px var(--box-shadow-hover);
-        }
-
-        .oldanimals{
-            background-color: var(--primary-color);
-            color: var(--secondary-text);
-            padding-top: 30px;
-            padding-bottom: 40px;
-            transition: transform 0.3s ease;
-
-            h2{
-                margin: 20px;
-            }
-            .card{
-                border-radius: 8px;
-                border: 1px solid var(--card-border) !important;
-                transition: transform 0.3s ease;
-                box-shadow: 0 0px 8px 8px var(--box-shadow);
-
-                .card-body{
-                    background-color: var(--card-body) !important;
-                    color: var(--card-text) !important;
-                    border: 1px solid var(--card-border) !important;
-                }
-                img{
-                    height: 400px;
-                }
-
-            }
-            .card:hover{
-                transform: translateY(-5px);
-                box-shadow: 0 0px 8px 8px var(--box-shadow-hover);
-            }
-
-
-        }
-
-        .on{
-            background-color: var(--base-variant);
-
-            .onkentes{
-                color: var(--secondary-text);
-                height: auto;
-                width: 800px;
-                margin: auto;
-                font-size:x-large;
-                padding: 20px;
-
-                animation: scroll linear;
-                animation-timeline: view();
-                animation-range: entry 0 cover 30%;
-
-                p{
-                    text-align: left;
-                }
-                a{
-                    background-color: var(--gbutton-color);
-                    color: var(--button-text);
-                    border: 1px solid var(--gbutton-border);
-                    transition: transform 0.3s ease;
-                }
-                a:hover{
-                    transform: scale(1.2);
-                }
-            }
-            @media only screen and (max-width: 850px) {
-                .onkentes{
-                    width: auto;
-                }
-                .textboxok{
-                    width: auto;
-                }
-            }
-        }
+    .welcome .welcomepage .textboxok {
+        width: auto;
     }
 }
 
-/* Footer */
+/* ------------------------ Footer ------------------------*/
 footer{
     background-color: var(--footer-bg);
     color: var(--footer-link);
     height: 300px;
     opacity: .98;
-
-    a{
-        color: var(--footer-link);
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-    a:hover{
-        color: var(--footer-link-hover);
-        text-decoration: underline;
-    }
-
-    hr{
-        border: 8px solid black;
-        opacity: 1;
-        margin: 0px;
-    }
 }
-/* nav */
+footer a{
+    color: var(--footer-link);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+footer a:hover{
+    color: var(--footer-link-hover);
+    text-decoration: underline;
+}
+footer hr{
+    border: 8px solid black;
+    opacity: 1;
+    margin: 0px;
+}
+
+/* ------------------------ Nav ------------------------*/
 nav {
     position: fixed;
     top: 0;
@@ -347,328 +323,288 @@ nav {
     background-color: var(--nav-bg);
     transition: background-color 0.2s ease;
     color: var(--nav-text);
-
-    .logo{
-        height: 50px;
-        width: 50px;
-        padding: 0;
-        border-radius: 50%;
-        background-color: var(--nav-bg);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .nav-link{
-        color: var(--nav-text);
-    }
-
-    li{
-        a{
-            color: var(--nav-text);
-        }
-        a:active{
-            color: var(--nav-active);
-        }
-        a:hover{
-            color: var(--nav-hover);
-        }
-    }
-
-    .header-sticky {
-        position: fixed;
-        background-color: var(--nav-bg);
+}
+nav .logo{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--nav-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav .nav-link{
+    color: var(--nav-text);
+}
+nav li a{
+    color: var(--nav-text);
+}
+nav li a:active{
+    color: var(--nav-active);
+}
+nav li a:hover{
+    color: var(--nav-hover);
+}
+nav .header-sticky {
+    position: fixed;
+    background-color: var(--nav-bg);
         top: 0;
         z-index: 2000;
         opacity: .9;
-    }
-    @media screen and (max-width: 992px) {
-        .vr{
-            display: none;
-        }
+}
+@media screen and (max-width: 992px) {
+    .vr{
+        display: none;
     }
 }
 
-@keyframes scroll{
-    from{
-        opacity: 0;
-        scale: 0.5;
-    }
-    to{
-        opacity: 1;
-        scale: 1;
-    }
-}
-
-/* sign.blade.php */
-.reg{
+/* ------------------------ Sign ------------------------*/
+.reg {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    .sign{
-        height: 750px;
-        width: 450px;
-        border: 2px solid rgba(255,255,255,.4);
-        border-radius: 10px;
-        background: rgba(0,0,0,.2);
-        backdrop-filter: blur(4px);
-        box-shadow: 0 0 5px var(--box-shadow),
-        0 0 15px rgba(0,0,0,.2),
-        0 0 30px rgba(0,0,0,.2);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        color: var(--sign-text);
-
-        .LoginForm{
-            position: absolute;
-            transform: translateX(0px) rotate(0deg);
-            transition: .5s ease;
-            transition-delay: .4s;
-        }
-        .LoginForm.active{
-            transform: translateX(-500px) rotate(-50deg);
-            transition-delay: .2s;
-        }
-        .RegisterForm{
-            transform: translateX(600px) rotate(50deg);
-            transition: .5s ease;
-            transition-delay: .2s;
-        }
-        .RegisterForm.active{
-            transform: translateX(0px) rotate(0deg);
-            transition-delay: .4s;
-        }
-        h2{
-            text-align: center;
-            font-size: 38px;
-            font-weight: 600;
-        }
-        .input-box{
-            margin: 35px 0;
-            width: 330px;
-            border-bottom: 2px solid rgba(255,255,255,.4);
-            position: relative;
-
-            input{
-                background: transparent;
-                border: none;
-                outline: none;
-                width: 100%;
-                height: 40px;
-                padding: 0 35px 0 5px;
-                color: var(--sign-text);
-            }
-            }
-            label{
-                font-weight: 400px;
-                letter-spacing: .5px;
-                position: absolute;
-                left: 5px;
-                /* top: 0%; */
-                transform: translateY(-50%);
-                transition: .5s ease;
-
-            }
-            i{
-                position: absolute;
-                right: 5px;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: 20px;
-            }
-        }
-        .forget-section{
-            display: flex;
-
-            .LoginForm{
-                position: absolute;
-                transform: translateX(0px) rotate(0deg);
-                transition: .5s ease;
-                transition-delay: .4s;
-
-                #loginerror{
-                    visibility: hidden;
-                }
-            }
-            .LoginForm.active{
-                transform: translateX(-500px) rotate(-50deg);
-                transition-delay: .2s;
-
-                #loginerror{
-                    visibility: visible;
-                }
-            }
-            .RegisterForm{
-                transform: translateX(600px) rotate(50deg);
-                transition: .5s ease;
-                transition-delay: .2s;
-
-                #registererror{
-                    visibility: hidden;
-                }
-            }
-            .RegisterForm.active{
-                transform: translateX(0px) rotate(0deg);
-                transition-delay: .4s;
-
-                #registererror{
-                    visibility: visible;
-                }
-            }
-            h2{
-                text-align: center;
-                font-size: 38px;
-                font-weight: 600;
-            }
-            .input-box{
-                margin: 35px 0;
-                width: 330px;
-                border-bottom: 2px solid rgba(255,255,255,.4);
-                position: relative;
-
-                input{
-                    background: transparent;
-                    border: none;
-                    outline: none;
-                    width: 100%;
-                    height: 40px;
-                    padding: 0 35px 0 5px;
-                }
-                }
-                label{
-                    font-weight: 400px;
-                    letter-spacing: .5px;
-                    position: absolute;
-                    left: 5px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    transition: .5s ease;
-                    opacity: .4;
-
-                }
-                i{
-                    position: absolute;
-                    right: 5px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    font-size: 20px;
-                }
-            }
-            .forget-section{
-                display: flex;
-                justify-content: space-between;
-                font-size: 15px;
-                margin: -15px 0 15px;
-
-                p{
-                    display: flex;
-                    align-items: center;
-
-                    input{
-                        accent-color: #11595d;
-                        margin: 0 3px;
-                    }
-                }
-                a{
-                    text-decoration: none;
-                }
-            }
-            .buttn{
-                height: 45px;
-                width: 100%;
-                border-radius: 50px;
-                color: #fff;
-                background: #007bff;
-                border: 2px solid #074588;
-                outline: none;
-                font-size: 16px;
-                cursor: pointer;
-                letter-spacing: 1px;
-            }
-            .account-creation{
-                text-align: center;
-                margin: 25px 0 10px;
-                font-weight: 400;
-                font-size: 14px;
-
-                span{
-                    a{
-                        text-decoration: none;
-                    }
-                    a:hover{
-                        text-decoration: underline;
-                    }
-                }
-
-    }
-    .password-header {
-        display: flex;
-        align-items: center;
-    }
-
-    .password-label {
-        position: static !important; /* Felülírjuk az abszolút pozicionálást */
-        display: inline !important;
-        margin: 0 !important;
-        transform: none !important;
-        left: auto !important;
-        top: auto !important;
-    }
-
-    .password-info-icon {
-        margin-left: 8px;
-        width: 18px;
-        height: 18px;
-        background-color: #007bff;
-        color: white;
-        border-radius: 50%;
-        text-align: center;
-        font-size: 12px;
-        font-weight: bold;
-        cursor: help;
-        line-height: 18px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
-
-    .password-tooltip {
-        visibility: hidden;
-        width: 220px;
-        background-color: #333;
-        color: #fff;
-        text-align: left;
-        border-radius: 6px;
-        padding: 10px;
-        position: absolute;
-        z-index: 100;
-        top: 100%;
-        left: 0;
-        opacity: 0;
-        transition: opacity 0.3s;
-        font-size: 13px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-
-    .password-info-icon:hover .password-tooltip {
-        visibility: visible;
-        opacity: 1;
-    }
-
-    .password-tooltip ul {
-        margin: 8px 0 0 15px;
-        padding: 0;
-    }
-
-    .password-tooltip li {
-        font-size: 12px;
-        line-height: 1.5;
-        margin-bottom: 3px;
-    }
+}
+.reg .sign {
+    height: 750px;
+    width: 450px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 5px var(--box-shadow),
+               0 0 15px rgba(0, 0, 0, 0.2),
+               0 0 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: var(--sign-text);
+}
+.reg .sign .LoginForm {
+    position: absolute;
+    transform: translateX(0px) rotate(0deg);
+    transition: 0.5s ease;
+    transition-delay: 0.4s;
+}
+.reg .sign .LoginForm.active {
+    transform: translateX(-500px) rotate(-50deg);
+    transition-delay: 0.2s;
+}
+.reg .sign .RegisterForm {
+    transform: translateX(600px) rotate(50deg);
+    transition: 0.5s ease;
+    transition-delay: 0.2s;
+}
+.reg .sign .RegisterForm.active {
+    transform: translateX(0px) rotate(0deg);
+    transition-delay: 0.4s;
+}
+.reg .sign h2 {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 600;
+}
+.reg .sign .input-box {
+    margin: 35px 0;
+    width: 330px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    position: relative;
+}
+.reg .sign .input-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 40px;
+    padding: 0 35px 0 5px;
+    color: var(--sign-text);
+}
+.reg .sign .input-box label {
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    position: absolute;
+    left: 5px;
+    transform: translateY(-50%);
+    transition: 0.5s ease;
+}
+.reg .sign .input-box i {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.reg .sign .forget-section {
+    display: flex;
+}
+.reg .sign .forget-section .LoginForm {
+    position: absolute;
+    transform: translateX(0px) rotate(0deg);
+    transition: 0.5s ease;
+    transition-delay: 0.4s;
+}
+.reg .sign .forget-section .LoginForm #loginerror {
+    visibility: hidden;
+}
+.reg .sign .forget-section .LoginForm.active {
+    transform: translateX(-500px) rotate(-50deg);
+    transition-delay: 0.2s;
+}
+.reg .sign .forget-section .LoginForm.active #loginerror {
+    visibility: visible;
+}
+.reg .sign .forget-section .RegisterForm {
+    transform: translateX(600px) rotate(50deg);
+    transition: 0.5s ease;
+    transition-delay: 0.2s;
+}
+.reg .sign .forget-section .RegisterForm #registererror {
+    visibility: hidden;
+}
+.reg .sign .forget-section .RegisterForm.active {
+    transform: translateX(0px) rotate(0deg);
+    transition-delay: 0.4s;
+}
+.reg .sign .forget-section .RegisterForm.active #registererror {
+    visibility: visible;
+}
+.reg .sign .forget-section h2 {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 600;
+}
+.reg .sign .forget-section .input-box {
+    margin: 35px 0;
+    width: 330px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    position: relative;
+}
+.reg .sign .forget-section .input-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 40px;
+    padding: 0 35px 0 5px;
+}
+.reg .sign .forget-section .input-box label {
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.5s ease;
+    opacity: 0.4;
+}
+.reg .sign .forget-section .input-box i {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.reg .sign .forget-section .forget-section {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin: -15px 0 15px;
+}
+.reg .sign .forget-section .forget-section p {
+    display: flex;
+    align-items: center;
+}
+.reg .sign .forget-section .forget-section input {
+    accent-color: #11595d;
+    margin: 0 3px;
+}
+.reg .sign .forget-section .forget-section a {
+    text-decoration: none;
+}
+.reg .sign .buttn {
+    height: 45px;
+    width: 100%;
+    border-radius: 50px;
+    color: #fff;
+    background: #007bff;
+    border: 2px solid #074588;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+.reg .sign .account-creation {
+    text-align: center;
+    margin: 25px 0 10px;
+    font-weight: 400;
+    font-size: 14px;
+}
+.reg .sign .account-creation span a {
+    text-decoration: none;
+}
+.reg .sign .account-creation span a:hover {
+    text-decoration: underline;
+}
+.reg .sign .password-header {
+    display: flex;
+    align-items: center;
+}
+.reg .sign .password-label {
+    position: static !important;
+    display: inline !important;
+    margin: 0 !important;
+    transform: none !important;
+    left: auto !important;
+    top: auto !important;
+}
+.reg .sign .password-info-icon {
+    margin-left: 8px;
+    width: 18px;
+    height: 18px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: help;
+    line-height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.reg .sign .password-tooltip {
+    visibility: hidden;
+    width: 220px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 100;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 13px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.reg .sign .password-info-icon:hover .password-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+.reg .sign .password-tooltip ul {
+    margin: 8px 0 0 15px;
+    padding: 0;
+}
+.reg .sign .password-tooltip li {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 3px;
 }
 /* BZGGG FUIXIXIX */
 .input-box input:focus ~ label,
@@ -686,84 +622,82 @@ input:-internal-autofill-selected {
 }
 
 /* Responsitivitása */
-@media(max-width:768px){
-    .sign{
+@media (max-width: 768px) {
+    .reg .sign {
         height: 500px;
         width: 380px;
     }
-    .sign .form-box{
+    .reg .sign .form-box {
         font-size: 32px;
     }
-    .form-box .input-box i{
+    .reg .sign .form-box .input-box i {
         font-size: 18px;
     }
-    .form-box .input-box label{
+    .reg .sign .form-box .input-box label {
         font-size: 14px;
     }
-    .form-box .input-box{
+    .reg .sign .form-box .input-box {
         margin: 35px 0;
         width: 300px;
     }
-    .forget-section{
-        font-size:  13px;
+    .reg .sign .forget-section {
+        font-size: 13px;
     }
-    .buttn{
+    .reg .sign .buttn {
         height: 40px;
         width: 100%;
         font-size: 14px;
     }
-    .account-creation{
+    .reg .sign .account-creation {
         font-size: 13px;
     }
 }
-
-@media(max-width:480px){
-    .sign{
+@media (max-width: 480px) {
+    .reg .sign {
         height: 450px;
         width: 310px;
     }
-    .sign .form-box{
+    .reg .sign .form-box {
         font-size: 26px;
     }
-    .form-box .input-box i{
+    .reg .sign .form-box .input-box i {
         font-size: 16px;
     }
-    .form-box .input-box label{
+    .reg .sign .form-box .input-box label {
         font-size: 12px;
     }
-    .form-box .input-box{
+    .reg .sign .form-box .input-box {
         margin: 30px 0;
         width: 260px;
     }
-    .forget-section{
-        font-size:  11px;
+    .reg .sign .forget-section {
+        font-size: 11px;
     }
-    .buttn{
+    .reg .sign .buttn {
         height: 35px;
         width: 100%;
         font-size: 12px;
     }
-    .account-creation{
+    .reg .sign .account-creation {
         font-size: 11px;
     }
 }
 
 
-/* MyPage */
 
+/* ------------------------ MyPage ------------------------*/
 .mypage{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
     color: var(--sign-text);
-
-    hr{
-        border: 1px solid var(--vonal);
-        opacity: 1;
-    }
-    .mypagebg{
+}
+.mypage hr{
+    border: 1px solid var(--vonal);
+    opacity: 1;
+}
+.mypage .mypagebg{
     height: auto;
     width: 700px;
     border: 2px solid rgba(255,255,255,.4);
@@ -776,220 +710,227 @@ input:-internal-autofill-selected {
     text-align: center;
     justify-content: center;
     overflow: hidden;
-
-    .table {
-        border-collapse: separate;
-        border-spacing: 0;
-        display: inline;
-
-        thead th {
-            border-bottom: 2px solid var(--border-color);
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            background-color: var(--tableh);
-            color: var(--text-color);
-        }
-        tbody{
-            td,th{
-                padding: 0.75rem;
-                vertical-align: middle;
-                border-top: 1px solid var(--border-color);
-                background-color: var(--tableb);
-            }
-            tr:last-child{
-                td, th{
-                    border-bottom: 1px solid var(--border-color);
-                }
-            }
-        }
+}
+.mypage table {
+    border-collapse: separate;
+    border-spacing: 0;
+    display: inline;
+}
+.mypage table thead th {
+    border-bottom: 2px solid var(--border-color);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--tableh);
+    color: var(--text-color);
+}
+.mypage table tbody td,th{
+    padding: 0.75rem;
+    vertical-align: middle;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--tableb);
+}
+.mypage table tbody tr:last-child td, th{
+    border-bottom: 1px solid var(--border-color);
+}
+.mypage h2{
+    margin-top: 30px;
     }
-
-        h2{
-            margin-top: 30px;
-        }
-        p{
-            font-size: 30px;
-        }
-    }
-    .profdata{
-        margin-left: 3rem;
-    }
-
-    .kij{
-        background-color: var(--nbutton-color);
-        color: var(--button-text);
-        border: 1px solid var(--nbutton-border);
-    }
-    .change{
-        background-color: var(--gbutton-color);
-        color: var(--button-text);
-        border: 1px solid var(--gbutton-border);
-    }
-    .save{
-        background-color: var(--wdbutton-color);
-        color: var(--wdbutton-text);
-        border: 1px solid var(--wdbutton-border);
-    }
+.mypage p{
+    font-size: 30px;
+}
+.mypage .profdata{
+    margin-left: 3rem;
+}
+.mypage .kij{
+    background-color: var(--nbutton-color);
+    color: var(--button-text);
+    border: 1px solid var(--nbutton-border);
+}
+.mypage .change{
+    background-color: var(--gbutton-color);
+    color: var(--button-text);
+    border: 1px solid var(--gbutton-border);
+}
+.mypage .save{
+    background-color: var(--wdbutton-color);
+    color: var(--wdbutton-text);
+    border: 1px solid var(--wdbutton-border);
 }
 
-/* CONTACT */
-.contact{
+/* ------------------------ Contact ------------------------*/
+.contact {
     background-color: var(--base-color);
     color: var(--text-color);
     padding-top: 30px;
-
-
-
-    hr{
-        border: 1px solid var(--vonal);
-        opacity: 1;
-        margin-bottom: 15px;
-    }
-    .table {
-        border-collapse: separate;
-        border-spacing: 0;
-
-        thead th {
-            border-bottom: 2px solid var(--border-color);
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            background-color: var(--tableh);
-            color: var(--text-color);
-        }
-        tbody{
-            td,th{
-                padding: 0.75rem;
-                vertical-align: middle;
-                border-top: 1px solid var(--border-color);
-                background-color: var(--tableb);
-            }
-            tr:last-child{
-                td, th{
-                    border-bottom: 1px solid var(--border-color);
-                }
-            }
-        }
-    }
-    .text{
-        font-size: larger;
-        margin: 25px;
-    }
-    .jo{
-        border: 1px solid var(--vonal);
-        margin: 0;
-    }
-    .ikonok{
-        i{
-            font-size: xx-large;
-        }
-        p{
-            font-size: larger;
-            color: black;
-        }
-        a{
-            color: var(--text-color);
-            text-decoration: none;
-        }
-        a:hover{
-            color: var(--text-color);
-            text-decoration: underline;
-        }
-    }
-    .donation{
-        background-color: var(--base-variant);
-        color: var(--secondary-text);
-
-        a{
-            color: var(--secondary-text);
-            text-decoration: none;
-        }
-        a:hover{
-            color: var(--secondary-text);
-            text-decoration: underline;
-        }
-    }
-    .tamogatok{
-        padding: 20px;
-
-        .supporterek{
-
-            animation: scroll linear;
-            animation-timeline: view();
-            animation-range: entry 0 cover 50%;
-            transition: transform 0.3s ease;
-
-            img{
-                border: 2px solid #ddd;
-                border-radius: 15%;
-                height: 300px;
-                width: 300px;
-                padding: 15px;
-            }
-            h5{
-                padding-top: 10px;
-                padding-bottom: 15px;
-            }
-        }
-        .supporterek:hover{
-            transform: translateY(5px);
-        }
-    }
-    .surgos{
-        background-color: var(--sosbg);
-        color: var(--button-text);
+}
+.contact hr {
+    border: 1px solid var(--vonal);
+    opacity: 1;
+    margin-bottom: 15px;
+}
+.contact .table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.contact .table thead th {
+    border-bottom: 2px solid var(--border-color);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--tableh);
+    color: var(--text-color);
+}
+.contact .table tbody td,
+.contact .table tbody th {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--tableb);
+}
+.contact .table tbody tr:last-child td,
+.contact .table tbody tr:last-child th {
+    border-bottom: 1px solid var(--border-color);
+}
+.contact .text {
+    font-size: larger;
+    margin: 25px;
+}
+.contact .jo {
+    border: 1px solid var(--vonal);
+    margin: 0;
+}
+.contact .ikonok i {
+    font-size: xx-large;
+}
+.contact .ikonok p {
+    font-size: larger;
+    color: black;
+}
+.contact .ikonok a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+.contact .ikonok a:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+.contact .donation {
+    background-color: var(--base-variant);
+    color: var(--secondary-text);
+}
+.contact .donation a {
+    color: var(--secondary-text);
+    text-decoration: none;
+}
+.contact .donation a:hover {
+    color: var(--secondary-text);
+    text-decoration: underline;
+}
+.contact .tamogatok {
+    padding: 20px;
+}
+.contact .tamogatok .supporterek {
+    animation: scroll linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 50%;
+    transition: transform 0.3s ease;
+}
+.contact .tamogatok .supporterek img {
+    border: 2px solid #ddd;
+    border-radius: 15%;
+    height: 300px;
+    width: 300px;
+    padding: 15px;
+}
+.contact .tamogatok .supporterek h5 {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+.contact .tamogatok .supporterek:hover {
+    transform: translateY(5px);
+}
+.contact .surgos {
+    background-color: var(--sosbg);
+    color: var(--button-text);
+    height: auto;
+    padding: 20px;
+}
+.contact .surgos p {
+    padding-bottom: 20px;
+}
+.contact .surgos .sosikonok i {
+    font-size: xx-large;
+}
+.contact .surgos .sosikonok p {
+    font-size: larger;
+}
+.contact .surgos .sosikonok a {
+    color: var(--button-text);
+    text-decoration: none;
+}
+.contact .surgos .sosikonok a:hover {
+    color: var(--button-text);
+    text-decoration: underline;
+}
+.information {
+    background-color: var(--base-color);
+    color: var(--text-color);
+    height: 100vh;
+    font-size: 40px;
+}
+.information i {
+    font-size: 100px;
+    border: 3px solid var(--main-link);
+    border-radius: 50%;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+.information i:hover {
+    border: 3px solid var(--main-link-hover);
+    transform: scale(1.1);
+}
+.information a {
+    color: var(--main-link);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+.information a:hover {
+    color: var(--main-link-hover);
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+@media screen and (max-width: 992px) {
+    .information {
         height: auto;
-        padding: 20px;
-
-        p{
-            padding-bottom: 20px;
-        }
-
-        .sosikonok{
-            i{
-                font-size: xx-large;
-            }
-            p{
-                font-size: larger;
-                color: var();
-            }
-            a{
-                color: var(--button-text);
-                text-decoration: none;
-            }
-            a:hover{
-                color: var(--button-text);
-                text-decoration: underline;
-            }
-        }
     }
 }
+
+/* ------------------------ Informaciok ------------------------*/
 .information{
     background-color: var(--base-color);
     color: var(--text-color);
     height:100vh;
     font-size: 40px;
-
-    i{
-        font-size: 100px;
-        border: 3px solid var(--main-link);
-        border-radius: 50%;
-        padding: 15px;
-        transition: transform 0.3s ease;
-    }
-    i:hover{
-        border: 3px solid var(--main-link-hover);
-        transform:scale(1.1);
-    }
-    a{
-        color: var(--main-link);
-        text-decoration: none;
-        transition: transform 0.3s ease;
-    }
-    a:hover{
-        color: var(--main-link-hover);
-        text-decoration: underline;
-        transform:scale(1.1);
-    }
+}
+.information i{
+    font-size: 100px;
+    border: 3px solid var(--main-link);
+    border-radius: 50%;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+.information i:hover{
+    border: 3px solid var(--main-link-hover);
+    transform:scale(1.1);
+}
+.information a{
+    color: var(--main-link);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+.information a:hover{
+    color: var(--main-link-hover);
+    text-decoration: underline;
+    transform:scale(1.1);
 }
 @media screen and (max-width: 992px) {
     .information{
@@ -997,224 +938,202 @@ input:-internal-autofill-selected {
     }
 }
 
+/* ------------------------ Dokumentumok ------------------------*/
 .documents{
     background-color: var(--primary-color);
     color: var(--secondary-text);
     font-size: 20px;
     padding: 20px;
-
-    h2{
-        text-decoration: underline;
-        text-decoration-color: var(--vonal);
-    }
-    hr{
-        border: 1px solid var(--vonal);
-        opacity: 1;
-        margin-bottom: 15px;
-    }
-    i{
-        border: 3px solid var(--main-link);
-        border-radius: 50%;
-        padding: 2px;
-        margin: 2px;
-    }
-    a{
-        color: var(--main-link-hover);
-        text-decoration: none;
-        font-size: medium;
-        transition: transform 0.3s ease;
-
-        .custom-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
-            width: 120px;
-        }
-    }
-    a:hover{
-        transform: scale(1.1);
-    }
-    .kat{
-        color: var(--text-color);
-        text-decoration: none;
-        font-size: large;
-    }
-    .kat:hover{
-        color: var(--footer-link-hover);
-        text-decoration: underline;
-    }
+}
+.documents h2{
+    text-decoration: underline;
+    text-decoration-color: var(--vonal);
+}
+.documents hr{
+    border: 1px solid var(--vonal);
+    opacity: 1;
+    margin-bottom: 15px;
+}
+.documents i{
+    border: 3px solid var(--main-link);
+    border-radius: 50%;
+    padding: 2px;
+    margin: 2px;
+}
+.documents a{
+    color: var(--main-link-hover);
+    text-decoration: none;
+    font-size: medium;
+    transition: transform 0.3s ease;
+}
+.documents a .custom-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        white-space: nowrap;
+        width: 120px;
+}
+.documents a:hover{
+    transform: scale(1.1);
+}
+.documents .kat{
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: large;
+}
+.documents .kat:hover{
+    color: var(--footer-link-hover);
+    text-decoration: underline;
 }
 
+/* ------------------------ Programok ------------------------*/
 .program{
     background-color: var(--base-color);
     color: var(--text-color);
-
-
-    hr{
-        border: 1px solid var(--vonal);
-        opacity: 1;
-        margin-bottom: 15px;
+}
+.program hr{
+    border: 1px solid var(--vonal);
+    opacity: 1;
+    margin-bottom: 15px;
+}
+.program a{
+    color: var(--main-link);
+    text-decoration: none;
+}
+.program a:hover{
+    color: var(--main-link-hover);
+    text-decoration:underline;
+}
+.program .galeria img{
+    width: 400px;
+    height: 420px;
+    border: 3px solid black;
+    border-radius: 20%;
+    padding: 2px;
+    transition: transform 0.3s ease;
+}
+.program .galeria img:hover{
+    transform: translateY(-5px);
+}
+@media screen and (max-width: 500px) {
+    .galeriaimg{
+        width: 350px;
+        height: 370px;
+        border: 3px solid black;
+        border-radius: 20%;
+        padding: 2px;
     }
-    a{
-        color: var(--main-link);
-        text-decoration: none;
-    }
-    a:hover{
-        color: var(--main-link-hover);
-        text-decoration:underline;
-    }
-    .galeria{
-        img{
-            width: 400px;
-            height: 420px;
-            border: 3px solid black;
-            border-radius: 20%;
-            padding: 2px;
-            transition: transform 0.3s ease;
-        }
-        img:hover{
-            transform: translateY(-5px);
-        }
-    }
-    @media screen and (max-width: 500px) {
-        .galeria{
-            img{
-                width: 350px;
-                height: 370px;
-                border: 3px solid black;
-                border-radius: 20%;
-                padding: 2px;
-            }
-        }
-    }
-
 }
 
+/* ------------------------ Allatok ------------------------*/
 .allatok{
     background-color: var(--base-variant);
     color: var(--text-color);
-
-    .szures{
-        background-color: #3498db;
-        transition: transform 0.3s ease;
-    }
-    .szures:hover{
-        transform: scale(1.1);
-    }
-    .reset{
-        background-color: #e74c3c;
-        transition: transform 0.3s ease;
-    }
-    .reset:hover{
-        transform: scale(1.1);
-    }
-
-    form{
-        background-color: var(--base-color);
-        color: var(--secondary-text);
-        transition: transform 0.3s ease;
-    }
-    form:hover{
-        transform: translateY(-5px);
-    }
-
-    .card{
-        border-radius: 8px;
-        border: 1px solid var(--card-border) !important;
-        transition: transform 0.3s ease;
-        box-shadow: 0 0px 8px 8px var(--box-shadow);
-
-        .card-body{
-            background-color: var(--card-body) !important;
-            color: var(--card-text) !important;
-            border: 1px solid var(--card-border) !important;
-        }
-
-    }
-    .card:hover{
-        transform: translateY(-5px);
-        box-shadow: 0 0px 8px 8px var(--box-shadow-hover);
-    }
-
-
-
+}
+.allatok .szures{
+    background-color: #3498db;
+    transition: transform 0.3s ease;
+}
+.allatok .szures:hover{
+    transform: scale(1.1);
+}
+.allatok .reset{
+    background-color: #e74c3c;
+    transition: transform 0.3s ease;
+}
+.allatok .reset:hover{
+    transform: scale(1.1);
+}
+.allatok form{
+    background-color: var(--base-color);
+    color: var(--secondary-text);
+    transition: transform 0.3s ease;
+}
+.allatok form:hover{
+    transform: translateY(-5px);
+}
+.allatok .card{
+    border-radius: 8px;
+    border: 1px solid var(--card-border) !important;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0px 8px 8px var(--box-shadow);
+}
+.allatok .card .card-body{
+    background-color: var(--card-body) !important;
+    color: var(--card-text) !important;
+    border: 1px solid var(--card-border) !important;
+}
+.allatok .card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 0px 8px 8px var(--box-shadow-hover);
 }
 
-.allat{
 
+/* ------------------------ Allat ------------------------*/
+.allat{
     background-color: var(--base-variant);
     color: var(--secondary-text);
+}
 
-    .megjegy{
-        margin-bottom: 20px;
-    }
-    p{
-        margin: 2px;
-    }
-    .felso{
-        border: 10px solid black;
-        opacity: 1;
-        margin: 0px;
-        margin-bottom: 20px;
-    }
+.allat .megjegy{
+    margin-bottom: 20px;
+}
+.allat p{
+    margin: 2px;
+}
+.allat .felso{
+    border: 10px solid black;
+    opacity: 1;
+    margin: 0px;
+    margin-bottom: 20px;
+}
 
-    hr{
-        border: 1px solid var(--vonal);
-    }
+.allat hr{
+    border: 1px solid var(--vonal);
+}
 
-    .asd{
-        margin-bottom: 30px;
+.allat .asd{
+    margin-bottom: 30px;
+}
 
-        img{
-            margin-top: 60px;
-            width: 650px;
-            height: 650px;
-            border: 5px solid var(--card-border);
-            box-shadow: 0px 0px 8px 8px var(--box-shadow);
-            transition: 0.3s ease;
-        }
-        img:hover{
-            transform: translateY(-3px);
-            box-shadow: 0px 0px 8px 8px var(--box-shadow-hover);
-        }
-    }
-    /* @media screen and (max-width: 500px) {
-        .asd{
-            img{
-                width: 850px;
-                height: 550px;
-                border: 1px solid var(--card-border);
-            }
-        }
-    } */
+.allat .asd img{
+    margin-top: 60px;
+    width: 650px;
+    height: 650px;
+    border: 5px solid var(--card-border);
+    box-shadow: 0px 0px 8px 8px var(--box-shadow);
+    transition: 0.3s ease;
+}
+.allat .asd img:hover{
+    transform: translateY(-3px);
+    box-shadow: 0px 0px 8px 8px var(--box-shadow-hover);
+}
 
-    .allathead{
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--base-color);
-        color: var(--text-color);
-    }
-    .foglalas{
-        height: auto;
-        margin-top: 20px;
+.allat .allathead{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--base-color);
+    color: var(--text-color);
+}
+.allat .foglalas{
+    height: auto;
+    margin-top: 20px;
+}
 
-        button{
-            color: var(--button-text);
-            background-color: var(--gbutton-color);
-            border: 1px solid var(--gbutton-border);
-        }
-        a{
-            color: var(--button-text);
-            background-color: var(--gbutton-color);
-            border: 1px solid var(--gbutton-border);
-        }
+.allat .foglalas button{
+    color: var(--button-text);
+    background-color: var(--gbutton-color);
+    border: 1px solid var(--gbutton-border);
+}
+.allat .foglalas a{
+    color: var(--button-text);
+    background-color: var(--gbutton-color);
+    border: 1px solid var(--gbutton-border);
+}
 
-        .foglalilehetoseg{
-            height: auto;
-            padding: 80px;
-        }
-    }
+.allat .foglalas .foglalilehetoseg{
+    height: auto;
+    padding: 80px;
 }

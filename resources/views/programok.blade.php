@@ -14,7 +14,7 @@
                 <hr class="w-25">
                 <h3>Kutyasétáltatás</h3>
                 <h5>Szeretnél segíteni, de nincs lehetőséged örökbe fogadni? Csatlakozz kutyasétáltatási programunkhoz! Heti rendszerességgel lehetőséged van sétáltatni menhelyi kutyáinkat, ezzel is hozzájárulva boldogabb életükhöz.</h5>
-                <li>Időpontok: Minden héten, minden nap <b>kedden</b> és <b>szerdán</b> kívül.</li>
+                <li>Időpontok: Minden héten, minden nap <b>kedden</b> és <b>vasárnapon</b> kívül.</li>
                 <li>Helyszín: Változó álltalában</li>
                 @if (Auth::check())
                     <li>Jelentkezési lehetőség: <a href="/sign">Regisztrálj most!</a></li>
@@ -41,9 +41,9 @@
                 <h1 class="text-center">Galéria</h1>
                 <hr class="w-75 mx-auto">
             <div class="row mx-auto text-center">
-                <div class="col"><img src="{{asset('img/programok/elso.png')}}" alt="elso"></div>
-                <div class="col"><img src="{{asset('img/programok/masodik.png')}}" alt="masodik"></div>
-                <div class="col"><img src="{{asset('img/programok/harmadik.png')}}" alt="harmadik"></div>
+                <div class="col py-2"><img src="{{asset('img/programok/elso.png')}}" alt="elso"></div>
+                <div class="col py-2"><img src="{{asset('img/programok/masodik.png')}}" alt="masodik"></div>
+                <div class="col py-2"><img src="{{asset('img/programok/harmadik.png')}}" alt="harmadik"></div>
             </div>
         </div>
         <div class="gyik">

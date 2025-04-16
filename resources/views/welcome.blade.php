@@ -78,9 +78,9 @@
             <div class="oldanimals">
                 <div class="container">
                     <div class="mx-auto">
-                        <h1 class="text-center py-2">Legrégebbi lakóink:</h1>
+                        <h1 class="text-center py-2">Legrégebbi lakóink</h1>
                         <div class="row mx-auto text-center">
-                            <h2 class="py-2">Kutyák:</h2>
+                            <h2 class="py-2">Kutyák</h2>
                             @foreach ($oldallatokk as $kutyak)
                                 <div class="col-12 col-lg-4" style="margin-top: 24px">
                                     <a href="/allatok/{{$kutyak->allat_id}}" class="text-decoration-none">
@@ -96,7 +96,7 @@
                         </div>
 
                         <div class="row mx-auto text-center">
-                            <h2 class="py-2">Macskák:</h2>
+                            <h2 class="py-2">Macskák</h2>
                             @foreach ($oldallatokc as $macskak)
                                 <div class="col-12 col-lg-4" style="margin-top: 24px">
                                     <a href="/allatok/{{$macskak->allat_id}}" class="text-decoration-none">

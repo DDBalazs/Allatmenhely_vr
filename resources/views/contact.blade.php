@@ -104,7 +104,7 @@
                 </div>
                 <div class="col supporterek">
                     <img src="{{asset('img/supporters/happytails.png')}}" alt="happytails">
-                    <h5>Happy Tails Vet Clinic</h5>
+                    <h5>Happy Tails Pet Supplies</h5>
                 </div>
                 <div class="col supporterek">
                     <img src="{{asset('img/supporters/furryfriends.png')}}" alt="furryfriends">

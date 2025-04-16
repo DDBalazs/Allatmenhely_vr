@@ -12,10 +12,11 @@ use App\Models\Meret;
 
 class AllatMenhely extends Controller
 {
-    
+
     public function Welcome(){
         return view('welcome', [
-            'oldallatokk'   =>  Allatok::select('allat.allat_id', 'allat.nev','allat.fajta_id','fajta.fajta_id','fajta.faj','allat.beerkezes_datuma','allat.orokbefogadhato','allat.aktiv')
+            'oldallatokk'   =>  Allatok::select('allat.allat_id', 'allat.nev','allat.fajta_id','fajta.fajta_id','fajta.faj',
+                                                'allat.beerkezes_datuma','allat.orokbefogadhato','allat.aktiv')
                                             ->join('fajta', 'allat.fajta_id','=','fajta.fajta_id')
                                             ->where('fajta.faj','kutya')
                                             ->where('allat.orokbefogadhato', '1')
@@ -24,7 +25,8 @@ class AllatMenhely extends Controller
                                             ->limit(3)
                                             ->get(),
 
-            'oldallatokc'   =>  Allatok::select('allat.allat_id', 'allat.nev','allat.fajta_id','fajta.fajta_id','fajta.faj','allat.beerkezes_datuma','allat.orokbefogadhato','allat.aktiv')
+            'oldallatokc'   =>  Allatok::select('allat.allat_id', 'allat.nev','allat.fajta_id','fajta.fajta_id','fajta.faj',
+                                                'allat.beerkezes_datuma','allat.orokbefogadhato','allat.aktiv')
                                             ->join('fajta', 'allat.fajta_id','=','fajta.fajta_id')
                                             ->where('fajta.faj','macska')
                                             ->where('allat.orokbefogadhato', '1')
@@ -37,7 +39,8 @@ class AllatMenhely extends Controller
 
     public function Allatok(){
         return view('allatok',[
-            'allatok'   =>  Allatok::select('allat.allat_id','allat.nev','allat.fajta_id','allat.chip_sorszam','allat.szuldatum','allat.meret_id','allat.szin','allat.ivartalanitott','allat.orokbefogadhato','allat.beerkezes_datuma','allat.megjegyzes','fajta.fajta_id','fajta.faj','allat.aktiv')
+            'allatok'   =>  Allatok::select('allat.allat_id','allat.nev','allat.fajta_id','allat.chip_sorszam','allat.szuldatum','allat.meret_id','allat.szin','allat.ivartalanitott',
+                                            'allat.orokbefogadhato','allat.beerkezes_datuma','allat.megjegyzes','fajta.fajta_id','fajta.faj','allat.aktiv')
                                     ->join('fajta','allat.fajta_id','fajta.fajta_id')
                                     ->join('meret', 'allat.meret_id', '=', 'meret.meret_id')
                                     ->where('allat.aktiv', '1')
@@ -47,7 +50,6 @@ class AllatMenhely extends Controller
 
     public function AllatokPost(Request $req){
         $conditions = [];
-        $params = [];
 
         // Faj szűrés
         if($req->has('kperm') && in_array($req->input('kperm'), ['dog', 'cat'])) {
@@ -200,14 +202,6 @@ class AllatMenhely extends Controller
             'idopont.after_or_equal'    =>  'Az időpontot nem lehet a holnapi napnál korábbra foglalni!',
             'idopont.before_or_equal'   =>  'Az időpontot előre csak napra pontosan 2 héttel lehet!'
         ]);
-
-        // Foglalt::create([
-        //     'allat_id'      => $id,
-        //     'datum'         => $req->idopont,
-        //     'onkentes_id'   => auth()->id(),
-        //     'elfogadas'     => 'e',
-        //     'teljesitve'    => 0
-        // ]);
 
         $data = new Foglalt;
         $data->allat_id     = $id;
